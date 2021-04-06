@@ -1,0 +1,34 @@
+/**
+ *  author: eric
+ *  create at: 2019-12-26 16:42:52
+ */
+@breadcrumb-item-prefix: ~"@{prefix}breadcrumb-item";
+
+.@{breadcrumb-item-prefix}{
+    // .db(inline-flex);
+    // align-items: center;
+    a{
+        text-decoration: none;
+        .c(@default);
+        .borb(1px solid transparent);
+        // .db(inline-flex);
+        // align-items: center;
+        [class^='yo-icon-']{
+            vertical-align:middle;
+            .p(0 2px);
+        }
+        &:hover{
+            text-decoration: none;
+            .borbc(@default);
+        }
+    }
+    .@{breadcrumb-prefix}-separator{
+        .p(0 5px);
+        vertical-align: middle;
+    }
+    &:last-child{
+        .@{breadcrumb-prefix}-separator{
+            .db(none);
+        }
+    }
+}

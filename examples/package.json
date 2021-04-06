@@ -1,0 +1,42 @@
+{
+  "name": "youi",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "eric <1034850788@qq.com>",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode production",
+    "dev": "vue-cli-service serve --mode local",
+    "start": "npm run dev",
+    "build:pc": "vue-cli-service build --mode pc",
+    "build:dev": "vue-cli-service build --mode development",
+    "build:test": "vue-cli-service build --mode test",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:sandbox": "vue-cli-service build --mode sandbox"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "qrcode-terminal": "^0.12.0",
+    "register-service-worker": "^1.6.2",
+    "vue-analytics": "^5.19.0"
+  },
+  "devDependencies": {
+    "@gfx/zopfli": "^1.0.14",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-pwa": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "vconsole-webpack-plugin": "^1.4.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}

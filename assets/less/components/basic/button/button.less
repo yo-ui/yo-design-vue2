@@ -1,0 +1,355 @@
+@button-prefix: ~"@{prefix}btn";
+
+.@{button-prefix}{
+    .dib;
+    line-height: 1;
+    // .h(20);
+    // .lh(10);
+    white-space: nowrap;
+    cursor: pointer;
+    .bc(@white);
+    .bor(1px solid rgba(0,0,0,0));
+    .c(@font);
+    .bs;
+    .tran(.2s linear);
+    .fw(500);
+    .tc;
+    .userselect;
+    .p(8px 20px);
+    .br(4px);
+    .fz(14);
+    .m(0);
+    vertical-align: middle;
+    -webkit-appearance:none;
+    // .box-s(0 0 10px 1px @grayE);
+    outline: none;
+    cursor: pointer;
+    &+.@{button-prefix}{
+        .ml(10);
+    }
+    [class^='yo-icon-']{
+        .dib;
+        .fz(15);
+        &+*{
+            .mr(5);
+        }
+    }
+    &.@{button-prefix}-default{
+        .borc(@border);
+        // &.@{button-prefix}-plain{
+            // .borc(@default);
+            // .bc(@primary-plain-bc);
+            // .c(@primary);
+        // }
+        &:hover{
+            .c(@default)!important;
+            .bc(@default-bc)!important;
+            .borc(@default-plain)!important;
+            &.@{button-prefix}-plain{
+                .borc(@default)!important;
+                .bc(rgba(0,0,0,0))!important;
+            }
+            // .borc(@default);
+            // .mr(1);
+            // .posr;
+            // &::before{
+            //     content: "";
+            //     .posa;
+            //     // .bc(rgba(255,255,255,.4));
+            //     // .squ(100%);
+            //     left:-1px;
+            //     right:0px;
+            //     bottom:0;
+            //     top:-1px;
+            //     .bor(1px solid @default);
+            // }
+        }
+    }
+    &.@{button-prefix}-primary{
+        .c(@white);
+        .bc(@primary);
+        // .borc(@primary);
+        &.@{button-prefix}-plain{
+            .borc(@primary-plain);
+            .bc(@primary-plain-bc);
+            .c(@primary);
+        }
+        &:hover{
+            opacity:.8!important;
+            &.@{button-prefix}-plain{
+                .borc(@primary)!important;
+                .bc(@primary)!important;
+                .c(@white)!important;
+                opacity:1!important;
+            }
+        }
+    }
+    &.@{button-prefix}-info{
+        .c(@white);
+        .bc(@info);
+        // .borc(@info);
+        &.@{button-prefix}-plain{
+            .borc(@info-plain);
+            .bc(@info-plain-bc);
+            .c(@info);
+        }
+        &:hover{
+            opacity:.8!important;
+            &.@{button-prefix}-plain{
+                .borc(@info)!important;
+                .bc(@info)!important;
+                .c(@white)!important;
+                opacity:1!important;
+            }
+        }
+    }
+    &.@{button-prefix}-success{
+        .c(@white);
+        .bc(@success);
+        &.@{button-prefix}-plain{
+            .borc(@success-plain);
+            .bc(@success-plain-bc);
+            .c(@success)
+        }
+        // .borc(@success);
+        &:hover{
+            opacity:.8!important;
+            &.@{button-prefix}-plain{
+                .borc(@success)!important;
+                .bc(@success)!important;
+                .c(@white)!important;
+                opacity:1!important;
+            }
+        }
+    }
+    &.@{button-prefix}-warning{
+        .c(@white);
+        .bc(@warning);
+        &.@{button-prefix}-plain{
+            .borc(@warning-plain);
+            .bc(@warning-plain-bc);
+            .c(@warning);
+        }
+        // .borc(@warning);
+        &:hover{
+            opacity:.8!important;
+            &.@{button-prefix}-plain{
+                .borc(@warning)!important;
+                .bc(@warning)!important;
+                .c(@white)!important;
+                opacity:1!important;
+            }
+        }
+    }
+    &.@{button-prefix}-error{
+        .c(@white);
+        .bc(@error);
+        &.@{button-prefix}-plain{
+            .borc(@error-plain);
+            .bc(@error-plain-bc);
+            .c(@error);
+        }
+        // .borc(@error);
+        &:hover{
+            opacity:.8!important;
+            &.@{button-prefix}-plain{
+                .borc(@error)!important;
+                .bc(@error)!important;
+                .c(@white)!important;
+                opacity:1!important;
+            }
+        }
+    }
+    &.@{button-prefix}-dashed{
+        .bor-s(dashed);
+        .borc(@border);
+        // .bc(rgba(0,0,0,0));
+        // &.@{button-prefix}-plain{
+        //     // .br(0);
+        // }
+        &:hover{
+            .c(@default)!important;
+            .borc(@default)!important;
+        }
+
+    }
+    &.@{button-prefix}-text{
+        .bor(none);
+        .bc(rgba(0,0,0,0));
+        // .c(@primary);
+        .box-s(none);
+        &:hover{
+            .c(@default)!important;
+            // .borc(@default);
+        }
+    }
+    &.@{button-prefix}-no-border{
+        .borc(rgba(0,0,0,0));
+    }
+    &.@{button-prefix}-round{
+        .br(20px);
+    }
+    &.@{button-prefix}-circle{
+        .br(50%);
+        .p(8px);
+        // .lh(0);
+    }
+    &.@{button-prefix}-square{
+        .br(0);
+    }
+    &.@{button-prefix}-transparent{
+        .bc(rgba(0,0,0,0));
+    }
+    &.@{button-prefix}-l{
+        .p(12px 20px);
+        &.@{button-prefix}-circle{
+            .p(12px);
+        }
+    }
+    &.@{button-prefix}-m{
+        .p(6px 20px);
+        &.@{button-prefix}-circle{
+            .p(6px);
+        }
+    }
+    &.@{button-prefix}-s{
+        .p(4px 20px);
+        &.@{button-prefix}-circle{
+            .p(4px);
+        }
+    }
+    &.@{button-prefix}-xs{
+        .p(2px 20px);
+        &.@{button-prefix}-circle{
+            .p(2px);
+        }
+    }
+    &.@{button-prefix}-block{
+        .w(100%);
+        .db;
+        .ml(0);
+    }
+    &.@{button-prefix}-loading{
+        pointer-events: none;
+        .posr;
+        &::before{
+            content: "";
+            .posa;
+            .bc(rgba(255,255,255,.4));
+            // .squ(100%);
+            left:-1px;
+            right:-1px;
+            bottom:-1px;
+            top:-1px;
+        }
+    }
+    &.@{button-prefix}-disabled{
+        .borc(@border-disabled);
+        .bc(@bg-disabled);
+        .c(@font-disabled);
+        cursor: not-allowed;
+        .box-s(none);
+        &.@{button-prefix}-text{
+            .bc(transparent);
+            &:hover{
+                .bc(transparent)!important;
+            }
+        }
+        &:hover{
+            .c(@font-disabled)!important;
+            .bc(@bg-disabled)!important;
+            .borc(@border-disabled)!important;
+        }
+    }
+}
+.@{button-prefix}-group:not(.@{button-prefix}-group-vertical){
+    .@{button-prefix}{
+        .posr;
+        .ml(-1);
+        vertical-align: middle;
+        &.@{button-prefix}-default{
+            .borc(@border);
+            &:hover{
+                .borc(@default-plain)!important;
+            }
+        }
+        &.@{button-prefix}-primary{
+            .borc(@primary-border);
+        }
+        &.@{button-prefix}-info{
+            .borc(@info-border);
+        }
+        &.@{button-prefix}-success{
+            .borc(@success-border);
+        }
+        &.@{button-prefix}-warning{
+            .borc(@warning-border);
+        }
+        &.@{button-prefix}-error{
+            .borc(@error-border);
+        }
+        &:first-child{
+            .br-right(0);
+        }
+        &:last-child{
+            .br-left(0);
+        }
+        &:not(:last-child):not(:first-child){
+            .br(0);
+        }
+        &:hover{
+            z-index:1!important;
+        }
+    }
+
+    // &.@{button-prefix}-group-round{
+    //     &.@{button-prefix}{
+    //         &:first-child{
+    //             .br-right(0);
+    //         }
+    //     }
+    // }
+}
+.@{button-prefix}-group-vertical{
+    .@{button-prefix}{
+        .db;
+        .mt(-1);
+        .ml(0);
+        .posr;
+        .p(10px);
+        &:first-child{
+            .br-bottom(0);
+        }
+        &:last-child{
+            .br-top(0);
+        }
+        &.@{button-prefix}-default{
+            // .ml(-1);
+            .borc(@border);
+            &:hover{
+                .borc(@default-plain)!important;
+            }
+        }
+        &.@{button-prefix}-primary{
+            .borc(@primary-border);
+        }
+        &.@{button-prefix}-info{
+            .borc(@info-border);
+        }
+        &.@{button-prefix}-success{
+            .borc(@success-border);
+        }
+        &.@{button-prefix}-warning{
+            .borc(@warning-border);
+        }
+        &.@{button-prefix}-error{
+            .borc(@error-border);
+        }
+        &:not(:last-child):not(:first-child){
+            .br(0);
+        }
+        &:hover{
+            z-index:1!important;
+        }
+    }
+}

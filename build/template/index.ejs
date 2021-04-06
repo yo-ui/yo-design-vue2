@@ -1,0 +1,19 @@
+/**
+ *  author: <%=author%>
+ *  create at: <%=date%>
+ */
+<% var upperNames=upperName.split('-')
+    var lastName=''
+    if(upperNames.length>1){
+        lastName=upperNames[1]
+        lastName=lastName.slice(0,1).toUpperCase()+lastName.slice(1)
+    }
+    upperName=upperNames[0]+lastName %>
+import Yo<%=upperName%> from './<%=lowerName%>'
+
+/* istanbul ignore next */
+Yo<%=upperName%>.install = function(Vue) {
+    Vue.component(Yo<%=upperName%>.name, Yo<%=upperName%>)
+}
+
+export default Yo<%=upperName%>

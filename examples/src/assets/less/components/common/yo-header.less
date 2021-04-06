@@ -1,0 +1,63 @@
+@import "../../common.less";
+.header-com{
+    // .bc(@default);
+    .bc(@white);
+    .h(65);
+    .lh(65);
+    .df;
+    .posf;
+    left:0;
+    right:0;
+    top:0;
+    z-index:1;
+    align-items: center;
+    justify-content: space-between;
+    .box-s(~"0 1px 5px rgb(0 0 0 / 8%)");
+    .left{
+        .df;
+        align-items: center;
+        .logo{
+            .squ(50);
+            .m(0 30px);
+            .bi('/static/images/logo.png');
+            .bz(50px);
+            .bp(center);
+            .bgr;
+        }
+        .title{
+            .fz(24);
+            .c(@gray6);
+            .fw(700);
+        }
+        .search-box{
+            .ml(40);
+            input{
+                .bor(none);
+                outline: none;
+                .fz(14);
+                &::placeholder{
+                    .c(@grayC);
+                }
+            }
+        }
+    }
+    .nav{
+        .df;
+        align-items: center;
+        a{
+            .c(@yo-font);
+            opacity:.9;
+            .p(0 20px);
+            .lh(65);
+            cursor: pointer;
+            .db;
+            transition: all .2s ease-in-out;
+            &:hover,&.active{
+                // .bc(rgba(0,0,0,.2));
+                .c(@default);
+                opacity:1;
+                .borb(2px solid @yo-theme);
+            }
+        }
+    }
+}

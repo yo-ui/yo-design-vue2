@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOUI-A high quality UI Toolkit based on Vue.js</title>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <link rel="icon" href="<%=VUE_APP_IMAGE_SERVER%>/static/images/favicon.ico" type="image/x-icon" />
+    <link rel="Shortcut Icon" href="<%=VUE_APP_IMAGE_SERVER%>/static/images/favicon.ico" />
+    <link href="<%=VUE_APP_IMAGE_SERVER%>/static/images/favicon.ico" rel="apple-touch-icon-precomposed" />
+    <link rel="apple-touch-icon" type="image/x-icon" href="<%=VUE_APP_IMAGE_SERVER%>/static/images/favicon.ico">
+    <style>
+      /* .index-fq-loading-component{position:absolute;top:0;left:0;right:0;bottom:0;z-index:9;background-color:rgba(255,255,255,.9)}.index-fq-loading-component .index-fq-loading-component-box{position:absolute;top:50%;left:50%;width:78px;height:78px;margin:-39px auto auto -39px;z-index:999}.loader{position:relative;margin:0 auto;width:100px}.loader:before{content:'';display:block;padding-top:100%}.circular{-webkit-animation:rotate 2s linear infinite;animation:rotate 2s linear infinite;height:100%;-webkit-transform-origin:center center;transform-origin:center center;width:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto}.path{stroke-dasharray:1,200;stroke-dashoffset:0;-webkit-animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite;animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite;stroke-linecap:round}@-webkit-keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}@keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}@-webkit-keyframes color{100%,0%{stroke:#3f5ef5}40%{stroke:#4e6af3}66%{stroke:#6c84f7}80%,90%{stroke:#8a9cf7}}@keyframes color{100%,0%{stroke:#3f5ef5}40%{stroke:#4e6af3}66%{stroke:#6c84f7}80%,90%{stroke:#8a9cf7}} */
+      .spinner {
+        border-radius: 50%;
+        margin: 20px;
+        display: inline-block;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        background-color: #e0e0eb;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        }
+        .spinnerTwo:before {
+        position: absolute;
+        top: 100px;
+        left: 99px;
+        content: "";
+        height: 100px;
+        width: 5px;
+        background-color: #535657;
+        transform-origin: 50% 0%;
+        border-radius: 8px;
+        animation: clockmin 2s linear infinite;
+        }
+.spinnerTwo:after {
+  position: absolute;
+  content: "";
+  height: 100px;
+  width: 4px;
+  top: 100px;
+  left: 99px;
+  transform-origin: 50% 0%;
+  background-color: #D1462F;
+  border-radius: 2px;
+  animation: clocksec 0.5s linear infinite;
+}
+.spinnerTwo span {
+  position: absolute;
+  top: 80px;
+  left: 99px;
+  height: 20px;
+  width: 5px;
+  border-radius: 2px;
+  background: #535657;
+  transform-origin: 50% 100%;
+  animation: clockhour 10s linear infinite;
+}
+
+@keyframes clockhour {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockmin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clocksec {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    </style>
+</head>
+<body class="app">
+    <!-- <div class="index-fq-loading-component" id="loading">
+        <div class="index-fq-loading-component-box">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+    </div> -->
+    <div class="spinner spinnerTwo" id="loading"><span></span></div>
+    <div id="app"></div>
+    <script src="<%=VUE_APP_JS_SERVER%>/static/js/lib/vue/vue.min.js"></script>
+    <script src="<%=VUE_APP_JS_SERVER%>/static/js/lib/vuex/vuex.min.js"></script>
+    <script src="<%=VUE_APP_CSS_SERVER%>/static/js/lib/vue-router/vue-router.min.js"></script>
+    <script src="<%=VUE_APP_CSS_SERVER%>/static/js/lib/axios/axios.min.js"></script>
+    <script src="<%=VUE_APP_CSS_SERVER%>/static/js/lib/qs/qs.min.js"></script>
+    <!-- built files will be auto injected -->
+    <!-- Start of exnet Zendesk Widget script -->
+    <!-- eWAuXlBfuO4dbvEyF2mWMWsRVsqI2K8FsMaP6UbD -->
+    <!-- <script id="ze-snippet" defer async src="https://static.zdassets.com/ekr/snippet.js?key=2ac7fd4d-e064-4bef-aad4-d8ec512172a4"> </script>     -->
+    <!-- End of exnet Zendesk Widget script -->
+    <script>        
+        window.onerror = function(message, source, line, column, error) {
+            console.error('window.onerror',message,source,line,column,error)
+        }
+    </script>
+</body>
+</html>

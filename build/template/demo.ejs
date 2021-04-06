@@ -1,0 +1,24 @@
+/**
+ *  author: <%=author%>
+ *  create at: <%=date%>
+ */
+<template>
+	<div>
+		<yo-<%=lowerName%>></yo-<%=lowerName%>>
+	</div>
+</template>
+<script>
+export default {
+	data() {
+		return {
+
+		}
+	},
+	mounted() {
+		this.$emit('loaded')
+	},
+}
+</script>
+<style lang="less" scoped>
+	
+</style>

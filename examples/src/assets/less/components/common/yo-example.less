@@ -1,0 +1,97 @@
+@import "../../common.less";
+.yo-example-com{
+    // .p(15px);
+    // .bc(@grayE);
+    // .df;
+    .bor(1px solid #ebedf0);
+    .br(4px);
+    .oh;
+    &.yo-example-com-v{
+        flex-direction: column;
+        .yo-example-code{
+            .borl(none);
+            // .bort(1px dashed @default-plain);
+            .flex(none);
+        }
+    }
+    &:hover{
+        // .box-s(0 2px 7px rgba(0,0,0,.15));
+        // .box-s(0 0px 5px @yo-theme);
+        // .borc(transparent);
+        .posr;
+    }
+    .yo-example{
+        .m(15px);
+        .flex(1);
+    }
+    .yo-example-code{
+        .flex(1);
+        .posr;
+        .oh;
+        .h(200);
+        // .borl(1px dashed @default-plain);
+        .tran(height .2s ease-in-out);
+        &.expand{
+            height: auto;
+        }
+        .nav{
+            .df;
+            .posa;
+            top:5px;
+            right:5px;
+            // .w(100%);
+            .p(0 15px);
+            justify-content: flex-end;
+            align-items: center;
+            // &:hover{
+            //     .bc(rgba(0,0,0,.1));
+            // }
+            li{
+                .p(0 8px);
+                .fz(15);
+                .click;
+                &.yo-icon-code{
+                    .fz(22);
+                }
+                &.yo-icon-copy{
+                    .fz(18);
+                }
+                &:hover{
+                    .fw(bold);
+                    cursor: pointer;
+                }
+            }
+        }
+        .yo-code-com{
+            // .h(200);
+            .bort(1px dashed #ebedf0);
+            .bc(@white);
+            .p(0 15px);
+            .mb(44);
+        }
+        .footer{
+            .tc;   
+            .df;
+            .posa;
+            bottom:0;
+            right:0;
+            left:0;
+            .h(44);
+            .bc(rgba(255,255,255,.8));
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            // opacity:.6;
+            &:hover{
+                // opacity: 1;
+                .bc(@default-plain-hover);
+                i{
+                    .tranf(rotate(180deg));
+                }
+            }
+        }
+    }
+    // .hljs{
+    //     .bc(@grayE);
+    // }
+}

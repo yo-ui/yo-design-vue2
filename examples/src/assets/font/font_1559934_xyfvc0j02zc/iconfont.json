@@ -1,0 +1,100 @@
+{
+  "id": "1559934",
+  "name": "youi",
+  "font_family": "yo-font",
+  "css_prefix_text": "yo",
+  "description": "YOUI vue前端框架",
+  "glyphs": [
+    {
+      "icon_id": "547426",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "925066",
+      "name": "eye",
+      "font_class": "eye",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1381407",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "1718630",
+      "name": "upload",
+      "font_class": "upload",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
+      "icon_id": "2571134",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "2861028",
+      "name": "Loading",
+      "font_class": "Loading",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "4113567",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "5806928",
+      "name": "9 Upload to Cloud",
+      "font_class": "UploadtoCloud",
+      "unicode": "e8d7",
+      "unicode_decimal": 59607
+    },
+    {
+      "icon_id": "6994848",
+      "name": "eye",
+      "font_class": "eye1",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "7408324",
+      "name": "loading",
+      "font_class": "loading1",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "7457691",
+      "name": "Loading",
+      "font_class": "Loading1",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "7826085",
+      "name": "close",
+      "font_class": "baseline-close-px",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "11813168",
+      "name": "loading-onequarter",
+      "font_class": "loading-onequarter",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}
