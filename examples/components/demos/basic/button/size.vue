@@ -70,7 +70,6 @@
         btnSize: "",
       };
     },
-    mounted() {},
     methods: {
       switchSize(size) {
         this.btnSize = size;

@@ -117,27 +117,52 @@
             .mb(15);
         }
         table{
-            .mt(15);
-            .bor(1px solid @default-plain);
+            .mt(10);
+            // .bor(1px solid @default-plain);
+            // .borc(@yo-border);
             .w(100%);
-            .br(2px);
+            // .br(2px);
+            .fz(14);
             border-spacing: 0;
-            border-collapse: 0;
+            border-collapse: collapse;
+            .bor(0);
             th{
-                .bc(@default-bc);
-                .lh(40);
-                .fz(14);
-                .fw(bold);
+                .bc(rgba(0,0,0,.02));
+                white-space: nowrap;
+                // .lh(40);
+                .p(15px 16px);
+                .tl;
+                .fw(500);
+                .c(#5c6b77);
+                // .fz(14);
+                // .fw(bold);
+                .borb(2px solid @yo-border);
             }
             td{
                 .lh(35);
                 .c(@gray6);
                 .pl(15);
+                .borb(1px solid @yo-border);
+                // .c();
+                &:nth-child(3){
+                    .c(#fa795e);
+                    .fz(13);
+                    .w(22%);
+                }
+                &:first-child{
+                    .c(#013336);
+                    .fw(500);
+                    .w(20%);
+                }
+                &:last-child{
+                    .fz(13);
+                    .w(13%);
+                }
             }
             td,th{
                 // .posr;
-                .borr(1px solid @default-plain);
-                .borb(1px solid @default-plain);
+                // .borr(1px solid @default-plain);
+                // .borb(1px solid @default-plain);
                 // .ml(-1);
                 // .mt(-1);
                 // .tc;

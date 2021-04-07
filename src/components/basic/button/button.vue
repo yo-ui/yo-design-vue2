@@ -13,6 +13,8 @@
         <slot name="right"></slot>`;
   export default {
     name: "yButton",
+    //不继承父组件属性  需要v-bind来处理
+    inheritAttrs: false,
     inject: {
       yButtonGroup: {
         default: "",
@@ -27,17 +29,17 @@
     `):
     **/
     template: `
-        <router-link :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
+        <router-link v-bind="$attrs" v-on="$listeners" :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
         :target="target" v-if="typeof(to)==='object'&&$route" 
         :class="yoClasses" :disabled="disabled || loading">
             ${template}
         </router-link>
-        <a :href="typeof(to)=='string'?to:to.name" class="${prefix}" :class="yoClasses" :style="yoStyles"
+        <a v-bind="$attrs" v-on="$listeners" :href="typeof(to)=='string'?to:to.name" class="${prefix}" :class="yoClasses" :style="yoStyles"
         :target="target" @click="handleClick"
         :disabled="disabled || loading" v-else-if="isHttpLink">
             ${template}
         </a>
-        <button class="${prefix}"
+        <button v-bind="$attrs" v-on="$listeners" class="${prefix}"
         @click="handleClick" :style="yoStyles"
         :disabled="disabled || loading"
         :type="nativeType"
@@ -100,9 +102,9 @@
       //是否是圆形
       circle: Boolean,
       //背景颜色
-      color: String,
+      backgroundColor: String,
       //文字颜色
-      textColor: String,
+      color: String,
       //是否是矩形-方形
       square: Boolean,
       //是否记录浏览记录
@@ -114,8 +116,8 @@
       type: String,
       //原生控件的type
       nativeType: {
-        type: Boolean,
-        default: false,
+        type: String,
+        default: "button",
       },
     }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
     computed: {
@@ -136,9 +138,9 @@
       },
       yoStyles() {
         let yoStyles = {
-          "background-color": `${this.color}`,
-          "border-color": `${this.color}`,
-          color: `${this.textColor}`,
+          "background-color": `${this.backgroundColor}`,
+          "border-color": `${this.backgroundColor}`,
+          color: `${this.color}`,
         };
         // console.log(yoStyles)
         return yoStyles;
@@ -182,13 +184,13 @@
     methods: {
       handleClick(evt) {
         if (this.isHttpLink) {
-          console.log("handleClick start", this.to);
+          // console.log("handleClick start", this.to);
           if (this.replace) {
             location.replace(this.to);
           }
           return false;
         }
-        console.log("handleClick end");
+        // console.log("handleClick end");
         if (this.stop) {
           event.stopPropagation();
         }

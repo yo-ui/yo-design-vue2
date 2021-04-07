@@ -5,7 +5,7 @@
       <template v-else>
         {{ title }}
       </template>
-      <a :href="`#${title}`">#</a>
+      <a :id="`${title}`" :href="`#${title}`">#</a>
     </h2>
     <slot></slot>
   </div>

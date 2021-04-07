@@ -91,11 +91,20 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/button/button2"></yo-example>
-
-    <yo-example demo="basic/button/button3"></yo-example>
-
-    <yo-example demo="basic/button/button4"></yo-example>
+    <!-- 加载中按钮状态 -->
+    <yo-example demo="basic/button/loading">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('加载中按钮状态')">
+          <p
+            v-html="
+              $lang(
+                `添加 <code>loading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
 
     <yo-example demo="basic/button/size">
       <template v-slot:desc>
@@ -120,172 +129,223 @@
       </template>
     </yo-example>
 
+    <yo-example demo="basic/button/style">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮样式')">
+          <p
+            v-html="
+              $lang(
+                `通过设置 <code>round|square|circle|ghost</code> 属性即可让按钮呈现不一样的样式。`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+
+    <yo-example demo="basic/button/color">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮颜色')">
+          <p
+            v-html="
+              $lang(
+                `通过设置 <code>backgroundColor</code> 属性即可改变按钮的背景颜色，支持正常的颜色值如<code>white,black,#000,rgb(0,0,0),rgba(0,0,0,.1)</code>`
+              )
+            "
+          ></p>
+          <p
+            v-html="
+              $lang(
+                `通过设置 <code>color</code> 属性即可改变按钮的文字颜色，支持正常的颜色值如<code>white,black,#000,rgb(0,0,0),rgba(0,0,0,.1)</code>`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+
+    <yo-example demo="basic/button/link">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮链接')">
+          <p
+            v-html="
+              $lang(`通过设置 to 可以实现点击按钮直接跳转，支持传入 vue-router 对象。`)
+            "
+          ></p>
+          <p v-html="$lang(`设置 replace 则不会保存历史记录。`)"></p>
+          <p v-html="$lang(`设置 target，会跟 a 标签一样的行为。`)"></p>
+        </yo-desc> </template
+    ></yo-example>
+
     <!-- <yo-anchor :text="$lang('图标按钮')"></yo-anchor>
     <yo-example demo="basic/button/button8"></yo-example> -->
 
-    <yo-anchor :text="$lang('文字按钮')"></yo-anchor>
-    <yo-example demo="basic/button/button9"></yo-example>
+    <!-- <yo-anchor :text="$lang('文字按钮')"></yo-anchor>
+    <yo-example demo="basic/button/button9"></yo-example> -->
 
-    <h3>Button 参数</h3>
+    <!-- <h3>Button 参数</h3> -->
+    <yo-anchor text="API" :size="24"></yo-anchor>
+    <p>{{ $lang("按钮的属性说明如下：") }}</p>
     <table class="table">
       <tr>
-        <th>参数</th>
-        <th>说明</th>
-        <th>类型</th>
-        <th>可选值</th>
-        <th>默认值</th>
+        <th v-for="item in apiTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <!-- <th>说明</th>
+        <th>类型</th> -->
+        <!-- <th>可选值</th> -->
+        <!-- <th>默认值</th>
+        <th>版本</th> -->
       </tr>
-      <tr>
-        <td>type</td>
-        <td>按钮类型</td>
-        <td>String</td>
-        <td>
+      <tr v-for="item in apiTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td>{{ item.desc }}</td>
+        <td>{{ item.type }}</td>
+        <!-- <td>
           <code>primary</code
           >、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code
             >error</code
           >
-        </td>
-        <td>--</td>
+        </td> -->
+        <td>{{ item.default || "--" }}</td>
+        <td>{{ item.version }}</td>
       </tr>
-      <tr>
-        <td>transparent</td>
+      <!-- <tr>
+        <td>ghost</td>
         <td>使按钮背景透明</td>
         <td>Boolean</td>
-        <td>--</td>
         <td>false</td>
-      </tr>
+      </tr> -->
       <tr>
         <td>size</td>
         <td>按钮大小</td>
         <td>String</td>
-        <td><code>l</code>、<code>m</code>、<code> s</code>、<code> xs</code></td>
+        <!-- <td><code>l</code>、<code>m</code>、<code> s</code>、<code> xs</code></td> -->
         <td>--</td>
       </tr>
       <tr>
         <td>circle</td>
         <td>按钮是否圆形显示</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>round</td>
         <td>按钮是否圆角显示</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>square</td>
         <td>按钮是否方形显示</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>plain</td>
         <td>按钮是否朴素显示</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>block</td>
         <td>按钮是否占一行显示,开启后，按钮的长度为 100%</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>disabled</td>
         <td>设置按钮为禁用状态</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>loading</td>
         <td>是否加载中，将覆盖原有的图标</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>loadingName</td>
         <td>是否加载中，内置loading样式</td>
         <td>String</td>
-        <td>
+        <!-- <td>
           <code>loading</code>、<code> loading1</code>, 、<code> loading2</code>、<code>
             loading3</code
           >、<code> loading4</code>
-        </td>
+        </td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>icon</td>
         <td>左侧引用icon</td>
         <td>String</td>
-        <td>(图标页所有的icon name)</td>
+        <!-- <td>(图标页所有的icon name)</td> -->
         <td>-</td>
       </tr>
       <tr>
         <td>rightIcon</td>
         <td>右侧引用icon</td>
         <td>String</td>
-        <td>(图标页所有的icon name)</td>
+        <!-- <td>(图标页所有的icon name)</td> -->
         <td>-</td>
       </tr>
       <tr>
         <td>stop</td>
         <td>click事件是否stopPropagation</td>
         <td>Boolean</td>
-        <td>--</td>
+        <!-- <td>--</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>prevent</td>
         <td>click事件是否preventDefault</td>
         <td>Boolean</td>
-        <td>--</td>
+        <!-- <td>--</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>to</td>
         <td>按钮是否显示边框</td>
         <td>String|Object</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>replace</td>
         <td>路由跳转时，开启 replace 将不会向 history 添加新记录</td>
         <td>Boolean</td>
-        <td>-</td>
+        <!-- <td>-</td> -->
         <td>false</td>
       </tr>
       <tr>
         <td>target</td>
         <td>路由跳转时，相当于 a 链接的 target 属性</td>
         <td>String</td>
-        <td>
+        <!-- <td>
           <code>_blank</code>、<code> _parent</code>、<code>_self</code>、<code>
             _top</code
           >、<code>framename</code> (与a标签类似)
-        </td>
+        </td> -->
         <td>false</td>
       </tr>
       <tr>
-        <td>no-border</td>
+        <td>border</td>
         <td>按钮是否显示边框</td>
         <td>Boolean</td>
-        <td>-</td>
-        <td>false</td>
+        <!-- <td>-</td> -->
+        <td>true</td>
       </tr>
       <tr>
         <td>native-type</td>
         <td>设置button原生的type</td>
         <td>String</td>
-        <td><code>button </code>、<code> submit </code>、<code> reset</code></td>
+        <!-- <td><code>button </code>、<code> submit </code>、<code> reset</code></td> -->
         <td>--</td>
       </tr>
     </table>
@@ -383,7 +443,53 @@
       //组件传入
     },
     data() {
-      return {};
+      return {
+        apiTableKeys: [
+          { code: "param", name: "参数" },
+          { code: "desc", name: "说明" },
+          { code: "type", name: "类型" },
+          { code: "default", name: "默认值" },
+          { code: "version", name: "版本" },
+        ],
+        apiTableData: [
+          { param: "type", desc: "按钮类型", type: "String", default: "", version: "" },
+          {
+            param: "ghost",
+            desc: "幽灵属性，使按钮背景透明",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "disabled",
+            desc: "按钮失效状态",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "circle",
+            desc: "按钮是否圆形或椭圆显示",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "round",
+            desc: "按钮是否圆角显示",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "square",
+            desc: "按钮是否方角显示",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+        ],
+      };
     },
     mounted() {},
     computed: {},
