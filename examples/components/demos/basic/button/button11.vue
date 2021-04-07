@@ -1,12 +1,12 @@
 <template>
   <div>
     <p>{{$lang('长按钮')}}</p>
-        <yo-button block>{{$lang('默认按钮')}}</yo-button>
-        <yo-button block type="primary">Primary</yo-button>
-        <yo-button block type="info">Info</yo-button>
-        <yo-button block type="success">Success</yo-button>
-        <yo-button block type="warning">Warning</yo-button>
-        <yo-button block type="error">Error</yo-button>
+        <y-button block>{{$lang('默认按钮')}}</y-button>
+        <y-button block type="primary">Primary</y-button>
+        <y-button block type="info">Info</y-button>
+        <y-button block type="success">Success</y-button>
+        <y-button block type="warning">Warning</y-button>
+        <y-button block type="error">Error</y-button>
   </div>
 </template>
 <script>

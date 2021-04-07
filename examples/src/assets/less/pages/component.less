@@ -6,9 +6,13 @@
 @import "../common.less";
 .yo-component-page{
     .flex-content{
-        .mt(2);
+        .posa;
+        top:65px;
+        bottom:0;
+        .mt(0);
+        // .mt(65);
         // .bort(1px solid @default-plain);
-        .db(inline-flex);
+        // .db(inline-flex);
         // .
         // &.fixed{
         //     .yo-left{
@@ -23,11 +27,12 @@
         // }
     }
     .yo-left{
+        .bs;
         min-width: 320px;
         .touch-y;
         .w(16%);
-        .h(100vh);
-        .pb(60);
+        // .h(100vh);
+        // .pb(60);
         // .tc;
         // .borr(1px solid @default-plain);
         .ad-box{
@@ -48,6 +53,7 @@
                 .m(8px 0);
             }
             .link{
+                .click;
                 &.active{
                     .c(@yo-theme);
                     .bc(@yo-hover-theme);
@@ -85,17 +91,28 @@
     }
     .yo-right{
         .flex(1);
-        .pl(20);
-        .pr(20);
-        .pb(50);
+        .p(20px 160px 50px 60px);
+        .touch-y;
+        // .h(100vh);
+        // .pl(20);
+        // .pr(20);
+        // .pb(50);
         // .ml(20);
         .borr(1px solid @border);
         p{
             .lh(25);
+            .p(10px 0);
+            &.alert{
+                .bc(@yo-hover-theme);
+                .pl(15);
+            }
+            code{
+                .c(@yo-theme);
+            }
         }
-        .yo-code-com{
-            .mb(15);
-        }
+        // .yo-code-com{
+        //     .mb(15);
+        // }
         .yo-example-com{
             .mb(15);
         }

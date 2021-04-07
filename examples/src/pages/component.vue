@@ -183,26 +183,26 @@
       },
     },
     beforeDestroy() {
-      let that = this;
-      window.removeEventListener("scroll", that.scrollEvent);
+      // let that = this;
+      // window.removeEventListener("scroll", that.scrollEvent);
     },
     methods: {
-      initEvent() {
-        let that = this;
-        window.addEventListener("scroll", that.scrollEvent);
-      },
-      scrollEvent() {
-        let that = this;
-        let yo_container = that.$refs.yo_container;
-        let yo_left = that.$refs.yo_left;
-        if (window.scrollY > 20) {
-          yoCommon.addClass(yo_container, "fixed");
-          yo_container.style.paddingLeft = yo_left.offsetWidth + "px";
-        } else {
-          yoCommon.removeClass(yo_container, "fixed");
-          yo_container.style.paddingLeft = 0;
-        }
-      },
+      // initEvent() {
+      //   let that = this;
+      //   window.addEventListener("scroll", that.scrollEvent);
+      // },
+      // scrollEvent() {
+      //   let that = this;
+      //   let yo_container = that.$refs.yo_container;
+      //   let yo_left = that.$refs.yo_left;
+      //   if (window.scrollY > 20) {
+      //     yoCommon.addClass(yo_container, "fixed");
+      //     yo_container.style.paddingLeft = yo_left.offsetWidth + "px";
+      //   } else {
+      //     yoCommon.removeClass(yo_container, "fixed");
+      //     yo_container.style.paddingLeft = 0;
+      //   }
+      // },
     },
   };
 </script>

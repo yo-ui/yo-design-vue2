@@ -4,7 +4,8 @@
  *  图标样式
 **/
 @import "../../../../common.less";
-.yo-component-icon-page{
+.yo-icon-page{
+    .pb(60);
     .yo-demo{
         .df;
         align-items: center;
@@ -15,33 +16,42 @@
         }
     }
     ul{
-        .df;
-        align-items: center;
+        // .df;
+        // align-items: center;
         // justify-content: center;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
+        .oh;
         .m(15px);
+        &::after{
+            clear: both;
+        }
         &>li{
-            .flex(1);
-            max-width:120px;
-            min-width:120px;
-            // min-width:16.666%;
+            // .flex(1);
+            .fl;
+            // max-width:120px;
+            // min-width:120px;
+            min-width:16.666%;
             // max-width:16.666%;
-            // .w(16.666%);
+            .w(16.666%);
             // .lh(120);
             .h(120);
-            .bor(1px solid @border);
+            // .bor(1px solid @border);
             .tc;
             .mr(-1);
             .mb(-1);
             .df;
             flex-direction: column;
             justify-content: center;
+            .tran;
             i{
                 .fz(40);
             }
             &:hover{
                 cursor: pointer;
-                .c(@default);
+                .c(@white);
+                .tranf(scale(1.5));
+                .bc(@yo-theme);
+                z-index: 99;
             }
         }
     }

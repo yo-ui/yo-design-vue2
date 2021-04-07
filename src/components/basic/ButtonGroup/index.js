@@ -2,7 +2,7 @@
  *  author: eric
  *  create at: 2019-12-12 14:37:53
  */
-import ButtonGroup from './button-group'
+import ButtonGroup from './ButtonGroup'
 
 /* istanbul ignore next */
 ButtonGroup.install = function(Vue) {

@@ -10,12 +10,13 @@ import store from '@/vuex/store'
 import {URL,RouterURL,Constants} from '@/common/env'
 import YOUI from './../../src/index'
 import './../../assets/less/themes/default/index.less'
-import 'highlight.js/styles/github-gist.css'
-import vueHighlightjs from '@/common/plugins/vue-highlightjs'
+import 'highlight.js/styles/arduino-light.css'
+import vueHighlightjs from '@/vue/vue-highlightjs'
 import qrcodeConsole from 'qrcode-terminal'
 const yoCode=() => import(/* webpackChunkName: "yo-component-code" */ '@com/common/yo-code')
 const yoAnchor=() => import(/* webpackChunkName: "yo-component-anchor" */ '@com/common/yo-anchor')
 const yoExample=() => import(/* webpackChunkName: "yo-component-example" */ '@com/common/yo-example')
+const yoDesc=() => import(/* webpackChunkName: "yo-component-desc" */ '@com/common/yo-desc')
 
 import Plugins from "@/vue/plugins";
 import Filters from "@/vue/filters";
@@ -36,6 +37,7 @@ Vue.use(Directives);
 
 
 //全局组件定义
+Vue.component('yoDesc', yoDesc)
 Vue.component('yoCode', yoCode)
 Vue.component('yoAnchor', yoAnchor)
 Vue.component('yoExample', yoExample)

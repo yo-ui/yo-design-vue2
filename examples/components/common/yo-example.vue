@@ -15,27 +15,28 @@
         </keep-alive>
       </template>
     </div>
-    <div
-      ref="yo_example_code"
-      class="yo-example-code"
-      :class="expand ? 'expand' : ''"
-      :style="!expand ? (codeHeight ? 'height:' + codeHeight + 'px' : '') : ''"
-    >
+    <slot name="desc"> </slot>
+    <div ref="yo_example_code" class="yo-example-code" :class="expand ? 'expand' : ''">
       <ul class="nav" v-if="codeHeight != 44">
-        <li class="yo-icon-code"></li>
+        <li class="yo-icon-code" @click="expand = !expand"></li>
         <li class="yo-icon-full"></li>
         <li class="yo-icon-copy"></li>
       </ul>
-      <yo-code :src="codeSrc"></yo-code>
-      <footer class="footer">
-        <yo-button
+      <yo-code
+        :src="codeSrc"
+        v-if="codeSrc"
+        type="language-html"
+        :style="!expand ? 'height: 0;border:none;' : ''"
+      ></yo-code>
+      <!-- <footer class="footer">
+        <y-button
           type="text"
           @click="expand = !expand"
           :right-icon="expand ? 'up' : 'down'"
         >
           {{ expand ? $lang("隐藏代码") : $lang("展开代码") }}
-        </yo-button>
-      </footer>
+        </y-button>
+      </footer> -->
     </div>
   </div>
 </template>
@@ -112,12 +113,12 @@
       },
     },
     created() {
-      console.log("---------create", mapState({ lang: "lang" }));
+      // console.log("---------create", mapState({ lang: "lang" }));
     },
-    mounted() {
+    async mounted() {
       let { root = "", demo = "", ext = "", lang = "" } = this;
-      console.log("---------", root, demo);
-      let codeSrc = `${root}  ${demo} ${ext}`;
+      // console.log("---------", root, demo);
+      let codeSrc = `${root}${demo}${ext}`;
       if (!root) {
         lang = lang.toLowerCase();
         let fold = "";
@@ -126,7 +127,7 @@
         }
         codeSrc = `/components${fold}/demos/${demo}${ext}`;
       }
-      console.log("---------", codeSrc);
+      // console.log("---------", codeSrc);
       this.codeSrc = codeSrc;
     },
     methods: {

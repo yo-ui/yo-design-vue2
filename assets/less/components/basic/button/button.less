@@ -23,7 +23,6 @@
     -webkit-appearance:none;
     // .box-s(0 0 10px 1px @grayE);
     outline: none;
-    cursor: pointer;
     &+.@{button-prefix}{
         .ml(10);
     }
@@ -197,8 +196,46 @@
     &.@{button-prefix}-square{
         .br(0);
     }
-    &.@{button-prefix}-transparent{
+    &.@{button-prefix}-ghost{
         .bc(rgba(0,0,0,0));
+        &:hover{
+            .bc(rgba(0,0,0,0))!important;
+        }
+        &.@{button-prefix}-default{
+            .borc(@white);
+            .c(@white);
+            &:hover{
+                .borc(@default)!important;
+                // .c(@default)!important;
+            }
+        }
+        &.@{button-prefix}-primary{
+            .borc(@primary);
+            .c(@primary);
+        }
+        &.@{button-prefix}-info{
+            .borc(@info);
+            .c(@info);
+        }
+        &.@{button-prefix}-success{
+            .borc(@success);
+            .c(@success);
+        }
+        &.@{button-prefix}-warning{
+            .borc(@warning);
+            .c(@warning);
+        }
+        &.@{button-prefix}-error{
+            .borc(@error);
+            .c(@error);
+        }
+        &.@{button-prefix}-text{
+            .c(@white);
+        }
+        &.@{button-prefix}-dashed{
+            .c(@white);
+            .borc(@white);
+        }
     }
     &.@{button-prefix}-l{
         .p(12px 20px);
@@ -255,101 +292,21 @@
                 .bc(transparent)!important;
             }
         }
+        &.@{button-prefix}-ghost{
+            .bc(transparent);
+            .borc(@border-disabled);
+            .c(@font-ghost-disabled)!important;
+            .fw(700);
+            &:hover{
+                .bc(transparent)!important;
+                .borc(@border-disabled)!important;
+                .c(@font-ghost-disabled)!important;
+            }
+        }
         &:hover{
             .c(@font-disabled)!important;
             .bc(@bg-disabled)!important;
             .borc(@border-disabled)!important;
-        }
-    }
-}
-.@{button-prefix}-group:not(.@{button-prefix}-group-vertical){
-    .@{button-prefix}{
-        .posr;
-        .ml(-1);
-        vertical-align: middle;
-        &.@{button-prefix}-default{
-            .borc(@border);
-            &:hover{
-                .borc(@default-plain)!important;
-            }
-        }
-        &.@{button-prefix}-primary{
-            .borc(@primary-border);
-        }
-        &.@{button-prefix}-info{
-            .borc(@info-border);
-        }
-        &.@{button-prefix}-success{
-            .borc(@success-border);
-        }
-        &.@{button-prefix}-warning{
-            .borc(@warning-border);
-        }
-        &.@{button-prefix}-error{
-            .borc(@error-border);
-        }
-        &:first-child{
-            .br-right(0);
-        }
-        &:last-child{
-            .br-left(0);
-        }
-        &:not(:last-child):not(:first-child){
-            .br(0);
-        }
-        &:hover{
-            z-index:1!important;
-        }
-    }
-
-    // &.@{button-prefix}-group-round{
-    //     &.@{button-prefix}{
-    //         &:first-child{
-    //             .br-right(0);
-    //         }
-    //     }
-    // }
-}
-.@{button-prefix}-group-vertical{
-    .@{button-prefix}{
-        .db;
-        .mt(-1);
-        .ml(0);
-        .posr;
-        .p(10px);
-        &:first-child{
-            .br-bottom(0);
-        }
-        &:last-child{
-            .br-top(0);
-        }
-        &.@{button-prefix}-default{
-            // .ml(-1);
-            .borc(@border);
-            &:hover{
-                .borc(@default-plain)!important;
-            }
-        }
-        &.@{button-prefix}-primary{
-            .borc(@primary-border);
-        }
-        &.@{button-prefix}-info{
-            .borc(@info-border);
-        }
-        &.@{button-prefix}-success{
-            .borc(@success-border);
-        }
-        &.@{button-prefix}-warning{
-            .borc(@warning-border);
-        }
-        &.@{button-prefix}-error{
-            .borc(@error-border);
-        }
-        &:not(:last-child):not(:first-child){
-            .br(0);
-        }
-        &:hover{
-            z-index:1!important;
         }
     }
 }

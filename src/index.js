@@ -1,57 +1,58 @@
 /* 
  *  author :eric 
  *  created at:2019-12-12
- *  按钮组件
+ *  组件列表
 */
-// layout
-import YoContainer from './components/basic/container'
-import YoSide from './components/basic/side'
-import YoHeader from './components/basic/header'
-import YoMain from './components/basic/main'
-import YoFooter from './components/basic/footer'
+// 基础组件
+// 布局组件
+import Container from './components/basic/container'
+import Side from './components/basic/side'
+import Header from './components/basic/header'
+import Main from './components/basic/main'
+import Footer from './components/basic/footer'
 // grid
-import YoRow from './components/basic/row'
-import YoCol from './components/basic/col'
+import Row from './components/basic/row'
+import Col from './components/basic/col'
 
 // button
-import YoButton from './components/basic/button'
-import YoButtonGroup from './components/basic/button-group'
+import Button from './components/basic/Button'
+import ButtonGroup from './components/basic/ButtonGroup'
 // link
-import YoLink from './components/basic/link'
+import Link from './components/basic/link'
 
 // input
-import YoInput from './components/form/input'
-import YoRadio from './components/form/radio'
-import YoCheckbox from './components/form/checkbox'
-import YoForm from './components/form/form'
-import YoFormItem from './components/form/form-item'
+import Input from './components/form/input'
+import Radio from './components/form/radio'
+import Checkbox from './components/form/checkbox'
+import Form from './components/form/form'
+import FormItem from './components/form/form-item'
 
 // breadcrumb
-import YoBreadcrumbItem from './components/navigation/breadcrumb'
-import YoBreadcrumb from './components/navigation/breadcrumb-item'
+import BreadcrumbItem from './components/navigation/breadcrumb'
+import Breadcrumb from './components/navigation/breadcrumb-item'
 
 const components = [
-	YoContainer,
-	YoSide,
-	YoHeader,
-	YoMain,
-	YoFooter,
+	Container,
+	Side,
+	Header,
+	Main,
+	Footer,
 
-	YoRow,
-	YoCol,
+	Row,
+	Col,
 
-	YoButton,
-	YoButtonGroup,
-	YoLink,
+	Button,
+	ButtonGroup,
+	Link,
 
-	YoBreadcrumb,
-	YoBreadcrumbItem,
+	Breadcrumb,
+	BreadcrumbItem,
 
-	YoForm,
-	YoFormItem,
-	YoInput,
-	YoRadio,
-	YoCheckbox,
+	Form,
+	FormItem,
+	Input,
+	Radio,
+	Checkbox,
 ]
 
 const install = function(Vue, opts = {}) {
@@ -74,26 +75,26 @@ export default {
 	version: '1.0.0',
 	install,
 
-	YoContainer,
-	YoSide,
-	YoHeader,
-	YoMain,
-	YoFooter,
+	Container,
+	Side,
+	Header,
+	Main,
+	Footer,
 
-	YoButton,
-	YoButtonGroup,
+	Button,
+	ButtonGroup,
 
-	YoRow,
-	YoCol,
+	Row,
+	Col,
 	
-	YoLink,
+	Link,
 
-	YoBreadcrumb,
-	YoBreadcrumbItem,
+	Breadcrumb,
+	BreadcrumbItem,
 	
-	YoForm,
-	YoFormItem,
-	YoInput,
-	YoRadio,
-	YoCheckbox,
+	Form,
+	FormItem,
+	Input,
+	Radio,
+	Checkbox,
 }

@@ -36,6 +36,7 @@
         .start-gpu();
         touch-action: pan-y;
         overflow-y: auto;
+        overflow-x: hidden;
 }
 .touch-x(){
   -webkit-overflow-scrolling: touch;
@@ -81,7 +82,7 @@
   .active;
   &:hover{
     .tran(all 0.1s ease-in-out);
-    .tranf(scale(1.1) translateZ(0) translate3d(0,0,0));
+    .tranf(scale(1.05) translateZ(0) translate3d(0,0,0));
     // .tranf(translate(-2px,0));
 //     backface-visibility: hidden;
 // -webkit-backface-visibility: hidden;

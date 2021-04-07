@@ -2,14 +2,108 @@
  *  author: eric
  *  create at: 2019-12-12 14:37:53
  */
-@button-group-prefix: ~"@{prefix}btn-group";
+@button-prefix: ~"@{prefix}btn";
+@button-group-prefix: ~"@{button-prefix}-group";
 
 .@{button-group-prefix}{
     .dib;
     .tc;
+    white-space: nowrap;
     &.@{button-group-prefix}-vertical{
         // flex-direction: column;
         .dib;
         .tc;
+    }
+}
+
+.@{button-prefix}-group:not(.@{button-prefix}-group-vertical){
+    .@{button-prefix}{
+        .posr;
+        .ml(-1);
+        vertical-align: middle;
+        &.@{button-prefix}-default{
+            .borc(@border);
+            &:hover{
+                .borc(@default-plain)!important;
+            }
+        }
+        &.@{button-prefix}-primary{
+            .borc(@primary-border);
+        }
+        &.@{button-prefix}-info{
+            .borc(@info-border);
+        }
+        &.@{button-prefix}-success{
+            .borc(@success-border);
+        }
+        &.@{button-prefix}-warning{
+            .borc(@warning-border);
+        }
+        &.@{button-prefix}-error{
+            .borc(@error-border);
+        }
+        &:first-child{
+            .br-right(0);
+        }
+        &:last-child{
+            .br-left(0);
+        }
+        &:not(:last-child):not(:first-child){
+            .br(0);
+        }
+        &:hover{
+            z-index:1!important;
+        }
+    }
+
+    // &.@{button-prefix}-group-round{
+    //     &.@{button-prefix}{
+    //         &:first-child{
+    //             .br-right(0);
+    //         }
+    //     }
+    // }
+}
+.@{button-prefix}-group-vertical{
+    .@{button-prefix}{
+        .db;
+        .mt(-1);
+        .ml(0);
+        .posr;
+        .p(10px);
+        &:first-child{
+            .br-bottom(0);
+        }
+        &:last-child{
+            .br-top(0);
+        }
+        &.@{button-prefix}-default{
+            // .ml(-1);
+            .borc(@border);
+            &:hover{
+                .borc(@default-plain)!important;
+            }
+        }
+        &.@{button-prefix}-primary{
+            .borc(@primary-border);
+        }
+        &.@{button-prefix}-info{
+            .borc(@info-border);
+        }
+        &.@{button-prefix}-success{
+            .borc(@success-border);
+        }
+        &.@{button-prefix}-warning{
+            .borc(@warning-border);
+        }
+        &.@{button-prefix}-error{
+            .borc(@error-border);
+        }
+        &:not(:last-child):not(:first-child){
+            .br(0);
+        }
+        &:hover{
+            z-index:1!important;
+        }
     }
 }

@@ -1,33 +1,130 @@
 <!--demo页面-->
 <template>
-  <div class="yo-component-button-page">
+  <div class="yo-button-page">
     <!-- <h1 :id="'Button'+$lang('按钮')"><a :href="'#'+'Button'+$lang('按钮')" class="yo-font yolianjie"></a>{{'Button'+$lang('按钮')}}</h1> -->
-    <yo-anchor :text="'Button' + $lang('按钮')" size="18"></yo-anchor>
 
-    <yo-anchor :text="$lang('基本用法')" size="18"></yo-anchor>
+    <yo-anchor :text="'Button' + $lang('按钮')" :size="30"></yo-anchor>
+    <p>
+      {{ $lang("基础组件，用于开始一个即时操作，触发业务逻辑时使用。") }}
+    </p>
+    <p
+      class="alert"
+      v-html="$lang('注意：非 template/render 模式下，需使用 <code>y-button</code>。')"
+    ></p>
 
-    <yo-example demo="basic/button/button1"></yo-example>
+    <yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
+    <yo-code type="javascript" src="/components/demos/basic/button/use.js"></yo-code>
+    <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-    <!-- <yo-example demo="basic/button/button2"></yo-example>
+    <yo-example demo="basic/button/type">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮类型')">
+          {{
+            $lang(
+              "按钮有7种类型:默认按钮、主题色按钮、虚线框按钮、文本按钮、信息按钮、成功按钮、警告按钮、错误按钮"
+            )
+          }}
+        </yo-desc>
+      </template>
+    </yo-example>
+
+    <yo-example demo="basic/button/group">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮组')">
+          <p
+            v-html="
+              $lang(`将多个<code>Button</code>放入到<code>ButtonGroup</code>容器中`)
+            "
+          ></p>
+          <p
+            v-html="
+              $lang(`通过设置 size 为 l、m、s、xs 分别把按钮组合设为大、小尺寸。若不设置
+          size，则尺寸为中。 `)
+            "
+          ></p>
+          <p v-html="$lang(`以按钮组的方式出现，常用于多项类似操作。 `)"></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+
+    <yo-example demo="basic/button/disabled">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('不可用按钮')">
+          <p
+            v-html="
+              $lang(
+                `添加 <code>disabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/button/ghost">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('幽灵按钮')">
+          <p
+            v-html="
+              $lang(`幽灵按钮将其他按钮的内容反色，背景变为透明，常用在有色背景上。`)
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/button/icon">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('图标按钮')">
+          <p
+            v-html="
+              $lang(
+                `当需要在 <code>Button</code> 内嵌入 <code>Icon </code>时，可以设置 <code>icon</code> 属性，或者直接在 <code>Button</code> 内使用 <code>Icon</code> 组件。`
+              )
+            "
+          ></p>
+          <p
+            v-html="
+              $lang(
+                `如果想控制 <code>Icon </code>具体的位置，只能直接使用 <code>Icon</code> 组件，而非 <code>icon </code>属性。`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/button/button2"></yo-example>
 
     <yo-example demo="basic/button/button3"></yo-example>
 
     <yo-example demo="basic/button/button4"></yo-example>
 
-    <yo-example demo="basic/button/button5"></yo-example>
+    <yo-example demo="basic/button/size">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('按钮尺寸')">
+          <p v-html="$lang(`按钮有大、中、小、特小以及默认五种尺寸。`)"></p>
+          <p
+            v-html="
+              $lang(
+                `通过设置 size 为 <code>l</code>(large)、<code>m</code>(Medium)、<code>s</code>(small)、<code>xs</code>(extra small)分别把按钮设为大、中、小、特小尺寸。若不设置 <code>size</code>，则尺寸为默认。`
+              )
+            "
+          ></p>
+        </yo-desc>
+      </template>
+    </yo-example>
 
-    <yo-example demo="basic/button/button6"></yo-example>
+    <yo-example demo="basic/button/block">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('block 按钮')">
+          <p v-html="$lang(`block属性将使按钮适合其父宽度。`)"></p>
+        </yo-desc>
+      </template>
+    </yo-example>
 
-    <yo-example demo="basic/button/button7"></yo-example> -->
-
-    <yo-anchor :text="$lang('图标按钮')"></yo-anchor>
-    <yo-example demo="basic/button/button8"></yo-example>
+    <!-- <yo-anchor :text="$lang('图标按钮')"></yo-anchor>
+    <yo-example demo="basic/button/button8"></yo-example> -->
 
     <yo-anchor :text="$lang('文字按钮')"></yo-anchor>
     <yo-example demo="basic/button/button9"></yo-example>
-
-    <yo-anchor :text="$lang('按钮组')"></yo-anchor>
-    <yo-example demo="basic/button/button10"></yo-example>
 
     <h3>Button 参数</h3>
     <table class="table">
@@ -294,6 +391,23 @@
   };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
-  // @import "../assets/less/pages/index.less";
+<style lang="less">
+  @import (reference) "../../../../assets/less/common.less";
+  .yo-button-page {
+    .demo {
+      .yo-btn {
+        .mb(10);
+      }
+    }
+    .bg-gray {
+      .p(20px);
+      .bc(#bcccce);
+    }
+    .pb20 {
+      .pb(20);
+    }
+    .pb10 {
+      .pb(10);
+    }
+  }
 </style>
