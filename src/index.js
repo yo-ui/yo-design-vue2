@@ -18,10 +18,12 @@ import Col from './components/basic/col'
 import Button from './components/basic/Button'
 import ButtonGroup from './components/basic/ButtonGroup'
 // link
-import Link from './components/basic/link'
+import Link from './components/basic/Link'
+// icon
+import Icon from './components/basic/Icon'
 
 // input
-import Input from './components/form/input'
+import Input from './components/form/Input'
 import Radio from './components/form/radio'
 import Checkbox from './components/form/checkbox'
 import Form from './components/form/form'
@@ -44,6 +46,7 @@ const components = [
 	Button,
 	ButtonGroup,
 	Link,
+	Icon,
 
 	Breadcrumb,
 	BreadcrumbItem,
@@ -83,11 +86,12 @@ export default {
 
 	Button,
 	ButtonGroup,
+	Link,
+	Icon,
 
 	Row,
 	Col,
 	
-	Link,
 
 	Breadcrumb,
 	BreadcrumbItem,

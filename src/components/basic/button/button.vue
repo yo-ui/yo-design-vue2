@@ -4,15 +4,15 @@
     // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
     size: ["l", "m", "s", "xs"],
   };
-  const template = `<slot name="left"></slot><i :class="'yo-icon-'+loadingName+' '+loadingName" v-if="loading"></i>
-        <i :class="'yo-icon-'+icon+' '+icon" v-if="icon && !loading"></i>
+  const template = `<slot name="left"></slot><i :class="'yo-icon-'+loadingName+' '+loadingName"  :style="{'font-size':iconSize+'px'}" v-if="loading"></i>
+        <i :class="'yo-icon-'+icon+' '+icon"  :style="{'font-size':iconSize+'px'}" v-if="icon && !loading"></i>
         <template v-if="hasText">
             <slot></slot>
         </template>
-        <i :class="'yo-icon-'+rightIcon+' '+rightIcon" v-if="rightIcon && !loading"></i>
+        <i :class="'yo-icon-'+rightIcon+' '+rightIcon"  :style="{'font-size':rightIconSize+'px'}" v-if="rightIcon && !loading"></i>
         <slot name="right"></slot>`;
   export default {
-    name: "yButton",
+    name: "YButton",
     //不继承父组件属性  需要v-bind来处理
     inheritAttrs: false,
     inject: {
@@ -53,6 +53,16 @@
     // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
     // props 中的数据，都是只读的，无法重新赋值
     props: {
+      //左侧icon 大小
+      iconSize: {
+        type: Number,
+        default: 12,
+      },
+      //右侧icon 大小
+      rightIconSize: {
+        type: Number,
+        default: 12,
+      },
       icon: String,
       rightIcon: String,
       loading: {

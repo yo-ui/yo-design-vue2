@@ -1,18 +1,58 @@
 <template>
   <div class="yo-icon-page">
-    <yo-anchor :text="'Icon ' + $lang('图标')" size="18"></yo-anchor>
+    <yo-anchor :text="'Icon ' + $lang('图标')" size="30"></yo-anchor>
     <p>{{ $lang("提供了一套常用的图标集合。") }}</p>
-    <yo-anchor :text="'Icon ' + $lang('使用方法')"></yo-anchor>
-    <p>{{ $lang("直接通过设置类名为 yo-icon-iconName 来使用即可。例如：") }}</p>
+    <p>
+      {{ $lang("基础组件，用于文字超链接。") }}
+    </p>
+    <p
+      class="alert"
+      v-html="$lang('注意：非 template/render 模式下，需使用 <code>y-icon</code>。')"
+    ></p>
 
+    <yo-anchor :text="$lang('组件注册')" size="24"></yo-anchor>
+    <yo-code type="javascript" src="/components/demos/basic/icon/use.js"></yo-code>
+
+    <yo-anchor :text="$lang('代码示例')" size="24"></yo-anchor>
+    <yo-example demo="basic/icon/normal">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('自定义图标用法')">
+          {{
+            $lang(
+              "YOUI（yo） 的 Icon 支持使用第三方自定义图标，你可以引入任意的字体文件库来使用。"
+            )
+          }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/icon/color">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('图标颜色')">
+          {{ $lang("定义图标的颜色。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/icon/size">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('图标大小')">
+          {{ $lang("定义图标的大小。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <!--     
     <div class="yo-demo">
       <i class="yo-icon-edit"></i>
       <i class="yo-icon-share"></i>
       <i class="yo-icon-remove"></i>
       <y-button type="primary" icon="search">{{ $lang("搜索") }}</y-button>
+    </div> -->
+    <div class="search-box">
+      <y-input size="l" icon="search" right-icon="close"></y-input>
     </div>
-
-    <ul>
+    <p class="center">
+      {{ $lang("点击下面的图标按钮可以直接复制组件代码") }}
+    </p>
+    <ul class="icon-list">
       <li>
         <i class="yo-icon-y"></i>
         yo-icon-y
@@ -361,6 +401,6 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
   @import "../../../../assets/less/pages/components/basic/icons/icons.less";
 </style>

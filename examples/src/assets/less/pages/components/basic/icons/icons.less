@@ -6,16 +6,35 @@
 @import "../../../../common.less";
 .yo-icon-page{
     .pb(60);
-    .yo-demo{
-        .df;
-        align-items: center;
-        .m(5px auto);
-        &>i{
-            .m(0 20px);
-            .fz(2em);
+    /deep/ .demo{
+        // .df;
+        // align-items: center;
+        
+        p{
+            .m(5px auto);
+            .df;
+            align-items: center;
+            &>i{
+                .m(0 20px);
+                // .fz(15px);
+            }
         }
     }
-    ul{
+    .search-box{
+        .tc;
+        .yo-input{
+            .w(500);
+            /deep/ .yo-input-inner{
+               .bc(@yo-border);
+            }
+        }
+    }
+    p{
+        &.center{
+            .tc;
+        }
+    }
+    .icon-list{
         // .df;
         // align-items: center;
         // justify-content: center;
@@ -42,16 +61,19 @@
             .df;
             flex-direction: column;
             justify-content: center;
-            .tran;
+            .tran(~"color .3s ease-in-out,background-color .3s ease-in-out");
             i{
                 .fz(40);
+                .tran(transform .3s ease-in-out);
             }
             &:hover{
                 cursor: pointer;
                 .c(@white);
-                .tranf(scale(1.5));
                 .bc(@yo-theme);
                 z-index: 99;
+                i{
+                    .tranf(scale(1.5));
+                }
             }
         }
     }

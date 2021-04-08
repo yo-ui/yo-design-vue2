@@ -135,7 +135,7 @@
           <p
             v-html="
               $lang(
-                `通过设置 <code>round|square|circle|ghost</code> 属性即可让按钮呈现不一样的样式。`
+                `通过设置 <code>round|square|circle|ghost|plain</code> 属性即可让按钮呈现不一样的样式。`
               )
             "
           ></p>
@@ -184,216 +184,88 @@
     <yo-example demo="basic/button/button9"></yo-example> -->
 
     <!-- <h3>Button 参数</h3> -->
-    <yo-anchor text="API" :size="24"></yo-anchor>
-    <p>{{ $lang("按钮的属性说明如下：") }}</p>
+    <!-- <yo-anchor text="API" :size="24"></yo-anchor> -->
+
+    <yo-anchor :text="'Button ' + $lang('属性')" :size="24"></yo-anchor>
+    <p
+      v-html="
+        $lang(
+          '支持原生 <code>button</code> 的其他所有属性。注意使用了<code>to</code>属性的时候相当于 <code>a</code>标签'
+        )
+      "
+    ></p>
     <table class="table">
       <tr>
-        <th v-for="item in apiTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
         <!-- <th>说明</th>
         <th>类型</th> -->
         <!-- <th>可选值</th> -->
         <!-- <th>默认值</th>
         <th>版本</th> -->
       </tr>
-      <tr v-for="item in apiTableData" :key="item.param">
+      <tr v-for="item in propsTableData" :key="item.param">
         <td>{{ item.param }}</td>
-        <td>{{ item.desc }}</td>
+        <td v-html="item.desc"></td>
         <td>{{ item.type }}</td>
-        <!-- <td>
-          <code>primary</code
-          >、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code
-            >error</code
-          >
-        </td> -->
-        <td>{{ item.default || "--" }}</td>
-        <td>{{ item.version }}</td>
-      </tr>
-      <!-- <tr>
-        <td>ghost</td>
-        <td>使按钮背景透明</td>
-        <td>Boolean</td>
-        <td>false</td>
-      </tr> -->
-      <tr>
-        <td>size</td>
-        <td>按钮大小</td>
-        <td>String</td>
-        <!-- <td><code>l</code>、<code>m</code>、<code> s</code>、<code> xs</code></td> -->
-        <td>--</td>
-      </tr>
-      <tr>
-        <td>circle</td>
-        <td>按钮是否圆形显示</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>round</td>
-        <td>按钮是否圆角显示</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>square</td>
-        <td>按钮是否方形显示</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>plain</td>
-        <td>按钮是否朴素显示</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>block</td>
-        <td>按钮是否占一行显示,开启后，按钮的长度为 100%</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>disabled</td>
-        <td>设置按钮为禁用状态</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>loading</td>
-        <td>是否加载中，将覆盖原有的图标</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>loadingName</td>
-        <td>是否加载中，内置loading样式</td>
-        <td>String</td>
-        <!-- <td>
-          <code>loading</code>、<code> loading1</code>, 、<code> loading2</code>、<code>
-            loading3</code
-          >、<code> loading4</code>
-        </td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>icon</td>
-        <td>左侧引用icon</td>
-        <td>String</td>
-        <!-- <td>(图标页所有的icon name)</td> -->
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>rightIcon</td>
-        <td>右侧引用icon</td>
-        <td>String</td>
-        <!-- <td>(图标页所有的icon name)</td> -->
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>stop</td>
-        <td>click事件是否stopPropagation</td>
-        <td>Boolean</td>
-        <!-- <td>--</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>prevent</td>
-        <td>click事件是否preventDefault</td>
-        <td>Boolean</td>
-        <!-- <td>--</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>to</td>
-        <td>按钮是否显示边框</td>
-        <td>String|Object</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>replace</td>
-        <td>路由跳转时，开启 replace 将不会向 history 添加新记录</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>target</td>
-        <td>路由跳转时，相当于 a 链接的 target 属性</td>
-        <td>String</td>
-        <!-- <td>
-          <code>_blank</code>、<code> _parent</code>、<code>_self</code>、<code>
-            _top</code
-          >、<code>framename</code> (与a标签类似)
-        </td> -->
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>border</td>
-        <td>按钮是否显示边框</td>
-        <td>Boolean</td>
-        <!-- <td>-</td> -->
-        <td>true</td>
-      </tr>
-      <tr>
-        <td>native-type</td>
-        <td>设置button原生的type</td>
-        <td>String</td>
-        <!-- <td><code>button </code>、<code> submit </code>、<code> reset</code></td> -->
-        <td>--</td>
+        <td>{{ item.default || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
 
-    <h3>Button 事件</h3>
+    <!-- <h3>Button 事件</h3> -->
+
+    <yo-anchor :text="'Button ' + $lang('事件')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th>参数</th>
+        <th v-for="item in eventTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <!-- <th>参数</th>
         <th>说明</th>
-        <th>返回值</th>
+        <th>返回值</th> -->
       </tr>
-      <tr>
+      <tr v-for="item in eventTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.callback || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
+      </tr>
+      <!-- <tr>
         <td>click</td>
         <td>点击事件</td>
         <td>Event</td>
+      </tr> -->
+    </table>
+
+    <!-- <h3>Button Slots</h3> -->
+
+    <yo-anchor :text="'Button ' + $lang('插槽')" :size="24"></yo-anchor>
+    <table class="table">
+      <tr>
+        <th v-for="item in slotTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <!-- <th>名称</th>
+        <th>说明</th> -->
+      </tr>
+      <tr v-for="item in slotTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <!-- <td>{{ item.callback || "-" }}</td> -->
+        <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
 
-    <h3>Button Slots</h3>
+    <!-- <h3>ButtonGroup 参数</h3> -->
+    <yo-anchor :text="'ButtonGroup ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th>名称</th>
-        <th>说明</th>
+        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
       </tr>
-      <tr>
-        <td>--</td>
-        <td>默认内容</td>
+      <tr v-for="item in groupPropsTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.default || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
       </tr>
-      <tr>
-        <td>left</td>
-        <td>左侧内容</td>
-      </tr>
-      <tr>
-        <td>right</td>
-        <td>右侧内容</td>
-      </tr>
-    </table>
-
-    <h3>ButtonGroup 参数</h3>
-    <table class="table">
-      <tr>
-        <th>参数</th>
-        <th>说明</th>
-        <th>类型</th>
-        <th>可选值</th>
-        <th>默认值</th>
-      </tr>
-      <tr>
+      <!-- <tr>
         <td>round</td>
         <td>是否是圆角边框</td>
         <td>String</td>
@@ -418,18 +290,22 @@
         <td>Boolean</td>
         <td>--</td>
         <td>false</td>
-      </tr>
+      </tr> -->
     </table>
 
-    <h3>ButtonGroup Slots</h3>
+    <!-- <h3>ButtonGroup Slots</h3> -->
+    <yo-anchor :text="'ButtonGroup ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th>名称</th>
-        <th>说明</th>
+        <th v-for="item in slotTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <!-- <th>名称</th>
+        <th>说明</th> -->
       </tr>
-      <tr>
-        <td>--</td>
-        <td>默认内容</td>
+      <tr v-for="item in groupSlotTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <!-- <td>{{ item.callback || "-" }}</td> -->
+        <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
   </div>
@@ -444,14 +320,26 @@
     },
     data() {
       return {
-        apiTableKeys: [
+        propsTableKeys: [
           { code: "param", name: "参数" },
           { code: "desc", name: "说明" },
           { code: "type", name: "类型" },
           { code: "default", name: "默认值" },
           { code: "version", name: "版本" },
         ],
-        apiTableData: [
+        eventTableKeys: [
+          { code: "param", name: "事件名称" },
+          { code: "desc", name: "说明" },
+          { code: "callback", name: "回调参数" },
+          { code: "version", name: "版本" },
+        ],
+        slotTableKeys: [
+          { code: "param", name: "插槽名称" },
+          { code: "desc", name: "说明" },
+          // { code: "callback", name: "回调参数" },
+          { code: "version", name: "版本" },
+        ],
+        propsTableData: [
           { param: "type", desc: "按钮类型", type: "String", default: "", version: "" },
           {
             param: "ghost",
@@ -485,6 +373,140 @@
             param: "square",
             desc: "按钮是否方角显示",
             type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "plain",
+            desc: "按钮是否朴素显示",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "border",
+            desc: "按钮是否显示边框",
+            type: "Boolean",
+            default: "true",
+            version: "",
+          },
+          {
+            param: "block",
+            desc: "按钮是否占一行显示,开启后，按钮的长度为 100%",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "loading",
+            desc: "是否加载中，将覆盖原有的图标",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "loadingName",
+            desc:
+              "是否加载中，内置loading样式,可选值为<code>loading</code>、<code>loading1</code>、<code>loading2</code>、<code>loading3</code>、<code>loading4</code>以及对应的loading图标类名",
+            type: "String",
+            default: "loading",
+            version: "",
+          },
+          {
+            param: "size",
+            desc:
+              "按钮大小，可选值有<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+            type: "String",
+            default: "",
+            version: "",
+          },
+          {
+            param: "icon",
+            desc:
+              "左侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
+            type: "String",
+            default: "",
+            version: "",
+          },
+          {
+            param: "rightIcon",
+            desc:
+              "右侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
+            type: "String",
+            default: "",
+            version: "",
+          },
+          {
+            param: "to",
+            desc: "跳转的链接，支持 vue-router 对象",
+            type: "String | Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "replace",
+            desc: "路由跳转时，开启 replace 将不会向 history 添加新记录",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "target",
+            desc: "路由跳转时，相当于 a 链接的 target 属性",
+            type: "String",
+            default: "_self",
+            version: "",
+          },
+          {
+            param: "nativeType",
+            desc:
+              "设置 button 原生的 type 值，可选值请参考<a class='yo-btn yo-btn-text' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type' target='_blank'>HTML 标准</a>,可选值有<code>button </code>、<code>submit</code>、<code>reset</code>",
+            type: "String",
+            default: "button",
+            version: "",
+          },
+        ],
+        eventTableData: [
+          {
+            param: "click",
+            desc: "点击事件,点击按钮时的回调",
+            callback: "(event)=>void",
+            version: "",
+          },
+        ],
+        slotTableData: [
+          { param: "-", desc: "默认插槽", version: "" },
+          { param: "left", desc: "左侧插槽", version: "" },
+          { param: "right", desc: "右侧插槽", version: "" },
+        ],
+        groupSlotTableData: [{ param: "-", desc: "默认插槽", version: "" }],
+        groupPropsTableData: [
+          {
+            param: "round",
+            desc: "按钮组圆角",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "vertical",
+            desc: "是否纵向排列按钮组",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "reverse",
+            desc: "是否将按钮组反向",
+            type: "Boolean",
+            default: "false",
+            version: "",
+          },
+          {
+            param: "size",
+            desc:
+              "按钮大小，可选值有<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+            type: "String",
             default: "false",
             version: "",
           },

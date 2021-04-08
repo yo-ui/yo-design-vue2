@@ -82,21 +82,21 @@
               :to="{ name: 'componentButton' }"
               :class="{ active: code == 'componentButton' }"
             >
-              {{ $lang("按钮") }}
+              {{ $lang("按钮 Button") }}
             </router-link>
             <router-link
               class="link"
               :to="{ name: 'componentLink' }"
               :class="{ active: code == 'componentLink' }"
             >
-              {{ $lang("文字链接") }}
+              {{ $lang("文字链接 Link") }}
             </router-link>
             <router-link
               class="link"
               :to="{ name: 'componentIcon' }"
               :class="{ active: code == 'componentIcon' }"
             >
-              {{ $lang("图标") }}
+              {{ $lang("图标 Icon") }}
             </router-link>
           </ul>
 

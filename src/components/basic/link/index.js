@@ -3,7 +3,7 @@
  *  create at: 2019-12-23 10:47:50
  */
 
-import YoLink from './link'
+import YoLink from './Link'
 
 /* istanbul ignore next */
 YoLink.install = function(Vue) {

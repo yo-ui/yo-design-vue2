@@ -3,11 +3,11 @@
  *  create at: 2019-12-30 23:48:26
  */
 
-import YoInput from './input'
+import YInput from './Input'
 
 /* istanbul ignore next */
-YoInput.install = function(Vue) {
-    Vue.component(YoInput.name, YoInput)
+YInput.install = function(Vue) {
+    Vue.component(YInput.name, YInput)
 }
 
-export default YoInput
+export default YInput

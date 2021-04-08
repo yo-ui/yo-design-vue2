@@ -9,6 +9,8 @@
         .posa;
         top:65px;
         bottom:0;
+        right:0;
+        left:0;
         .mt(0);
         // .mt(65);
         // .bort(1px solid @default-plain);
@@ -121,8 +123,8 @@
             // .bor(1px solid @default-plain);
             // .borc(@yo-border);
             .w(100%);
+            .mb(30);
             // .br(2px);
-            .fz(14);
             border-spacing: 0;
             border-collapse: collapse;
             .bor(0);
@@ -144,42 +146,45 @@
                 .pl(15);
                 .borb(1px solid @yo-border);
                 // .c();
+                &:nth-child(2){
+                    .w(30%);
+                }
                 &:nth-child(3){
                     .c(#fa795e);
                     .fz(13);
-                    .w(22%);
+                    .w(20%);
                 }
                 &:first-child{
                     .c(#013336);
                     .fw(500);
-                    .w(20%);
+                    .w(15%);
                 }
                 &:last-child{
                     .fz(13);
-                    .w(13%);
+                    .w(10%);
+                    .c(@yo-font);
                 }
             }
             td,th{
-                // .posr;
-                // .borr(1px solid @default-plain);
-                // .borb(1px solid @default-plain);
-                // .ml(-1);
-                // .mt(-1);
-                // .tc;
-                // .pl()
-                &:last-child{
-                    .borr(none);
-                }
+                .fz(14);
+                // &:last-child{
+                //     .borr(none);
+                // }
                 code{
-                    .c(@red);
+                    .c(@yo-theme);
+                    .p(1px 8px);
+                    .fw(400);
+                    .bc(@yo-hover-theme);
+                    .br(2px);
+                    .m(0 2px);
                 }
             }
             tr{
-                &:last-child{
-                    td{
-                        .borb(none);
-                    }
-                }
+                // &:last-child{
+                //     td{
+                //         .borb(none);
+                //     }
+                // }
                 &.del{
                     text-decoration: line-through;
                     .c(@default);

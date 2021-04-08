@@ -4,5 +4,6 @@
     <y-button circle>{{ $lang("圆") }}</y-button>
     <y-button square>{{ $lang("方形") }}</y-button>
     <y-button type="primary" ghost>{{ $lang("幽灵") }}</y-button>
+    <y-button type="primary" plain>{{ $lang("朴素") }}</y-button>
   </div>
 </template>

@@ -10,7 +10,7 @@
     size: ["l", "m", "s", "xs"],
   };
   export default {
-    name: "yButtonGroup",
+    name: "YButtonGroup",
     //提供给子组件使用
     provide() {
       return {
@@ -28,6 +28,7 @@
     props: {
       //圆角
       round: Boolean,
+      // round: Boolean,
       reverse: {
         type: Boolean,
         default: false,
