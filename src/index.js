@@ -11,8 +11,8 @@ import Header from './components/basic/header'
 import Main from './components/basic/main'
 import Footer from './components/basic/footer'
 // grid
-import Row from './components/basic/row'
-import Col from './components/basic/col'
+import Row from './components/basic/Row'
+import Col from './components/basic/Col'
 
 // button
 import Button from './components/basic/Button'

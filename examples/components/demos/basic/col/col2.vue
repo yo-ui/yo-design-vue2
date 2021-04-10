@@ -4,7 +4,7 @@
  */
 <template>
 	<div>
-		<yo-col></yo-col>
+		<y-col></y-col>
 	</div>
 </template>
 <script>

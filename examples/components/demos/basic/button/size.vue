@@ -86,7 +86,7 @@
     .tl;
     .yo-btn {
       &.active {
-        .bc(@yo-theme);
+        .bc(@yo-primary);
         .c(@white);
       }
     }

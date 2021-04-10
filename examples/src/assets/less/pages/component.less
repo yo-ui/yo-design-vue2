@@ -13,7 +13,7 @@
         left:0;
         .mt(0);
         // .mt(65);
-        // .bort(1px solid @default-plain);
+        // .bort(1px solid yo-primary-plain);
         // .db(inline-flex);
         // .
         // &.fixed{
@@ -36,7 +36,7 @@
         // .h(100vh);
         // .pb(60);
         // .tc;
-        // .borr(1px solid @default-plain);
+        // .borr(1px solid yo-primary-plain);
         .ad-box{
             .p(20px);
             img{
@@ -57,12 +57,12 @@
             .link{
                 .click;
                 &.active{
-                    .c(@yo-theme);
-                    .bc(@yo-hover-theme);
+                    .c(@yo-primary);
+                    .bc(@yo-primary-light);
                 }
                 &:hover{
-                    .c(@yo-theme);
-                    // .bc(@yo-hover-theme);
+                    .c(@yo-primary);
+                    // .bc(@yo-primary-light);
                 }
             }
             .sub{
@@ -85,7 +85,7 @@
                 //     .fz(14);
                 //     .c(@gray2);
                 //     &.active{
-                //         .c(@default);
+                //         .c(@yo-primary);
                 //     }
                 // }
             // }
@@ -105,11 +105,11 @@
             .lh(25);
             .p(10px 0);
             &.alert{
-                .bc(@yo-hover-theme);
+                .bc(@yo-primary-light);
                 .pl(15);
             }
             code{
-                .c(@yo-theme);
+                .c(@yo-primary);
             }
         }
         // .yo-code-com{
@@ -120,7 +120,7 @@
         }
         table{
             .mt(10);
-            // .bor(1px solid @default-plain);
+            // .bor(1px solid yo-primary-plain);
             // .borc(@yo-border);
             .w(100%);
             .mb(30);
@@ -162,7 +162,7 @@
                 &:last-child{
                     .fz(13);
                     .w(10%);
-                    .c(@yo-font);
+                    .c(@yo-text);
                 }
             }
             td,th{
@@ -171,10 +171,10 @@
                 //     .borr(none);
                 // }
                 code{
-                    .c(@yo-theme);
+                    .c(@yo-primary);
                     .p(1px 8px);
                     .fw(400);
-                    .bc(@yo-hover-theme);
+                    .bc(@yo-primary-light);
                     .br(2px);
                     .m(0 2px);
                 }
@@ -187,7 +187,7 @@
                 // }
                 &.del{
                     text-decoration: line-through;
-                    .c(@default);
+                    .c(@yo-primary);
                 }
             }
         }

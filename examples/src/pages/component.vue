@@ -79,6 +79,20 @@
           <ul class="list">
             <router-link
               class="link"
+              :to="{ name: 'componentFont' }"
+              :class="{ active: code == 'componentFont' }"
+            >
+              {{ $lang("字体 Font") }}
+            </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentColor' }"
+              :class="{ active: code == 'componentColor' }"
+            >
+              {{ $lang("颜色 Color") }}
+            </router-link>
+            <router-link
+              class="link"
               :to="{ name: 'componentButton' }"
               :class="{ active: code == 'componentButton' }"
             >

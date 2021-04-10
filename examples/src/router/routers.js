@@ -69,6 +69,24 @@ const Routers = [
         },
         //组件-基础组件
         {
+            path: RouterURL['componentFont'].path,
+            name: RouterURL['componentFont'].name,
+            meta: {
+                title: RouterURL['componentFont'].title,
+            },
+            component: () => import(/* webpackChunkName: "yo-component-font" */ '@/pages/components/basic/font/font'),
+        },
+        //组件-基础组件
+        {
+            path: RouterURL['componentColor'].path,
+            name: RouterURL['componentColor'].name,
+            meta: {
+                title: RouterURL['componentColor'].title,
+            },
+            component: () => import(/* webpackChunkName: "yo-component-color" */ '@/pages/components/basic/color/color'),
+        },
+        //组件-基础组件
+        {
             path: RouterURL['componentLink'].path,
             name: RouterURL['componentLink'].name,
             meta: {
@@ -83,7 +101,7 @@ const Routers = [
             meta: {
                 title: RouterURL['componentIcon'].title,
             },
-            component: () => import(/* webpackChunkName: "yo-component-Icon" */ '@/pages/components/basic/icons/icons'),
+            component: () => import(/* webpackChunkName: "yo-component-icon" */ '@/pages/components/basic/icon/icon'),
         },
         // 表单
         //组件-输入框组件

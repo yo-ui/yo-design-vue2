@@ -11,7 +11,7 @@
         .fz(14);
         .hljs-name{
             // .fw(100);
-            .c(@yo-theme);
+            .c(@yo-primary);
         }
         .hljs-attr{
             .c(red);
@@ -25,13 +25,13 @@
         flex-direction: column;
         .yo-example-code{
             .borl(none);
-            // .bort(1px dashed @default-plain);
+            // .bort(1px dashed yo-primary-plain);
             .flex(none);
         }
     }
     &:hover{
         // .box-s(0 2px 7px rgba(0,0,0,.15));
-        // .box-s(0 0px 5px @yo-theme);
+        // .box-s(0 0px 5px @yo-primary);
         // .borc(transparent);
         .posr;
     }
@@ -44,7 +44,7 @@
         .posr;
         .oh;
         // .h(200);
-        // .borl(1px dashed @default-plain);
+        // .borl(1px dashed yo-primary-plain);
         .tran(height .2s ease-in-out);
         &.expand{
             height: auto;
@@ -102,7 +102,7 @@
             // opacity:.6;
             &:hover{
                 // opacity: 1;
-                .bc(@default-plain-hover);
+                .bc(@yo-primary-light);
                 i{
                     .tranf(rotate(180deg));
                 }

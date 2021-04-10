@@ -9,12 +9,19 @@
     .yo-row{
         .mb(15);
 		.yo-col{
-            .bc(@default-plain);
             .p(8px 0);
-            .br(4px);
+            // .br(4px);
             .tc;
+            .content{
+                .p(20px);
+                .bc(@yo-primary);
+                .c(@white);
+            }
             &:nth-child(odd){
-                .bc(@default-bc);
+                .content{
+                    .bc(@yo-primary-light);
+                    .c(@yo-primary);
+                }
             }
 		}
 	}

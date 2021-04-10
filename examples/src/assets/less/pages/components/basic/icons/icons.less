@@ -22,6 +22,7 @@
     }
     .search-box{
         .tc;
+        .m(40px auto 20px);
         .yo-input{
             .w(500);
             /deep/ .yo-input-inner{
@@ -40,7 +41,7 @@
         // justify-content: center;
         // flex-wrap: wrap;
         .oh;
-        .m(15px);
+        .m(15px auto);
         &::after{
             clear: both;
         }
@@ -69,7 +70,7 @@
             &:hover{
                 cursor: pointer;
                 .c(@white);
-                .bc(@yo-theme);
+                .bc(@yo-primary);
                 z-index: 99;
                 i{
                     .tranf(scale(1.5));

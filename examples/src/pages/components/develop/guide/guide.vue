@@ -26,7 +26,7 @@ new Vue({
             {{$lang('以上代码便完成了 YOUI 的引入。需要注意的是，样式文件需要单独引入。')}}
         </p>
         <yo-anchor :text="$lang('按需引入')">
-        <a :href="'#'+$lang('按需引入')" class="yo-font yolianjie"></a>{{$lang('按需引入')}}
+        <a :href="'#'+$lang('按需引入')" class="yo-text yolianjie"></a>{{$lang('按需引入')}}
         </yo-anchor>
     <p>
     {{$lang('借助')}} babel-plugin-component，{{$lang('我们可以只引入需要的组件，以达到减小项目体积的目的。')}}

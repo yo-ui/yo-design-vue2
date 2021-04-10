@@ -16,18 +16,18 @@
             </span>
             <i class="yo-icon-inner" :class="'yo-icon-'+icon" v-if="icon"></i>
         </span>
-        <input 
+        <input
         class="${prefix}-inner"
         v-bind="$attrs"
-        v-on="$listeners"
-        @blur="onBlur" 
+        v-on="inputListeners"
+        @blur="onBlur"
         @focus="onFocus"
         @keyup="onKeyup"
         @keydown="onKeydown"
         @keypress="onKeypress"
-        @change="onChange" 
-        @input="onInput" 
-        @clear="onClear"
+        @change="onChange"
+        @input="onInput"
+        v-bind:value="value"
         @compositionstart="onCompositionStart"
         @compositionupdate="onCompositionUpdate"
         @compositionend="onCompositionEnd"
@@ -38,7 +38,7 @@
         <span ref="post_box" class="yo-icon-post-box">
             <i class="yo-icon-inner yo-icon-search" v-if="search&&!enterButton"></i>
             <i class="yo-icon-inner" :class="'yo-icon-'+rightIcon" v-if="rightIcon"></i>
-            <i class="yo-icon-inner yo-icon-close" v-if="clearable&&this.value" @click="clear"></i>
+            <i class="yo-icon-inner yo-icon-close-closeable yo-icon-close" v-if="clearable&&!!value" @click="clear"></i>
             <span class="yo-icon-inner" v-if="$slots.suffix">
                 <slot name="suffix"></slot>
             </span>
@@ -63,18 +63,19 @@
                 ${template}
             </template>
             <template v-else>
-                <textarea class="yo-textarea-inner" 
+                <textarea class="yo-textarea-inner"
                 v-bind="$attrs"
-                v-on="$listeners"
-                @blur="onBlur" 
+                v-on="inputListeners"
+                @blur="onBlur"
                 @focus="onFocus"
                 @keyup="onKeyup"
                 :disabled="inputDisabled"
                 :readonly="readonly"
                 @keydown="onKeydown"
                 @keypress="onKeypress"
-                @change="onChange" 
-                @input="onInput" 
+                @change="onChange"
+                v-on:input="onInput"
+                v-bind:value="value"
                 @clear="onClear"
                 @compositionstart="onCompositionStart"
                 @compositionupdate="onCompositionUpdate"
@@ -86,6 +87,7 @@
             </template>
         </div>
     `,
+    inheritAttrs: false,
     //存放 数据
     data: function () {
       return {
@@ -164,10 +166,26 @@
           return Props.size.indexOf(value) != -1;
         },
       },
-    }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
+    }, // 把父组件传递过来的 parent msg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
     computed: {
       inputDisabled() {
         return this.disabled || (this.yForm || {}).disabled;
+      },
+      inputListeners() {
+        let vm = this;
+        return Object.assign(
+          {},
+          // 我们从父级添加所有的监听器
+          this.$listeners,
+          // 然后我们添加自定义监听器，
+          // 或覆写一些监听器的行为
+          {
+            // 这里确保组件配合 `v-model` 的工作
+            input: function (event) {
+              //   vm.$emit("input", event.target.value);
+            },
+          }
+        );
       },
       nativeInputType() {
         let type = this.type;
@@ -188,10 +206,10 @@
       enterButtonValue() {
         return typeof this.enterButton === "string" ? this.enterButton : "";
       },
-      nativeInputValue() {
-        // console.error(this.value)
-        return this.value === null || this.value === undefined ? "" : String(this.value);
-      },
+      //   nativeInputValue() {
+      //     console.error("nativeInputValue()", this.value);
+      //     return this.value === null || this.value === undefined ? "" : String(this.value);
+      //   },
       yoStyles() {
         let yoStyles = {
           "background-color": `${this.color}`,
@@ -257,14 +275,15 @@
           if (this.$refs.input) {
             let left = this.$refs.pre_box.offsetWidth,
               right = this.$refs.post_box.offsetWidth;
-            this.$refs.input.style.cssText = `padding-left:${
-              left > 0 ? left : left + 5
-            }px;padding-right:${right > 0 ? right : right + 5}px`;
+            console.log(left, right, "updateComponent");
+            this.$refs.input.style.paddingLeft = `${left > 0 ? left : left + 5}px`;
+            this.$refs.input.style.paddingRight = `${right > 0 ? right : right + 5}px`;
           }
         });
       },
       init() {
-        this.setNativeInputValue();
+        // this.setNativeInputValue();
+        this.updateComponent();
         // console.log('----',this.$attrs,this.type)
       },
       //使input 失去焦点
@@ -273,6 +292,7 @@
       focus() {},
       // 清空输入值
       clear() {
+        console.log("clear");
         this.$emit("input", "");
         this.$emit("change", "");
         this.$emit("clear");
@@ -285,15 +305,14 @@
       onKeydown() {},
       onKeypress() {},
       onChange() {},
-      onClear() {},
+      onClear() {
+        this.$emit("input", "");
+      },
       onCompositionStart() {
         this.isComposing = true;
       },
-      onCompositionUpdate(event) {
-        const text = event.target.value;
-        const lastCharacter = text[text.length - 1] || "";
-        // this.isComposing = !isKorean(lastCharacter);
-        this.isComposing = false;
+      onCompositionUpdate() {
+        this.isComposing = true;
       },
       onCompositionEnd(event) {
         if (this.isComposing) {
@@ -301,52 +320,21 @@
           this.onInput(event);
         }
       },
-      onInput(event) {
-        // should not emit input during composition
+      onInput($event) {
+        // 在输入后才触发input
         if (this.isComposing) {
           return;
         }
-
-        // should remove the following line when we don't support IE
-        if (event.target.value === this.nativeInputValue) {
-          return;
-        }
-
-        this.$emit("input", event.target.value);
-        // ensure native input value is controlled
-        this.$nextTick(this.setNativeInputValue);
+        this.$emit("input", $event.target.value);
       },
       getInput() {
         return this.$refs.input || this.$refs.textarea;
-      },
-      setNativeInputValue() {
-        const input = this.getInput();
-        if (!input) {
-          return;
-        }
-        // if (input.value === this.nativeInputValue){
-        //     return
-        // }
-        let value = this.nativeInputValue;
-        // console.error(value,this.value,'----')
-        //增加未写v-model 的控件处理
-        if (this.value !== undefined) {
-          input.value = this.nativeInputValue;
-          this.updateComponent();
-        }
       },
     },
     //存放 过滤器
     filters: {},
     //自定义 私有指令
     directives: {},
-    watch: {
-      value(newVal, oldVal) {
-        if (oldVal != newVal) {
-          this.setNativeInputValue();
-        }
-      },
-    },
     /*  生命周期函数  */
     //创建期间
     beforeCreate() {},

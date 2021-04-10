@@ -3,11 +3,11 @@
  *  create at: 2019-12-21 13:25:54
  */
 
-import YoCol from './col'
+import YCol from './Col'
 
 /* istanbul ignore next */
-YoCol.install = function(Vue) {
-    Vue.component(YoCol.name, YoCol)
+YCol.install = function(Vue) {
+    Vue.component(YCol.name, YCol)
 }
 
-export default YoCol
+export default YCol

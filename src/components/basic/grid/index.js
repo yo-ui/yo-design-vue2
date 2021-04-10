@@ -3,11 +3,11 @@
  *  create at: 2019-12-20 16:22:07
  */
 
-import YoGrid from './grid'
+import YGrid from './Grid'
 
 /* istanbul ignore next */
-YoGrid.install = function(Vue) {
-    Vue.component(YoGrid.name, YoGrid)
+YGrid.install = function(Vue) {
+    Vue.component(YGrid.name, YGrid)
 }
 
-export default YoGrid
+export default YGrid

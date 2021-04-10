@@ -1,7 +1,7 @@
 <!--demo页面-->
 <template>
   <div class="yo-button-page">
-    <!-- <h1 :id="'Button'+$lang('按钮')"><a :href="'#'+'Button'+$lang('按钮')" class="yo-font yolianjie"></a>{{'Button'+$lang('按钮')}}</h1> -->
+    <!-- <h1 :id="'Button'+$lang('按钮')"><a :href="'#'+'Button'+$lang('按钮')" class="yo-text yolianjie"></a>{{'Button'+$lang('按钮')}}</h1> -->
 
     <yo-anchor :text="'Button' + $lang('按钮')" :size="30"></yo-anchor>
     <p>

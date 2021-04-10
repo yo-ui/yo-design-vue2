@@ -47,13 +47,23 @@
       <y-button type="primary" icon="search">{{ $lang("搜索") }}</y-button>
     </div> -->
     <div class="search-box">
-      <y-input size="l" icon="search" right-icon="close"></y-input>
+      <y-input
+        size="l"
+        icon="search"
+        clearable
+        v-model="keywords"
+        :placeholder="$lang('请输入英文关键词进行搜索，如search')"
+      ></y-input>
     </div>
     <p class="center">
       {{ $lang("点击下面的图标按钮可以直接复制组件代码") }}
     </p>
     <ul class="icon-list">
-      <li>
+      <li v-for="item in iconList" :key="item.code">
+        <i :class="`yo-icon-${item.code}`"></i>
+        {{ `yo-icon-${item.code}` }}
+      </li>
+      <!-- <li>
         <i class="yo-icon-y"></i>
         yo-icon-y
       </li>
@@ -396,10 +406,120 @@
       <li>
         <i class="yo-icon-radio2-on"></i>
         yo-icon-radio2-on
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        keywords: "",
+        icons: Object.freeze([
+          { code: "y" },
+          { code: "google" },
+          { code: "setting" },
+          { code: "print" },
+          { code: "full" },
+          { code: "plus" },
+          { code: "minus" },
+          { code: "message" },
+          { code: "facebook" },
+          { code: "more" },
+          { code: "search" },
+          { code: "female" },
+          { code: "network-error" },
+          { code: "password" },
+          { code: "calendar" },
+          { code: "alipay" },
+          { code: "star" },
+          { code: "like" },
+          { code: "baidu" },
+          { code: "voice" },
+          { code: "twitter" },
+          { code: "category" },
+          { code: "share" },
+          { code: "mobile" },
+          { code: "video" },
+          { code: "like1" },
+          { code: "right" },
+          { code: "phone" },
+          { code: "location" },
+          { code: "left" },
+          { code: "refresh" },
+          { code: "user" },
+          { code: "cancel" },
+          { code: "success" },
+          { code: "cart" },
+          { code: "zan" },
+          { code: "time" },
+          { code: "email" },
+          { code: "edit" },
+          { code: "wechat" },
+          { code: "table" },
+          { code: "image" },
+          { code: "delete" },
+          { code: "male" },
+          { code: "add" },
+          { code: "home" },
+          { code: "service" },
+          { code: "category1" },
+          { code: "return" },
+          { code: "notice" },
+          { code: "voice1" },
+          { code: "music" },
+          { code: "user1" },
+          { code: "remove" },
+          { code: "calendar" },
+          { code: "info" },
+          { code: "warn" },
+          { code: "loading4" },
+          { code: "loading3" },
+          { code: "loading2" },
+          { code: "loading2" },
+          { code: "loading" },
+          { code: "close" },
+          { code: "eye-close" },
+          { code: "upload" },
+          { code: "close1" },
+          { code: "link" },
+          { code: "upload1" },
+          { code: "eye" },
+          { code: "code" },
+          { code: "copy" },
+          { code: "down" },
+          { code: "up" },
+          { code: "power" },
+          { code: "switch-off" },
+          { code: "switch-on" },
+          { code: "check" },
+          { code: "check-on" },
+          { code: "check-off" },
+          { code: "radio1-off" },
+          { code: "radio1-on" },
+          { code: "radio11-on" },
+          { code: "radio11-off" },
+          { code: "radio2-on" },
+          { code: "radio2-off" },
+          { code: "radio-on" },
+          { code: "radio-off" },
+        ]),
+      };
+    },
+    computed: {
+      iconList() {
+        let { keywords = "", icons = [] } = this;
+        return icons.filter((item) => {
+          let { code = "" } = item;
+          keywords = keywords.toUpperCase();
+          code = code.toUpperCase();
+          return code.indexOf(keywords) > -1;
+        });
+      },
+    },
+  };
+</script>
 
 <style lang="less" scoped>
   @import "../../../../assets/less/pages/components/basic/icons/icons.less";

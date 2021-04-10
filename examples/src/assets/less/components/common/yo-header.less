@@ -1,6 +1,6 @@
 @import "../../common.less";
 .header-com{
-    // .bc(@default);
+    // .bc(@yo-primary);
     .bc(@white);
     .h(65);
     .lh(65);
@@ -45,7 +45,7 @@
         .df;
         align-items: center;
         a{
-            .c(@yo-font);
+            .c(@yo-text);
             opacity:.9;
             .p(0 20px);
             .lh(65);
@@ -54,9 +54,9 @@
             transition: all .2s ease-in-out;
             &:hover,&.active{
                 // .bc(rgba(0,0,0,.2));
-                .c(@default);
+                .c(@yo-primary);
                 opacity:1;
-                .borb(2px solid @yo-theme);
+                .borb(2px solid @yo-primary);
             }
         }
     }

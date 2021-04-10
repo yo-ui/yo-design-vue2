@@ -1,7 +1,7 @@
 {
   "id": "1559934",
   "name": "youi",
-  "font_family": "yo-font",
+  "font_family": "yo-text",
   "css_prefix_text": "yo",
   "description": "YOUI vue前端框架",
   "glyphs": [

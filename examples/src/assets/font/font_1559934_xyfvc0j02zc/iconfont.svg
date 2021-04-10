@@ -9,9 +9,9 @@ Created by iconfont
 </metadata>
 <defs>
 
-<font id="yo-font" horiz-adv-x="1024" >
+<font id="yo-text" horiz-adv-x="1024" >
   <font-face
-    font-family="yo-font"
+    font-family="yo-text"
     font-weight="500"
     font-stretch="normal"
     units-per-em="1024"

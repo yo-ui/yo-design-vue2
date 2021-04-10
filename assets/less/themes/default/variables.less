@@ -3,19 +3,34 @@
 // --------------------------------------------------
 
 //== Font
-@font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+@font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
 @prefix: yo-;
-
-
-@default:#0a9fad;  //默认主题色
+@yo-black:var(--yo-black);//黑色
+@yo-white:var(--yo-white);//白色
+@yo-transparent:var(--yo-transparent);//透明色
+@yo-primary:var(--yo-primary);//主题色
+@yo-info:var(--yo-info);//信息提示色
+@yo-success:var(--yo-success);//成功色
+@yo-warning:var(--yo-warning);//警告色
+@yo-error:var(--yo-error);//失败色
+@yo-primary-light:var(--yo-primary-light);//主题色浅色 hover用
+@yo-primary-dark:var(--yo-primary-dark);//主题色深色  active用
+@yo-title:var(--yo-title); //标题颜色
+@yo-text:var(--yo-text); //正文内容颜色
+@yo-text-assist:var(--yo-text-assist); //辅助文字颜色
+@yo-text-disabled:var(--yo-text-disabled); //文字失效颜色
+@yo-border:var(--yo-border); //边框颜色
+@yo-divide:var(--yo-divide); //分割线颜色
+@yo-background-color:var(--yo-background-color); //背景颜色
+@default:@yo-primary;  //默认主题色
 @default-plain:#bfd4fc;  //默认主题色
 @default-bc:#f2f7ff;  //默认背景色
-@primary:@default; //主要颜色
+@primary:@yo-primary; //主要颜色
 @primary-border:@default; //主要颜色
 @primary-plain:#c0dcf8; 
 @primary-plain-bc:#f0f7fe; 
-@success:#19be6b;//成功颜色
+@success:@yo-success;//成功颜色
 @success-border:#02aa56;//成功颜色
 @success-plain:#77be9b;//成功颜色
 @success-plain-bc:#caf8e1;//成功颜色
@@ -23,20 +38,20 @@
 @info-border:#0bacf7;//信息颜色
 @info-plain:#9cdbf8;//信息颜色
 @info-plain-bc:#c6ecfe;//信息颜色
-@warning:#f90;//警告颜色
+@warning:@yo-warning;//警告颜色
 @warning-border:#f3a735;//警告颜色
 @warning-plain:#fac980;//警告颜色
 @warning-plain-bc:#fcedd6;//警告颜色
-@error:#ed4014;//错误颜色
+@error:@yo-error;//错误颜色
 @error-border:#e03206;//错误颜色
 @error-plain:#e78870;//错误颜色
 @error-plain-bc:#facdc2;//错误颜色
 
 @bg-disabled:#f7f7f7;//背景不可用颜色
-@font:  #515a6e;//默认字体颜色
-@font-disabled:#c5c8ce;// 文字不可用颜色 
+@font:  @yo-text;//默认字体颜色
+@font-disabled:@yo-text-disabled;// 文字不可用颜色 
 @font-ghost-disabled:rgba(0,0,0,.25);//幽灵状态下的不可用颜色
-@border:#d7dde4;// 默认边框颜色
+@border:@yo-border;// 默认边框颜色
 @border-disabled:#dcdee2;// 默认边框颜色
 
 

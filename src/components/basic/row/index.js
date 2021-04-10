@@ -3,11 +3,11 @@
  *  create at: 2019-12-21 13:26:02
  */
 
-import YoRow from './row'
+import YRow from './Row'
 
 /* istanbul ignore next */
-YoRow.install = function(Vue) {
-    Vue.component(YoRow.name, YoRow)
+YRow.install = function(Vue) {
+    Vue.component(YRow.name, YRow)
 }
 
-export default YoRow
+export default YRow

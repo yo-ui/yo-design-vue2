@@ -48,7 +48,7 @@
         }
       }
       a {
-        .c(@yo-theme);
+        .c(@yo-primary);
         opacity: 0;
       }
     }

@@ -25,3 +25,47 @@
 @import (less) './../../components/form/input/input.less';
 @import (less) './../../components/form/radio/radio.less';
 @import (less) './../../components/form/checkbox/checkbox.less';
+
+
+.yo-h1{
+  .fz(16);
+  .c(@yo-text);
+  .fw(bold);
+}
+.yo-h2{
+  .fz(14);
+  .c(@yo-text);
+  .fw(bold);
+}
+.yo-h3{
+  .fz(12);
+  .c(@yo-text);
+  .fw(bold);
+}
+.yo-h{
+  .fz(13);
+  .c(@yo-text);
+}
+.yo-h-assist{
+  .fz(12);
+  .c(@yo-text-assist);
+}
+.yo-h-disabled{
+  .fz(12);
+  .c(@yo-text-disabled);
+}
+.yo-a{
+  .db(inline-flex);
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  .posr;
+  text-decoration: none;
+  .fz(12);
+  .c(@yo-primary);
+  &:hover{
+    opacity: .8;
+    .pointer;
+  }
+}
