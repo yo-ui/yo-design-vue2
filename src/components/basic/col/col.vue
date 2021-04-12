@@ -1,11 +1,9 @@
 /** * author: eric * create at: 2019-12-21 13:25:54 */
-<template>
-  <div :class="colClasses" :style="colStyles">
-    <slot></slot>
-  </div>
-</template>
 <script>
   const prefixCls = "yo-col";
+  // const template = `<div :class="colClasses" :style="colStyles">
+  //   <slot></slot>
+  // </div>`;
   export default {
     name: "YCol",
     //存放 数据
@@ -14,9 +12,24 @@
     },
     //存放 子组件
     // template: '',
+    render(h) {
+      let { tag = "" } = this;
+      return h(
+        tag,
+        {
+          class: this.colClasses,
+          style: this.colStyles,
+        },
+        this.$slots.default
+      );
+    },
     // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
     // props 中的数据，都是只读的，无法重新赋值
     props: {
+      tag: {
+        type: String,
+        default: "div",
+      },
       span: [Number, String],
       flex: [Number, String],
       //偏移
@@ -26,13 +39,14 @@
       push: [Number, String],
       //栅格排序  flex 排序
       order: [Number, String],
-
+      //响应式布局用  遵循Bootstrap Responsive breakpoints https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
       xs: [Number, Object],
       sm: [Number, Object],
       md: [Number, Object],
       lg: [Number, Object],
       xl: [Number, Object],
       xxl: [Number, Object],
+      xxxl: [Number, Object],
     }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
     inject: {
       yoRow: {
@@ -53,13 +67,14 @@
           [`${prefixCls}-push-${push}`]: push,
         });
 
-        // let lastSize = null;
-        for (let size of ["xxl", "xl", "lg", "md", "sm", "xs"]) {
-          if (this[size]) {
-            // lastSize = this[size];
+        for (let size of ["xxxl", "xxl", "xl", "lg", "md", "sm", "xs"]) {
+          let val = this[size];
+          if (typeof val === "object") {
+            for (let i in val) {
+              classList.push(`${prefixCls}-${size}-${i}-${val[i]}`);
+            }
+          } else {
             classList.push(`${prefixCls}-${size}-${this[size]}`);
-            // } else if (lastSize) {
-            // classList.push(`${prefixCls}-${size}-${lastSize}`);
           }
         }
         return classList;

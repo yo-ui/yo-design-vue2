@@ -16,5 +16,8 @@
     &.@{row-prefix}-flex{
         .df;
         clear: both;
+        &::after,&::before{
+            content: none;
+        }
     }
 }

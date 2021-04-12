@@ -36,19 +36,85 @@
       </template>
     </yo-example>
 
+    <yo-example demo="basic/grid/gutter">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('栅格间隔')">
+          {{
+            $lang(
+              "分栏之间存在间隔。栅格分左右上下间隔、左右间隔、上下间隔三种类型,Row 组件 提供 gutter 属性来指定每一栏之间的间隔，默认间隔为 0。"
+            )
+          }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/group">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('混合布局')">
+          {{ $lang("通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/offset">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('分栏偏移')">
+          {{ $lang("支持偏移指定的栏数。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/align">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('对齐方式')">
+          {{ $lang("通过 flex 布局来对分栏进行灵活的对齐。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/flex">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('flex 填充')">
+          {{ $lang("Col 提供 flex 属性以支持填充") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/order">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('栅格排序')">
+          {{
+            $lang(
+              "列排序。通过使用order属性或( push 和 pull 类)就可以很容易的改变列（column）的顺序。"
+            )
+          }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="basic/grid/responsive">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('响应式布局')">
+          <span
+            v-html="
+              $lang(`参照了 Bootstrap 的
+          响应式设计，预设了七个响应尺寸：<code>xs</code>、<code>sm</code>、<code>md</code>、<code
+            >lg </code
+          >、<code> xl</code
+          >、<code>xxl</code>、<code>xxxl</code>。<code>span</code>、<code>pull</code>、<code>push</code>、<code>offset</code>、<code
+            >order</code
+          >
+          属性可以通过内嵌到<code> xs</code
+          >、<code>sm</code>、<code>md</code>、<code>lg</code>、<code>xl</code>、<code>xxl</code>、<code>xxxl</code>属性中来使用。
+          其中 <code>:xs=&quot;6&quot; </code>相当于 <code>:xs=&quot;{ span: 6 }</code>&quot;。`)
+            "
+          ></span>
+        </yo-desc>
+      </template>
+    </yo-example>
+
     <!-- <h3>其他</h3>
     <yo-example demo="basic/grid/grid2"></yo-example> -->
 
     <!-- <h3>Row 参数</h3> -->
-    <yo-anchor :text="'Row ' + $lang('参数')" :size="24"></yo-anchor>
+    <yo-anchor :text="'Row ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
-        <!-- <th>说明</th>
-        <th>类型</th> -->
-        <!-- <th>可选值</th> -->
-        <!-- <th>默认值</th>
-        <th>版本</th> -->
       </tr>
       <tr v-for="item in propsTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -58,84 +124,29 @@
         <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
-    <table class="table">
-      <tr>
-        <th>参数</th>
-        <th>说明</th>
-        <th>类型</th>
-        <th>可选值</th>
-        <th>默认值</th>
-      </tr>
-      <tr>
-        <td>gutter</td>
-        <td>栅格间距，单位 px，左右平分</td>
-        <td>Number</td>
-        <td>-</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>type</td>
-        <td>布局模式，可选值为<code>flex</code>或不选，在现代浏览器下有效</td>
-        <td>String</td>
-        <td><code>flex</code></td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>align</td>
-        <td>flex 布局下的垂直对齐方式</td>
-        <td>String</td>
-        <td>
-          <code>stretch</code
-          >、<code>center</code>、<code>flex-start</code>、<code>flex-end</code>、<code>baseline</code>、<code>initial</code>、<code
-            >inherit</code
-          >
-          <br />
-          (可参照css justify-content属性)
-          <!-- <code>top</code>、<code>middle</code>、<code>bottom</code> -->
-        </td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>direction</td>
-        <td>flex 布局下的区块方向方式，可选值为</td>
-        <td>String</td>
-        <td>
-          <code>row</code
-          >、<code>row-reverse</code>、<code>column</code>、<code>column-reverse</code>、<code>initial</code>、<code
-            >inherit</code
-          >
-          <br />
-          (可参照css flex-direction属性)<!-- <code>row</code>、<code> column</code>、<code> row-reverse</code>、<code> column-reverse</code> -->
-        </td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>justify</td>
-        <td>flex 布局下的水平排列方式</td>
-        <td>String</td>
-        <td>
-          <code>flex-start</code
-          >、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code
-            >inherit</code
-          >
-          <br />
-          (可参照css justify-content属性)
-          <!-- <code>start</code>、<code>end</code>、<code>center</code>、<code>space-around</code>、<code>space-between</code> -->
-        </td>
-        <td>-</td>
-      </tr>
-    </table>
 
-    <h3>Col 参数</h3>
+    <!-- <h3>Col 属性</h3> -->
+
+    <yo-anchor :text="'Col ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
+        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+      </tr>
+      <tr v-for="item in colPropsTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.default || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
+      </tr>
+      <!-- <tr>
         <th>参数</th>
         <th>说明</th>
         <th>类型</th>
         <th>可选值</th>
         <th>默认值</th>
-      </tr>
-      <tr>
+      </tr> -->
+      <!-- <tr>
         <td>span</td>
         <td>栅格向左移动格数</td>
         <td>Number|String</td>
@@ -211,12 +222,12 @@
         <td>Number|Object</td>
         <td>-</td>
         <td>-</td>
-      </tr>
+      </tr> -->
     </table>
 
     <!-- <h3>Grid 方法</h3> -->
 
-    <yo-anchor :text="'Col ' + $lang('参数')" :size="24"></yo-anchor>
+    <!-- <yo-anchor :text="'Col ' + $lang('参数')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th>方法</th>
@@ -244,7 +255,7 @@
         <td>-</td>
         <td>-</td>
       </tr>
-    </table>
+    </table> -->
   </div>
 </template>
 <script>
@@ -257,6 +268,171 @@
           { code: "type", name: "类型" },
           { code: "default", name: "默认值" },
           { code: "version", name: "版本" },
+        ],
+        propsTableData: [
+          {
+            param: "gutter",
+            desc: "栅格间距，单位 px，上下左右平分",
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "gutterX",
+            desc: "栅格间距，单位 px，左右平分",
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "gutterY",
+            desc: "栅格间距，单位 px，上下平分",
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "type",
+            desc: `布局模式，可选值为flex或不选，在 <a class="yo-link yo-link-primary yo-link-underline" href="http://caniuse.com/#search=flex">现代浏览器</a> 下有效`,
+            type: "String",
+            default: "",
+            version: "",
+          },
+          {
+            param: "align",
+            desc: `flex 布局下的垂直对齐方式,可选值为<code>flex-start</code>、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code>inherit</code>(可参照css align-item属性)`,
+            type: "Number",
+            default: "",
+            version: "",
+          },
+          {
+            param: "direction",
+            desc: `flex 布局下的区块方向方式，可选值为<code>row</code
+          >、<code>row-reverse</code>、<code>column</code>、<code>column-reverse</code>、<code>initial</code>、<code
+            >inherit</code
+          >(可参照css flex-direction属性)`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "justify",
+            desc: `flex 布局下的水平排列方式，可选值为
+          <code>flex-start</code
+          >、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code
+            >inherit</code
+          >(可参照css justify-content属性)`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "tag",
+            desc: `自定义元素标签`,
+            type: "String",
+            default: "div",
+            version: "",
+          },
+        ],
+        colPropsTableData: [
+          {
+            param: "flex",
+            desc: `flex 布局填充`,
+            type: "String|Number",
+            default: "",
+            version: "",
+          },
+          {
+            param: "offset",
+            desc: `栅格左侧的间隔格数，间隔内不可以有栅格`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "order",
+            desc: `栅格顺序，<code>flex</code> 布局模式下有效`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "span",
+            desc: `栅格占位格数，为 0 时相当于 display: none`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "pull",
+            desc: `栅格向左移动格数`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "push",
+            desc: `栅格向右移动格数`,
+            type: "Number",
+            default: "0",
+            version: "",
+          },
+          {
+            param: "xs",
+            desc: `<code><576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "sm",
+            desc: `<code>≥576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "md",
+            desc: `<code>≥768px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "lg",
+            desc: `<code>≥992px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "xl",
+            desc: `<code>≥1200px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "xxl",
+            desc: `<code>≥1600px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "xxxl",
+            desc: `<code>≥1920px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象`,
+            type: "Number|Object",
+            default: "",
+            version: "",
+          },
+          {
+            param: "tag",
+            desc: `自定义元素标签`,
+            type: "String",
+            default: "div",
+            version: "",
+          },
         ],
       };
     },

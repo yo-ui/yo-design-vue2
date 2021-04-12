@@ -165,6 +165,16 @@
               {{ $lang("面包屑") }}
             </router-link>
           </ul>
+          <a class="sub">{{ $lang("其它 (Other)") }}</a>
+          <ul class="list">
+            <router-link
+              class="link"
+              :to="{ name: 'componentDivider' }"
+              :class="{ active: code == 'componentDivider' }"
+            >
+              {{ $lang("分割线 Divider") }}
+            </router-link>
+          </ul>
         </div>
       </div>
       <div class="yo-right">

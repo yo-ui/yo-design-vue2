@@ -4,9 +4,16 @@
     <div class="left">
       <div class="logo"></div>
       <span class="title"> Yo Design Vue2.x </span>
-      <div class="search-box">
+      <!-- <div class="search-box">
         <input type="text" :placeholder="$lang('搜索组件')" />
-      </div>
+      </div> -->
+      <y-input
+        size="l"
+        class="search-box"
+        v-model="keywords"
+        :placeholder="$lang('搜索组件')"
+        clearable
+      ></y-input>
     </div>
     <div class="nav">
       <router-link :to="{ name: 'index' }" :class="{ active: code == 'index' }">{{
@@ -33,7 +40,9 @@
   export default {
     name: "header-com",
     data() {
-      return {};
+      return {
+        keywords: "",
+      };
     },
     props: {
       code: {

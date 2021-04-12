@@ -1,11 +1,10 @@
 /** * author: eric * create at: 2019-12-21 13:26:02 */
-<template>
-  <div :class="rowClasses" :style="rowStyles">
-    <slot></slot>
-  </div>
-</template>
+
 <script>
   const prefixCls = "yo-row";
+  // const template = `<div :class="rowClasses" :style="rowStyles">
+  //   <slot></slot>
+  // </div>`;
 
   const Props = {
     type: ["flex"],
@@ -21,25 +20,44 @@
     },
     //存放 子组件
     // template: '',
+    render(h) {
+      let { tag = "" } = this;
+      return h(
+        tag,
+        {
+          class: this.rowClasses,
+          style: this.rowStyles,
+        },
+        this.$slots.default
+      );
+    },
     // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
     // props 中的数据，都是只读的，无法重新赋值
     props: {
+      tag: {
+        type: String,
+        default: "div",
+      },
       type: {
+        type: String,
         validator(value) {
           return Props.type.indexOf(value) != -1;
         },
       },
       align: {
+        type: String,
         validator(value) {
           return Props.align.indexOf(value) != -1;
         },
       },
       justify: {
+        type: String,
         validator(value) {
           return Props.justify.indexOf(value) != -1;
         },
       },
       direction: {
+        type: String,
         validator(value) {
           return Props.direction.indexOf(value) != -1;
         },
@@ -83,6 +101,8 @@
           let rightBottom = leftTop;
           style.marginLeft = leftTop;
           style.marginRight = rightBottom;
+          style.marginTop = leftTop;
+          style.marginBottom = rightBottom;
         }
         if (this.gutterX) {
           let leftTop = `-${this.gutterX / 2}px`;

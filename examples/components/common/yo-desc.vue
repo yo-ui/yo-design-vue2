@@ -56,5 +56,13 @@
       .lh(20);
       .p(5px);
     }
+    /deep/ code {
+      .c(@yo-primary);
+      .p(1px 8px);
+      .fw(400);
+      .bc(@yo-primary-light);
+      .br(2px);
+      .m(0 2px);
+    }
   }
 </style>

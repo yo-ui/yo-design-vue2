@@ -292,7 +292,7 @@
       focus() {},
       // 清空输入值
       clear() {
-        console.log("clear");
+        // console.log("clear");
         this.$emit("input", "");
         this.$emit("change", "");
         this.$emit("clear");
