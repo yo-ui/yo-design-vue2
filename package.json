@@ -1,4 +1,9 @@
 {
+  "name": "yo-design-vue",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "eric <1034850788@qq.com>",
+  "private": true,
   "devDependencies": {
     "ejs": "^3.0.1",
     "eslint-plugin-prettier": "^3.1.1",

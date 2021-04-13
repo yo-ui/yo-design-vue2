@@ -340,7 +340,13 @@
           { code: "version", name: "版本" },
         ],
         propsTableData: [
-          { param: "type", desc: "按钮类型", type: "String", default: "", version: "" },
+          {
+            param: "type",
+            desc: `设置按钮类型,可选值为<code>primary</code>,<code>dashed</code>,<code>text</code>,<code>info</code>,<code>success</code>,<code>warning</code>,<code>error</code>或者不设置`,
+            type: "String",
+            default: "",
+            version: "",
+          },
           {
             param: "ghost",
             desc: "幽灵属性，使按钮背景透明",
