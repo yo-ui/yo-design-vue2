@@ -55,13 +55,16 @@
     },
     computed: {
       colClasses() {
-        let width = this.span;
-        let offset = this.offset;
-        let push = this.push;
-        let pull = this.pull;
+        let { span: width, offset, order, push, pull } = this;
+        // let width = this.span;
+        // let offset = this.offset;
+        // let order = this.offset;
+        // let push = this.push;
+        // let pull = this.pull;
         let classList = [`${prefixCls}`];
         classList.push({
           [`${prefixCls}-${width}`]: width,
+          [`${prefixCls}-order-${order}`]: order,
           [`${prefixCls}-offset-${offset}`]: offset,
           [`${prefixCls}-pull-${pull}`]: pull,
           [`${prefixCls}-push-${push}`]: push,
@@ -69,12 +72,18 @@
 
         for (let size of ["xxxl", "xxl", "xl", "lg", "md", "sm", "xs"]) {
           let val = this[size];
-          if (typeof val === "object") {
-            for (let i in val) {
-              classList.push(`${prefixCls}-${size}-${i}-${val[i]}`);
+          if (val) {
+            if (typeof val === "object") {
+              for (let i in val) {
+                if (i === "span") {
+                  classList.push(`${prefixCls}-${size}-${val[i]}`);
+                } else {
+                  classList.push(`${prefixCls}-${size}-${i}-${val[i]}`);
+                }
+              }
+            } else {
+              classList.push(`${prefixCls}-${size}-${this[size]}`);
             }
-          } else {
-            classList.push(`${prefixCls}-${size}-${this[size]}`);
           }
         }
         return classList;
@@ -82,39 +91,61 @@
       colStyles() {
         let style = {};
         let styleType = "padding";
-        if (this.flex) {
-          style.flex = this.flex;
+        let { flex, rowType, rowGutter, rowGutterX, rowGutterY } = this;
+        if (flex) {
+          style.flex = flex;
         }
-        if (this.rowType == "flex") {
+        if (rowType == "flex") {
           styleType = "margin";
         }
 
-        if (this.rowGutter) {
-          let leftTop = this.rowGutter / 2 + "px";
-          let rightBottom = leftTop;
-          style[`${styleType}Left`] = leftTop;
-          style[`${styleType}Right`] = rightBottom;
-          style[`${styleType}Top`] = leftTop;
-          style[`${styleType}Bottom`] = rightBottom;
+        if (rowGutter) {
+          if (typeof rowGutter === "object") {
+            for (let i in rowGutter) {
+              let leftTop = rowGutter[i] / 2 + "px";
+              style[`--yo-col-gutter-${styleType}-${i}-x`] = leftTop;
+              style[`--yo-col-gutter-${styleType}-${i}-y`] = leftTop;
+            }
+          } else {
+            let leftTop = rowGutter / 2 + "px";
+            style[`${styleType}Left`] = leftTop;
+            style[`${styleType}Right`] = leftTop;
+            style[`${styleType}Top`] = leftTop;
+            style[`${styleType}Bottom`] = leftTop;
+          }
         }
 
-        if (this.rowGutterX) {
-          let leftTop = this.rowGutterX / 2 + "px";
-          style[`${styleType}Left`] = leftTop;
-          style[`${styleType}Right`] = leftTop;
+        if (rowGutterX) {
+          if (typeof rowGutterX === "object") {
+            for (let i in rowGutterX) {
+              let leftTop = rowGutterX[i] / 2 + "px";
+              style[`--yo-col-gutter-${styleType}-${i}-x`] = leftTop;
+            }
+          } else {
+            let leftTop = rowGutterX / 2 + "px";
+            style[`${styleType}Left`] = leftTop;
+            style[`${styleType}Right`] = leftTop;
+          }
         }
 
-        if (this.rowGutterY) {
-          let leftTop = this.rowGutterY / 2 + "px";
-          style[`${styleType}Top`] = leftTop;
-          style[`${styleType}Bottom`] = leftTop;
+        if (rowGutterY) {
+          if (typeof rowGutterY === "object") {
+            for (let i in rowGutterY) {
+              let leftTop = rowGutterY[i] / 2 + "px";
+              style[`--yo-col-gutter-${styleType}-${i}-y`] = leftTop;
+            }
+          } else {
+            let leftTop = rowGutterY / 2 + "px";
+            style[`${styleType}Top`] = leftTop;
+            style[`${styleType}Bottom`] = leftTop;
+          }
         }
 
-        if (this.order) {
-          style[`-webkit-box-ordinal-group`] = parseInt(this.order || 0) + 1;
-          style[`-ms-flex-order`] = this.order;
-          style[`order`] = this.order;
-        }
+        // if (this.order) {
+        //   style[`-webkit-box-ordinal-group`] = parseInt(this.order || 0) + 1;
+        //   style[`-ms-flex-order`] = this.order;
+        //   style[`order`] = this.order;
+        // }
 
         return style;
       },

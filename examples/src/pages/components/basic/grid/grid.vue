@@ -39,11 +39,13 @@
     <yo-example demo="basic/grid/gutter">
       <template v-slot:desc>
         <yo-desc :title="$lang('栅格间隔')">
-          {{
-            $lang(
-              "分栏之间存在间隔。栅格分左右上下间隔、左右间隔、上下间隔三种类型,Row 组件 提供 gutter 属性来指定每一栏之间的间隔，默认间隔为 0。"
-            )
-          }}
+          <span
+            v-html="
+              $lang(
+                '分栏之间存在间隔。栅格分左右上下间隔、左右间隔、上下间隔三种类型,Row 组件 提供 <code>gutter</code> 属性来指定每一栏之间的间隔，默认间隔为 0。我们推荐使用 <code>(16+8n)px</code> 作为栅格间隔。(n 是自然数) 如果要支持响应式，可以写成<code>{ xs: 8, sm: 16, md: 24, lg: 32 }</code>。如果只需要垂直或者水平间距，可以使用<code>gutterX,gutterY</code>'
+              )
+            "
+          ></span>
         </yo-desc>
       </template>
     </yo-example>

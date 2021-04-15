@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <p>排序</p> -->
-    <y-row type="flex" justify="center" align="center">
+    <y-row type="flex" gutterY="20" justify="center" align="center">
       <y-col span="4" order="2"
         ><div class="content" :style="[{ height: '80px' }]">y-col-4 2（原1）</div></y-col
       >
@@ -13,7 +13,7 @@
       >
     </y-row>
 
-    <y-row type="flex">
+    <y-row type="flex" gutterY="20">
       <y-col span="20" push="4" :style="[{ height: '80px' }]">
         <div class="content">y-col-4 2（原1）</div>
       </y-col>

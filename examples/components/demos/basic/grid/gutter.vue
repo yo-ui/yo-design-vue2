@@ -35,5 +35,33 @@
         <div class="content">y-col-12</div>
       </y-col>
     </y-row>
+
+    <p class="center">{{ $lang("响应式处理") }}</p>
+    <br />
+    <y-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 40, xxl: 48, xxxl: 54 }">
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+    </y-row>
+    <br />
+    <y-row :gutter="48">
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+      <y-col span="8">
+        <div class="content">y-col-8</div>
+      </y-col>
+    </y-row>
+    <br />
+    <br />
   </div>
 </template>

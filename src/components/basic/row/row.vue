@@ -96,38 +96,58 @@
       },
       rowStyles() {
         let style = {};
-        if (this.gutter) {
-          let leftTop = `-${this.gutter / 2}px`;
-          let rightBottom = leftTop;
-          style.marginLeft = leftTop;
-          style.marginRight = rightBottom;
-          style.marginTop = leftTop;
-          style.marginBottom = rightBottom;
-        }
-        if (this.gutterX) {
-          let leftTop = `-${this.gutterX / 2}px`;
-          let rightBottom = leftTop;
-          style.marginLeft = leftTop;
-          style.marginRight = rightBottom;
-        }
-        if (this.gutterY) {
-          let leftTop = `-${this.gutterY / 2}px`;
-          let rightBottom = leftTop;
-          style.marginTop = leftTop;
-          style.marginBottom = rightBottom;
-        }
-        if (this.type == "flex") {
-          if (this.direction) {
-            style["flex-direction"] = this.direction;
-            style["-ms-flex-direction"] = this.direction;
+        let { gutter, gutterX, gutterY, type, direction, justify, align } = this;
+        if (gutter) {
+          if (typeof gutter === "object") {
+            for (let i in gutter) {
+              let leftTop = `-${gutter[i] / 2}px`;
+              style[`--yo-row-gutter-${i}-x`] = leftTop;
+              style[`--yo-row-gutter-${i}-y`] = leftTop;
+            }
+          } else {
+            let leftTop = `-${gutter / 2}px`;
+            style.marginLeft = leftTop;
+            style.marginRight = leftTop;
+            style.marginTop = leftTop;
+            style.marginBottom = leftTop;
           }
-          if (this.justify) {
-            style["justify-content"] = this.justify;
-            style["-ms-flex-pack"] = this.justify;
+        }
+        if (gutterX) {
+          if (typeof gutterX === "object") {
+            for (let i in gutterX) {
+              let leftTop = `-${gutterX[i] / 2}px`;
+              style[`--yo-row-gutter-${i}-x`] = leftTop;
+            }
+          } else {
+            let leftTop = `-${gutterX / 2}px`;
+            style.marginLeft = leftTop;
+            style.marginRight = leftTop;
           }
-          if (this.align) {
-            style["align-items"] = this.align;
-            style["-ms-flex-align"] = this.align;
+        }
+        if (gutterY) {
+          if (typeof gutterY === "object") {
+            for (let i in gutterY) {
+              let leftTop = `-${gutterY[i] / 2}px`;
+              style[`--yo-row-gutter-${i}-y`] = leftTop;
+            }
+          } else {
+            let leftTop = `-${gutterY / 2}px`;
+            style.marginTop = leftTop;
+            style.marginBottom = leftTop;
+          }
+        }
+        if (type == "flex") {
+          if (direction) {
+            style["flex-direction"] = direction;
+            style["-ms-flex-direction"] = direction;
+          }
+          if (justify) {
+            style["justify-content"] = justify;
+            style["-ms-flex-pack"] = justify;
+          }
+          if (align) {
+            style["align-items"] = align;
+            style["-ms-flex-align"] = align;
           }
         }
         return style;
