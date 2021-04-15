@@ -7,7 +7,7 @@
 <script>
   const prefix = "yo-btn-group";
   const Props = {
-    size: ["l", "m", "s", "xs"],
+    size: ["xxl", "xl", "l", "m", "s", "xs"],
   };
   export default {
     name: "YButtonGroup",

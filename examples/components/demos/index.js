@@ -33,6 +33,7 @@ export default{
     'basicIconNormal': () => import(/* webpackChunkName: "yo-component-basic-icon" */ './basic/icon/normal'),
     'basicIconColor': () => import(/* webpackChunkName: "yo-component-basic-icon" */ './basic/icon/color'),
     'basicIconSize': () => import(/* webpackChunkName: "yo-component-basic-icon" */ './basic/icon/size'),
+    'basicIconRotate': () => import(/* webpackChunkName: "yo-component-basic-icon" */ './basic/icon/rotate'),
     
     'formFormForm1': () => import(/* webpackChunkName: "yo-component-form" */ './form/form/form1'),
     'formFormForm2': () => import(/* webpackChunkName: "yo-component-form" */ './form/form/form2'),

@@ -320,25 +320,25 @@
     },
     data() {
       return {
-        propsTableKeys: [
-          { code: "param", name: "参数" },
-          { code: "desc", name: "说明" },
-          { code: "type", name: "类型" },
-          { code: "default", name: "默认值" },
-          { code: "version", name: "版本" },
-        ],
-        eventTableKeys: [
-          { code: "param", name: "事件名称" },
-          { code: "desc", name: "说明" },
-          { code: "callback", name: "回调参数" },
-          { code: "version", name: "版本" },
-        ],
-        slotTableKeys: [
-          { code: "param", name: "插槽名称" },
-          { code: "desc", name: "说明" },
-          // { code: "callback", name: "回调参数" },
-          { code: "version", name: "版本" },
-        ],
+        // propsTableKeys: [
+        //   { code: "param", name: "参数" },
+        //   { code: "desc", name: "说明" },
+        //   { code: "type", name: "类型" },
+        //   { code: "default", name: "默认值" },
+        //   { code: "version", name: "版本" },
+        // ],
+        // eventTableKeys: [
+        //   { code: "param", name: "事件名称" },
+        //   { code: "desc", name: "说明" },
+        //   { code: "callback", name: "回调参数" },
+        //   { code: "version", name: "版本" },
+        // ],
+        // slotTableKeys: [
+        //   { code: "param", name: "插槽名称" },
+        //   { code: "desc", name: "说明" },
+        //   // { code: "callback", name: "回调参数" },
+        //   { code: "version", name: "版本" },
+        // ],
         propsTableData: [
           {
             param: "type",
@@ -405,7 +405,7 @@
           },
           {
             param: "loading",
-            desc: "是否加载中，将覆盖原有的图标",
+            desc: "是否加载中，将覆盖原有左侧引用的图标",
             type: "Boolean",
             default: "false",
             version: "",
@@ -421,7 +421,7 @@
           {
             param: "size",
             desc:
-              "按钮大小，可选值有<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+              "按钮大小，可选值有<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
             type: "String",
             default: "",
             version: "",
@@ -458,7 +458,8 @@
           },
           {
             param: "target",
-            desc: "路由跳转时，相当于 a 链接的 target 属性",
+            desc:
+              "路由跳转时，相当于 a 链接的 target 属性,可选值请参考<a class='yo-btn yo-btn-text' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formtarget' target='_blank'>HTML 标准</a>,可选值有<code>_self </code>、<code>_blank</code>、<code>_parent</code>、<code>_top</code>",
             type: "String",
             default: "_self",
             version: "",
@@ -511,9 +512,9 @@
           {
             param: "size",
             desc:
-              "按钮大小，可选值有<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+              "按钮大小，可选值有<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
             type: "String",
-            default: "false",
+            default: "",
             version: "",
           },
         ],

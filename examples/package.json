@@ -16,6 +16,7 @@
     "build:sandbox": "vue-cli-service build --mode sandbox"
   },
   "dependencies": {
+    "eslint": "^7.24.0",
     "jquery": "^3.4.1",
     "qrcode-terminal": "^0.12.0",
     "register-service-worker": "^1.6.2",

@@ -2,7 +2,7 @@
   <img height="100"  width="100" src="https://www.yo-ui.com/static/images/logo.png"/>
 </p>
 
-# Youi-Vue2.0 前端UI框架 1.0
+# YOUI-Vue2.x 前端UI框架 1.0
 
 # 目录结构
 ```
@@ -23,7 +23,7 @@
 |---- README.MD    项目说明文件
 ```
 
-# youi
+# YOUI
 <!--
 [![npm package](https://img.shields.io/npm/v/youi.svg?style=flat-square)](https://www.npmjs.org/package/youi)
 ![JS gzip size](http://img.badgesize.io/https://unpkg.com/youi/dist/youi.esm.js?style=flat-square&compression=gzip&label=gzip%20size:%20JS)
@@ -35,7 +35,7 @@
 ## Install
 
 ```js
-npm install youi --save
+npm install yo-design-vue --save
 ```
 
 

@@ -301,7 +301,7 @@
           {
             param: "align",
             desc: `flex 布局下的垂直对齐方式,可选值为<code>flex-start</code>、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code>inherit</code>(可参照css align-item属性)`,
-            type: "Number",
+            type: "String",
             default: "",
             version: "",
           },
@@ -311,8 +311,8 @@
           >、<code>row-reverse</code>、<code>column</code>、<code>column-reverse</code>、<code>initial</code>、<code
             >inherit</code
           >(可参照css flex-direction属性)`,
-            type: "Number",
-            default: "0",
+            type: "String",
+            default: "",
             version: "",
           },
           {
@@ -322,8 +322,8 @@
           >、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code
             >inherit</code
           >(可参照css justify-content属性)`,
-            type: "Number",
-            default: "0",
+            type: "String",
+            default: "",
             version: "",
           },
           {

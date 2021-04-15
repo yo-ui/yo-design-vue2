@@ -27,6 +27,10 @@
         type: String,
         required: true,
       },
+      rotate: {
+        type: [Number, String],
+        default: 0,
+      },
     }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
     computed: {
       yoClasses() {
@@ -39,10 +43,11 @@
       },
       //行内样式
       yoStyles() {
-        let { size, color = "" } = this;
+        let { size, color = "", rotate = 0 } = this;
         return {
-          "font-size": typeof size === "number" ? `${size}px` : size,
+          "font-size": `${parseFloat(size)}px`,
           color,
+          transform: `rotate(${rotate}deg)`,
         };
       },
     },

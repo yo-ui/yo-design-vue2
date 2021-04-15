@@ -47,11 +47,12 @@
         }
     }
     &.@{link-prefix}-default{
-        .c(@font);
+        .c(@yo-text);
         &:hover{
             opacity:.8;
+            .c(@yo-link);
             &::after{
-                .bc(@font);
+                .bc(@yo-link);
             }
         }
     }
@@ -102,6 +103,11 @@
     }
     &.@{link-prefix}-disabled{
         opacity:.5;
+        &.@{link-prefix}-default{
+            &:hover{
+                .c(@yo-text);
+            }
+        }
         &:hover{
             opacity:.5;
             cursor:not-allowed;

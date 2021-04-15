@@ -9,12 +9,12 @@
     cursor: pointer;
     .bc(@white);
     .bor(1px solid rgba(0,0,0,0));
-    .c(@font);
+    .c(@yo-text);
     .bs;
     // .tran(.2s linear);
     .fw(500);
     .tc;
-    .userselect;
+    // .userselect;
     .p(8px 20px);
     .br(4px);
     .fz(14);
@@ -232,6 +232,18 @@
         &.@{button-prefix}-dashed{
             .c(@white);
             .borc(@white);
+        }
+    }
+    &.@{button-prefix}-xxl{
+        .p(16px 20px);
+        &.@{button-prefix}-circle{
+            .p(16px);
+        }
+    }
+    &.@{button-prefix}-xl{
+        .p(14px 20px);
+        &.@{button-prefix}-circle{
+            .p(14px);
         }
     }
     &.@{button-prefix}-l{

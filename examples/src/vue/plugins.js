@@ -116,6 +116,26 @@ export default {
     //   { id: 29, name: "测试数据", startTime: "2020-06-10" }
     // ];
 
+    Vue.prototype.propsTableKeys=[
+      { code: "param", name: "参数" },
+      { code: "desc", name: "说明" },
+      { code: "type", name: "类型" },
+      { code: "default", name: "默认值" },
+      { code: "version", name: "版本" },
+    ]
+    Vue.prototype.slotTableKeys=[
+      { code: "param", name: "插槽名称" },
+      { code: "desc", name: "说明" },
+      // { code: "callback", name: "回调参数" },
+      { code: "version", name: "版本" },
+    ]
+    Vue.prototype.eventTableKeys=[
+      { code: "param", name: "事件名称" },
+      { code: "desc", name: "说明" },
+      { code: "callback", name: "回调参数" },
+      { code: "version", name: "版本" },
+    ]
+
     //全局方法 获取语言
     Vue.prototype.$lang = function(key = "", options = "") {
       let { $store } = this;
