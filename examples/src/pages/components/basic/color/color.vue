@@ -49,48 +49,48 @@
 </template>
 
 <script>
-  export default {};
+export default {};
 </script>
 
 <style lang="less" scoped>
-  @import (reference) "../../../../assets/less/common.less";
-  .y-color-page {
-    /deep/ .demo {
-      .df;
-      flex-wrap: wrap;
-      .p(15px 8px);
-      .ml(-8);
-      .mr(-8);
-      &.multi {
-        .color-box {
-          .br-bottom(0);
-        }
-      }
-      .box {
-        .flex(1);
-        flex-basis: 25%;
-        max-width: 25%;
-        .mb(15);
-      }
-      .sub-box {
-        .df;
-        .color-box {
-          .flex(1);
-          .br(0);
-          .ml(0);
-          .mr(0);
-        }
-      }
+@import (reference) "../../../../assets/less/common.less";
+.y-color-page {
+  /deep/ .demo {
+    .df;
+    flex-wrap: wrap;
+    .p(15px 8px);
+    .ml(-8);
+    .mr(-8);
+    &.multi {
       .color-box {
-        .c(@white);
-        .p(20px);
-        .br(5px);
-        .ml(8);
-        .mr(8);
-        .text {
-          .mt(5);
-        }
+        .br-bottom(0);
+      }
+    }
+    .box {
+      .flex(1);
+      flex-basis: 25%;
+      max-width: 25%;
+      .mb(15);
+    }
+    .sub-box {
+      .df;
+      .color-box {
+        .flex(1);
+        .br(0);
+        .ml(0);
+        .mr(0);
+      }
+    }
+    .color-box {
+      .c(@white);
+      .p(20px);
+      .br(5px);
+      .ml(8);
+      .mr(8);
+      .text {
+        .mt(5);
       }
     }
   }
+}
 </style>

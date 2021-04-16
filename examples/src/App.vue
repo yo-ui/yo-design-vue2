@@ -9,57 +9,57 @@
 </template>
 
 <script>
-  import fqCommon from "@/common/common";
-  import { URL } from "@/common/env";
-  let variablePool = {
-    startTime: Date.now(),
-  };
+import fqCommon from "@/common/common";
+import { URL } from "@/common/env";
+let variablePool = {
+  startTime: Date.now()
+};
 
-  export default {
-    name: "app",
-    data() {
-      return {
-        // serviceDialogShowStatus:false,
-      };
-    },
-    async created() {
-      let that = this;
-    },
-    components: {},
-    computed: {
-      userInfo() {
-        let userInfo = this.$store.getters.getUserInfo;
-        if (userInfo && userInfo.pageUserTheme) {
-          $("body")
-            .removeClass("dark")
-            .removeClass("light")
-            .addClass(userInfo ? userInfo.pageUserTheme : "");
-        }
-        return userInfo;
-      },
-      lang() {
-        let lang = this.$store.state.lang;
-        let _lang = (lang || "").toLowerCase();
+export default {
+  name: "app",
+  data() {
+    return {
+      // serviceDialogShowStatus:false,
+    };
+  },
+  async created() {
+    let that = this;
+  },
+  components: {},
+  computed: {
+    userInfo() {
+      let userInfo = this.$store.getters.getUserInfo;
+      if (userInfo && userInfo.pageUserTheme) {
         $("body")
-          .removeClass("zh-cn")
-          .removeClass("en")
-          .removeClass("korean")
-          .removeClass("japanese")
-          .addClass(_lang || "");
-        return lang;
-      },
+          .removeClass("dark")
+          .removeClass("light")
+          .addClass(userInfo ? userInfo.pageUserTheme : "");
+      }
+      return userInfo;
     },
-    async mounted() {
-      let that = this;
-    },
-    beforeDestroy() {
-      let that = this;
-    },
-    destroyed() {},
-    methods: {},
-  };
+    lang() {
+      let lang = this.$store.state.lang;
+      let _lang = (lang || "").toLowerCase();
+      $("body")
+        .removeClass("zh-cn")
+        .removeClass("en")
+        .removeClass("korean")
+        .removeClass("japanese")
+        .addClass(_lang || "");
+      return lang;
+    }
+  },
+  async mounted() {
+    let that = this;
+  },
+  beforeDestroy() {
+    let that = this;
+  },
+  destroyed() {},
+  methods: {}
+};
 </script>
 
 <style lang="less">
-  @import "./assets/less/main.less";
+@import "./assets/less/main.less";
 </style>

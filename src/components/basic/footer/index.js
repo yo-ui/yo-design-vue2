@@ -3,11 +3,11 @@
  *  create at: 2019-12-25 20:34:43
  */
 
-import YoFooter from './footer'
+import YFooter from './Footer'
 
 /* istanbul ignore next */
-YoFooter.install = function(Vue) {
-    Vue.component(YoFooter.name, YoFooter)
+YFooter.install = function(Vue) {
+    Vue.component(YFooter.name, YFooter)
 }
 
-export default YoFooter
+export default YFooter

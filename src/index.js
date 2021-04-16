@@ -5,11 +5,11 @@
 */
 // 基础组件
 // 布局组件
-import Container from './components/basic/container'
-import Side from './components/basic/side'
-import Header from './components/basic/header'
-import Main from './components/basic/main'
-import Footer from './components/basic/footer'
+import Container from './components/basic/Container'
+import Side from './components/basic/Side'
+import Header from './components/basic/Header'
+import Main from './components/basic/Main'
+import Footer from './components/basic/Footer'
 // grid
 import Row from './components/basic/Row'
 import Col from './components/basic/Col'

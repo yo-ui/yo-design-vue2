@@ -5,7 +5,8 @@
     // response:
     size: ["xxl", "xl", "l", "m", "s", "xs"],
   };
-  const template = `<slot name="left"></slot><i :class="'yo-icon-'+loadingName+' '+loadingName"  :style="{'font-size':iconSize+'px'}" v-if="loading"></i>
+  const template = `<slot name="left"></slot>
+        <i :class="'yo-icon-'+loadingName+' '+loadingName"  :style="{'font-size':iconSize+'px'}" v-if="loading"></i>
         <i :class="'yo-icon-'+icon+' '+icon"  :style="{'font-size':iconSize+'px'}" v-if="icon && !loading"></i>
         <template v-if="hasText">
             <slot></slot>
@@ -68,6 +69,7 @@
       rightIcon: String,
       loading: {
         type: Boolean,
+        default: false,
       },
       block: Boolean,
       border: {
@@ -178,7 +180,7 @@
           [`${prefix}-${this.btnSize}`]: !!this.btnSize,
           [`${prefix}-plain`]: !!this.plain,
           [`${prefix}-ghost`]: !!this.ghost,
-          [`${prefix}-no-border`]: this.border === false,
+          [`${prefix}-no-border`]: !this.border,
         };
       },
       iconCode() {

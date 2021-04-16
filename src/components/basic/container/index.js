@@ -3,11 +3,11 @@
  *  create at: 2019-12-24 22:12:39
  */
 
-import YoContainer from './container'
+import YContainer from './Container'
 
 /* istanbul ignore next */
-YoContainer.install = function(Vue) {
-    Vue.component(YoContainer.name, YoContainer)
+YContainer.install = function(Vue) {
+    Vue.component(YContainer.name, YContainer)
 }
 
-export default YoContainer
+export default YContainer

@@ -3,11 +3,11 @@
  *  create at: 2019-12-25 20:50:01
  */
 
-import YoMain from './main'
+import YMain from './Main'
 
 /* istanbul ignore next */
-YoMain.install = function(Vue) {
-    Vue.component(YoMain.name, YoMain)
+YMain.install = function(Vue) {
+    Vue.component(YMain.name, YMain)
 }
 
-export default YoMain
+export default YMain

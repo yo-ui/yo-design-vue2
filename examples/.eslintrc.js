@@ -1,38 +1,40 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
+    browser: true,
+    jquery: true
   },
-  // extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
-  extends: ["plugin:vue/essential","@vue/standard"],
+  globals: {
+    document: true,
+    $vm: true,
+    localStorage: true,
+    window: true,
+    AMap: true,
+    Vuex: true,
+    Vue: true,
+    moment: true,
+    ELEMENT: true,
+    SVG: true
+  },
+  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
   parserOptions: {
     parser: "babel-eslint"
-  },
-  globals:{
-    AMap:true,
-    moment:true,
-    Big:true,
-    Vuex:true,
-    Vue:true,
-    XLSX:true,
   },
   rules: {
     // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-console": "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "camelcase": [2, { 
-      "properties": "never"
-    }],
-    "no-unused-vars": [2, { 
-      // 允许声明未使用变量
-      "vars": "local",
-      // 参数不检查
-      "args": "none" 
-    }],
-    "no-unused-expressions": ["error", { 
-      "allowShortCircuit": true, 
-      "allowTernary": true 
-    }]
+
+    "no-unused-vars": [
+      2,
+      {
+        // 允许声明未使用变量
+        vars: "local",
+        // 参数不检查
+        args: "none"
+      }
+    ]
   },
   overrides: [
     {

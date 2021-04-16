@@ -18,7 +18,10 @@
     ></p>
 
     <yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
-    <yo-code type="javascript" src="/components/demos/basic/grid/use.js"></yo-code>
+    <yo-code
+      type="javascript"
+      src="/components/demos/basic/grid/use.js"
+    ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
     <!-- <p>说明</p> -->
@@ -52,7 +55,9 @@
     <yo-example demo="basic/grid/group">
       <template v-slot:desc>
         <yo-desc :title="$lang('混合布局')">
-          {{ $lang("通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。") }}
+          {{
+            $lang("通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。")
+          }}
         </yo-desc>
       </template>
     </yo-example>
@@ -116,7 +121,9 @@
     <yo-anchor :text="'Row ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in propsTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
       </tr>
       <tr v-for="item in propsTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -132,7 +139,9 @@
     <yo-anchor :text="'Col ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in propsTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
       </tr>
       <tr v-for="item in colPropsTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -261,185 +270,185 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        propsTableKeys: [
-          { code: "param", name: "参数" },
-          { code: "desc", name: "说明" },
-          { code: "type", name: "类型" },
-          { code: "default", name: "默认值" },
-          { code: "version", name: "版本" },
-        ],
-        propsTableData: [
-          {
-            param: "gutter",
-            desc: "栅格间距，单位 px，上下左右平分",
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "gutterX",
-            desc: "栅格间距，单位 px，左右平分",
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "gutterY",
-            desc: "栅格间距，单位 px，上下平分",
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "type",
-            desc: `布局模式，可选值为flex或不选，在 <a class="yo-link yo-link-primary yo-link-underline" href="http://caniuse.com/#search=flex">现代浏览器</a> 下有效`,
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "align",
-            desc: `flex 布局下的垂直对齐方式,可选值为<code>flex-start</code>、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code>inherit</code>(可参照css align-item属性)`,
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "direction",
-            desc: `flex 布局下的区块方向方式，可选值为<code>row</code
+export default {
+  data() {
+    return {
+      propsTableKeys: [
+        { code: "param", name: "参数" },
+        { code: "desc", name: "说明" },
+        { code: "type", name: "类型" },
+        { code: "default", name: "默认值" },
+        { code: "version", name: "版本" }
+      ],
+      propsTableData: [
+        {
+          param: "gutter",
+          desc: "栅格间距，单位 px，上下左右平分",
+          type: "Number|Object",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "gutterX",
+          desc: "栅格间距，单位 px，左右平分",
+          type: "Number|Object",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "gutterY",
+          desc: "栅格间距，单位 px，上下平分",
+          type: "Number|Object",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "type",
+          desc: `布局模式，可选值为flex或不选，在 <a class="yo-link yo-link-primary yo-link-underline" href="http://caniuse.com/#search=flex">现代浏览器</a> 下有效`,
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "align",
+          desc: `flex 布局下的垂直对齐方式,可选值为<code>flex-start</code>、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code>inherit</code>(可参照css align-item属性)`,
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "direction",
+          desc: `flex 布局下的区块方向方式，可选值为<code>row</code
           >、<code>row-reverse</code>、<code>column</code>、<code>column-reverse</code>、<code>initial</code>、<code
             >inherit</code
           >(可参照css flex-direction属性)`,
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "justify",
-            desc: `flex 布局下的水平排列方式，可选值为
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "justify",
+          desc: `flex 布局下的水平排列方式，可选值为
           <code>flex-start</code
           >、<code>flex-end</code>、<code>center</code>、<code>space-between</code>、<code>space-around</code>、<code>initial</code>、<code
             >inherit</code
           >(可参照css justify-content属性)`,
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "tag",
-            desc: `自定义元素标签`,
-            type: "String",
-            default: "div",
-            version: "",
-          },
-        ],
-        colPropsTableData: [
-          {
-            param: "flex",
-            desc: `flex 布局填充`,
-            type: "String|Number",
-            default: "",
-            version: "",
-          },
-          {
-            param: "offset",
-            desc: `栅格左侧的间隔格数，间隔内不可以有栅格`,
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "order",
-            desc: `栅格顺序，<code>flex</code> 布局模式下有效`,
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "span",
-            desc: `栅格占位格数，为 0 时相当于 display: none`,
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "pull",
-            desc: `栅格向左移动格数`,
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "push",
-            desc: `栅格向右移动格数`,
-            type: "Number",
-            default: "0",
-            version: "",
-          },
-          {
-            param: "xs",
-            desc: `<code><576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "sm",
-            desc: `<code>≥576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "md",
-            desc: `<code>≥768px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "lg",
-            desc: `<code>≥992px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "xl",
-            desc: `<code>≥1200px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "xxl",
-            desc: `<code>≥1600px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "xxxl",
-            desc: `<code>≥1920px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象`,
-            type: "Number|Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "tag",
-            desc: `自定义元素标签`,
-            type: "String",
-            default: "div",
-            version: "",
-          },
-        ],
-      };
-    },
-  };
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "tag",
+          desc: `自定义元素标签`,
+          type: "String",
+          default: "div",
+          version: ""
+        }
+      ],
+      colPropsTableData: [
+        {
+          param: "flex",
+          desc: `flex 布局填充`,
+          type: "String|Number",
+          default: "",
+          version: ""
+        },
+        {
+          param: "offset",
+          desc: `栅格左侧的间隔格数，间隔内不可以有栅格`,
+          type: "Number",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "order",
+          desc: `栅格顺序，<code>flex</code> 布局模式下有效`,
+          type: "Number",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "span",
+          desc: `栅格占位格数，为 0 时相当于 display: none`,
+          type: "Number",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "pull",
+          desc: `栅格向左移动格数`,
+          type: "Number",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "push",
+          desc: `栅格向右移动格数`,
+          type: "Number",
+          default: "0",
+          version: ""
+        },
+        {
+          param: "xs",
+          desc: `<code><576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "sm",
+          desc: `<code>≥576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "md",
+          desc: `<code>≥768px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "lg",
+          desc: `<code>≥992px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "xl",
+          desc: `<code>≥1200px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "xxl",
+          desc: `<code>≥1600px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象,(例如： <code> {span: 4, offset: 4}</code>)`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "xxxl",
+          desc: `<code>≥1920px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象`,
+          type: "Number|Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "tag",
+          desc: `自定义元素标签`,
+          type: "String",
+          default: "div",
+          version: ""
+        }
+      ]
+    };
+  }
+};
 </script>
 <style lang="less">
-  @import "../../../../assets/less/pages/components/basic/grid/grid.less";
+@import "../../../../assets/less/pages/components/basic/grid/grid.less";
 </style>

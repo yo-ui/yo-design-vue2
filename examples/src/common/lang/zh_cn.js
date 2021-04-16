@@ -1,4 +1,2 @@
-const lang = {
-    
-}
-export default lang
+const lang = {};
+export default lang;

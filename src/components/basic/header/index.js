@@ -3,11 +3,11 @@
  *  create at: 2019-12-24 23:12:35
  */
 
-import YoHeader from './header'
+import YHeader from './Header'
 
 /* istanbul ignore next */
-YoHeader.install = function(Vue) {
-    Vue.component(YoHeader.name, YoHeader)
+YHeader.install = function(Vue) {
+    Vue.component(YHeader.name, YHeader)
 }
 
-export default YoHeader
+export default YHeader

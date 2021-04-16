@@ -6,11 +6,16 @@
     </p>
     <p
       class="alert"
-      v-html="$lang('注意：非 template/render 模式下，需使用 <code>y-link</code>。')"
+      v-html="
+        $lang('注意：非 template/render 模式下，需使用 <code>y-link</code>。')
+      "
     ></p>
 
     <yo-anchor :text="$lang('组件注册')" size="24"></yo-anchor>
-    <yo-code type="javascript" src="/components/demos/basic/link/use.js"></yo-code>
+    <yo-code
+      type="javascript"
+      src="/components/demos/basic/link/use.js"
+    ></yo-code>
 
     <yo-anchor :text="$lang('代码示例')" size="24"></yo-anchor>
     <yo-example demo="basic/link/normal">
@@ -67,7 +72,9 @@
     ></p> -->
     <table class="table">
       <tr>
-        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in propsTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
         <!-- <th>说明</th>
         <th>类型</th> -->
         <!-- <th>可选值</th> -->
@@ -86,7 +93,9 @@
     <yo-anchor :text="'Link ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th v-for="item in slotTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in slotTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
         <!-- <th>名称</th>
         <th>说明</th> -->
       </tr>
@@ -151,110 +160,110 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        propsTableData: [
-          {
-            param: "type",
-            desc: `设置链接类型,可选值为<code>primary</code>,<code>text</code>,<code>info</code>,<code>success</code>,<code>warning</code>,<code>error</code>或者不设置`,
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "disabled",
-            desc: "链接失效状态",
-            type: "Boolean",
-            default: "false",
-            version: "",
-          },
+export default {
+  data() {
+    return {
+      propsTableData: [
+        {
+          param: "type",
+          desc: `设置链接类型,可选值为<code>primary</code>,<code>text</code>,<code>info</code>,<code>success</code>,<code>warning</code>,<code>error</code>或者不设置`,
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "disabled",
+          desc: "链接失效状态",
+          type: "Boolean",
+          default: "false",
+          version: ""
+        },
 
-          {
-            param: "iconSize",
-            desc: "左侧引用图标尺寸",
-            type: "Number",
-            default: "12",
-            version: "",
-          },
+        {
+          param: "iconSize",
+          desc: "左侧引用图标尺寸",
+          type: "Number",
+          default: "12",
+          version: ""
+        },
 
-          {
-            param: "icon",
-            desc:
-              "左侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "rightIconSize",
-            desc: "右侧引用图标尺寸",
-            type: "Number",
-            default: "12",
-            version: "",
-          },
-          {
-            param: "rightIcon",
-            desc:
-              "右侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "to",
-            desc: "跳转的链接，支持 vue-router 对象",
-            type: "String | Object",
-            default: "",
-            version: "",
-          },
-          {
-            param: "replace",
-            desc: "路由跳转时，开启 replace 将不会向 history 添加新记录",
-            type: "Boolean",
-            default: "false",
-            version: "",
-          },
-          {
-            param: "underline",
-            desc: "是否带下划线",
-            type: "Boolean",
-            default: "true",
-            version: "",
-          },
-          {
-            param: "target",
-            desc:
-              "路由跳转时，相当于 a 链接的 target 属性,可选值请参考<a class='yo-btn yo-btn-text' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formtarget' target='_blank'>HTML 标准</a>,可选值有<code>_self </code>、<code>_blank</code>、<code>_parent</code>、<code>_top</code>",
-            type: "String",
-            default: "_self",
-            version: "",
-          },
-          {
-            param: "color",
-            desc: "链接背景颜色",
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "textColor",
-            desc: "链接文字颜色",
-            type: "String",
-            default: "",
-            version: "",
-          },
-        ],
+        {
+          param: "icon",
+          desc:
+            "左侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "rightIconSize",
+          desc: "右侧引用图标尺寸",
+          type: "Number",
+          default: "12",
+          version: ""
+        },
+        {
+          param: "rightIcon",
+          desc:
+            "右侧引用图标名称,可选值为对应的图标类，若为内部icon类，则可省略<code>yo-icon-</code>前缀",
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "to",
+          desc: "跳转的链接，支持 vue-router 对象",
+          type: "String | Object",
+          default: "",
+          version: ""
+        },
+        {
+          param: "replace",
+          desc: "路由跳转时，开启 replace 将不会向 history 添加新记录",
+          type: "Boolean",
+          default: "false",
+          version: ""
+        },
+        {
+          param: "underline",
+          desc: "是否带下划线",
+          type: "Boolean",
+          default: "true",
+          version: ""
+        },
+        {
+          param: "target",
+          desc:
+            "路由跳转时，相当于 a 链接的 target 属性,可选值请参考<a class='yo-btn yo-btn-text' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formtarget' target='_blank'>HTML 标准</a>,可选值有<code>_self </code>、<code>_blank</code>、<code>_parent</code>、<code>_top</code>",
+          type: "String",
+          default: "_self",
+          version: ""
+        },
+        {
+          param: "color",
+          desc: "链接背景颜色",
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "textColor",
+          desc: "链接文字颜色",
+          type: "String",
+          default: "",
+          version: ""
+        }
+      ],
 
-        slotTableData: [
-          { param: "-", desc: "默认插槽", version: "" },
-          { param: "left", desc: "左侧插槽", version: "" },
-          { param: "right", desc: "右侧插槽", version: "" },
-        ],
-      };
-    },
-  };
+      slotTableData: [
+        { param: "-", desc: "默认插槽", version: "" },
+        { param: "left", desc: "左侧插槽", version: "" },
+        { param: "right", desc: "右侧插槽", version: "" }
+      ]
+    };
+  }
+};
 </script>
 <style lang="less" scoped>
-  @import "../../../../assets/less/pages/components/basic/link/link.less";
+@import "../../../../assets/less/pages/components/basic/link/link.less";
 </style>

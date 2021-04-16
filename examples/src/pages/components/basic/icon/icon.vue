@@ -7,11 +7,16 @@
     </p>
     <p
       class="alert"
-      v-html="$lang('注意：非 template/render 模式下，需使用 <code>y-icon</code>。')"
+      v-html="
+        $lang('注意：非 template/render 模式下，需使用 <code>y-icon</code>。')
+      "
     ></p>
 
     <yo-anchor :text="$lang('组件注册')" size="24"></yo-anchor>
-    <yo-code type="javascript" src="/components/demos/basic/icon/use.js"></yo-code>
+    <yo-code
+      type="javascript"
+      src="/components/demos/basic/icon/use.js"
+    ></yo-code>
 
     <yo-anchor :text="$lang('代码示例')" size="24"></yo-anchor>
     <yo-example demo="basic/icon/normal">
@@ -46,7 +51,7 @@
         </yo-desc>
       </template>
     </yo-example>
-    <!--     
+    <!--
     <div class="yo-demo">
       <i class="yo-icon-edit"></i>
       <i class="yo-icon-share"></i>
@@ -75,7 +80,9 @@
     <yo-anchor :text="'Icon ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
-        <th v-for="item in propsTableKeys" :key="item.code">{{ $lang(item.name) }}</th>
+        <th v-for="item in propsTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
       </tr>
       <tr v-for="item in propsTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -89,144 +96,146 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        keywords: "",
-        propsTableData: [
-          {
-            param: "type",
-            desc: "图标类型。遵循图标的命名规范",
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "size",
-            desc: "设置图标大小尺寸",
-            type: "Number|String",
-            default: "12",
-            version: "",
-          },
-          {
-            param: "color",
-            desc: "设置图标的颜色",
-            type: "String",
-            default: "",
-            version: "",
-          },
-          {
-            param: "rotate",
-            desc: "图标旋转角度",
-            type: "Number|String",
-            default: "0",
-            version: "",
-          },
-        ],
-        icons: Object.freeze([
-          { code: "y" },
-          { code: "google" },
-          { code: "setting" },
-          { code: "print" },
-          { code: "full" },
-          { code: "plus" },
-          { code: "minus" },
-          { code: "message" },
-          { code: "facebook" },
-          { code: "more" },
-          { code: "search" },
-          { code: "female" },
-          { code: "network-error" },
-          { code: "password" },
-          { code: "calendar" },
-          { code: "alipay" },
-          { code: "star" },
-          { code: "like" },
-          { code: "baidu" },
-          { code: "voice" },
-          { code: "twitter" },
-          { code: "category" },
-          { code: "share" },
-          { code: "mobile" },
-          { code: "video" },
-          { code: "like1" },
-          { code: "right" },
-          { code: "phone" },
-          { code: "location" },
-          { code: "left" },
-          { code: "refresh" },
-          { code: "user" },
-          { code: "cancel" },
-          { code: "success" },
-          { code: "cart" },
-          { code: "zan" },
-          { code: "time" },
-          { code: "email" },
-          { code: "edit" },
-          { code: "wechat" },
-          { code: "table" },
-          { code: "image" },
-          { code: "delete" },
-          { code: "male" },
-          { code: "add" },
-          { code: "home" },
-          { code: "service" },
-          { code: "category1" },
-          { code: "return" },
-          { code: "notice" },
-          { code: "voice1" },
-          { code: "music" },
-          { code: "user1" },
-          { code: "remove" },
-          { code: "calendar" },
-          { code: "info" },
-          { code: "warn" },
-          { code: "loading4" },
-          { code: "loading3" },
-          { code: "loading2" },
-          { code: "loading2" },
-          { code: "loading" },
-          { code: "close" },
-          { code: "eye-close" },
-          { code: "upload" },
-          { code: "close1" },
-          { code: "link" },
-          { code: "upload1" },
-          { code: "eye" },
-          { code: "code" },
-          { code: "copy" },
-          { code: "down" },
-          { code: "up" },
-          { code: "power" },
-          { code: "switch-off" },
-          { code: "switch-on" },
-          { code: "check" },
-          { code: "check-on" },
-          { code: "check-off" },
-          { code: "radio1-off" },
-          { code: "radio1-on" },
-          { code: "radio11-on" },
-          { code: "radio2-on" },
-          { code: "radio2-off" },
-          { code: "radio-on" },
-          { code: "radio-off" },
-        ]),
-      };
-    },
-    computed: {
-      iconList() {
-        let { keywords = "", icons = [] } = this;
-        return icons.filter((item) => {
-          let { code = "" } = item;
-          keywords = keywords.toUpperCase();
-          code = code.toUpperCase();
-          return code.indexOf(keywords) > -1;
-        });
-      },
-    },
-  };
+export default {
+  data() {
+    return {
+      keywords: "",
+      propsTableData: [
+        {
+          param: "type",
+          desc: "图标类型。遵循图标的命名规范",
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "size",
+          desc: "设置图标大小尺寸",
+          type: "Number|String",
+          default: "12",
+          version: ""
+        },
+        {
+          param: "color",
+          desc: "设置图标的颜色",
+          type: "String",
+          default: "",
+          version: ""
+        },
+        {
+          param: "rotate",
+          desc: "图标旋转角度",
+          type: "Number|String",
+          default: "0",
+          version: ""
+        }
+      ],
+      icons: Object.freeze([
+        { code: "y" },
+        { code: "google" },
+        { code: "setting" },
+        { code: "print" },
+        { code: "full" },
+        { code: "plus" },
+        { code: "minus" },
+        { code: "message" },
+        { code: "facebook" },
+        { code: "more" },
+        { code: "search" },
+        { code: "female" },
+        { code: "network-error" },
+        { code: "password" },
+        { code: "calendar" },
+        { code: "alipay" },
+        { code: "star" },
+        { code: "like" },
+        { code: "baidu" },
+        { code: "voice" },
+        { code: "twitter" },
+        { code: "category" },
+        { code: "share" },
+        { code: "mobile" },
+        { code: "video" },
+        { code: "like1" },
+        { code: "right" },
+        { code: "phone" },
+        { code: "location" },
+        { code: "left" },
+        { code: "refresh" },
+        { code: "user" },
+        { code: "cancel" },
+        { code: "success" },
+        { code: "cart" },
+        { code: "zan" },
+        { code: "time" },
+        { code: "email" },
+        { code: "edit" },
+        { code: "wechat" },
+        { code: "table" },
+        { code: "image" },
+        { code: "delete" },
+        { code: "male" },
+        { code: "add" },
+        { code: "home" },
+        { code: "service" },
+        { code: "category1" },
+        { code: "return" },
+        { code: "notice" },
+        { code: "voice1" },
+        { code: "music" },
+        { code: "user1" },
+        { code: "remove" },
+        { code: "calendar" },
+        { code: "info" },
+        { code: "warn" },
+        { code: "loading4" },
+        { code: "loading3" },
+        { code: "loading2" },
+        { code: "loading2" },
+        { code: "loading" },
+        { code: "close" },
+        { code: "eye-close" },
+        { code: "upload" },
+        { code: "close1" },
+        { code: "link" },
+        { code: "upload1" },
+        { code: "eye" },
+        { code: "code" },
+        { code: "copy" },
+        { code: "down" },
+        { code: "up" },
+        { code: "power" },
+        { code: "switch-off" },
+        { code: "switch-on" },
+        { code: "check" },
+        { code: "check-on" },
+        { code: "check-off" },
+        { code: "radio1-off" },
+        { code: "radio1-on" },
+        { code: "radio11-on" },
+        { code: "radio2-on" },
+        { code: "radio2-off" },
+        { code: "radio-on" },
+        { code: "radio-off" }
+      ])
+    };
+  },
+  computed: {
+    iconList() {
+      let { keywords = "", icons = [] } = this;
+      console.log(keywords, "icon search1");
+      return icons.filter(item => {
+        let { code = "" } = item;
+        console.log(keywords, "icon search2");
+        keywords = keywords.toUpperCase();
+        code = code.toUpperCase();
+        return code.indexOf(keywords) > -1;
+      });
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
-  @import "../../../../assets/less/pages/components/basic/icons/icons.less";
+@import "../../../../assets/less/pages/components/basic/icons/icons.less";
 </style>

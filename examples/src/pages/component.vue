@@ -121,17 +121,17 @@
               :to="{ name: 'componentGrid' }"
               :class="{ active: code == 'componentGrid' }"
             >
-              {{ $lang("栅格") }}
+              {{ $lang("栅格 Grid") }}
             </router-link>
             <router-link
               class="link"
               :to="{ name: 'componentLayout' }"
               :class="{ active: code == 'componentLayout' }"
             >
-              {{ $lang("布局") }}
+              {{ $lang("布局 Layout") }}
             </router-link>
           </ul>
-          <a class="sub">{{ $lang("表单组件") }}</a>
+          <a class="sub">{{ $lang("数据输入组件") }}</a>
           <ul class="list">
             <router-link
               class="link"
@@ -185,52 +185,54 @@
 </template>
 
 <script>
-  import yoCommon from "@/common/common";
-  export default {
-    name: "yo-component-page",
-    components: {
-      //组件传入
-      yoHeader: () =>
-        import(/* webpackChunkName: "yo-component-header" */ "@com/common/yo-header"),
-    },
-    data() {
-      return {
-        // code:'componentGuide',
-      };
-    },
-    mounted() {
-      // this.initEvent();
-    },
-    computed: {
-      code() {
-        return this.$route.name || "componentGuide";
-      },
-    },
-    beforeDestroy() {
-      // let that = this;
-      // window.removeEventListener("scroll", that.scrollEvent);
-    },
-    methods: {
-      // initEvent() {
-      //   let that = this;
-      //   window.addEventListener("scroll", that.scrollEvent);
-      // },
-      // scrollEvent() {
-      //   let that = this;
-      //   let yo_container = that.$refs.yo_container;
-      //   let yo_left = that.$refs.yo_left;
-      //   if (window.scrollY > 20) {
-      //     yoCommon.addClass(yo_container, "fixed");
-      //     yo_container.style.paddingLeft = yo_left.offsetWidth + "px";
-      //   } else {
-      //     yoCommon.removeClass(yo_container, "fixed");
-      //     yo_container.style.paddingLeft = 0;
-      //   }
-      // },
-    },
-  };
+import yoCommon from "@/common/common";
+export default {
+  name: "yo-component-page",
+  components: {
+    //组件传入
+    yoHeader: () =>
+      import(
+        /* webpackChunkName: "yo-component-header" */ "@com/common/yo-header"
+      )
+  },
+  data() {
+    return {
+      // code:'componentGuide',
+    };
+  },
+  mounted() {
+    // this.initEvent();
+  },
+  computed: {
+    code() {
+      return this.$route.name || "componentGuide";
+    }
+  },
+  beforeDestroy() {
+    // let that = this;
+    // window.removeEventListener("scroll", that.scrollEvent);
+  },
+  methods: {
+    // initEvent() {
+    //   let that = this;
+    //   window.addEventListener("scroll", that.scrollEvent);
+    // },
+    // scrollEvent() {
+    //   let that = this;
+    //   let yo_container = that.$refs.yo_container;
+    //   let yo_left = that.$refs.yo_left;
+    //   if (window.scrollY > 20) {
+    //     yoCommon.addClass(yo_container, "fixed");
+    //     yo_container.style.paddingLeft = yo_left.offsetWidth + "px";
+    //   } else {
+    //     yoCommon.removeClass(yo_container, "fixed");
+    //     yo_container.style.paddingLeft = 0;
+    //   }
+    // },
+  }
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-  @import "../assets/less/pages/component.less";
+@import "../assets/less/pages/component.less";
 </style>

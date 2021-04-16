@@ -1,4 +1,2 @@
-import apiConfig from './index'
-export default {
-    
-}
+import apiConfig from "./index";
+export default {};
