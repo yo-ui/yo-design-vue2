@@ -5,7 +5,7 @@
 
 import YoFormItem from './form-item'
 
-/* istanbul ignore next */
+
 YoFormItem.install = function(Vue) {
     Vue.component(YoFormItem.name, YoFormItem)
 }

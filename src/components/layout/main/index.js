@@ -5,7 +5,7 @@
 
 import YMain from './Main'
 
-/* istanbul ignore next */
+
 YMain.install = function(Vue) {
     Vue.component(YMain.name, YMain)
 }

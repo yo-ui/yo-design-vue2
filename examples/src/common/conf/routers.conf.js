@@ -38,6 +38,11 @@ export default {
     path: "basic/layout",
     title: "布局组件"
   },
+  componentList: {
+    name: "componentList",
+    path: "basic/list",
+    title: "列表组件"
+  },
 
   componentInput: {
     name: "componentInput",

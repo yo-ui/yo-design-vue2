@@ -5,7 +5,7 @@
 
 import YFooter from './Footer'
 
-/* istanbul ignore next */
+
 YFooter.install = function(Vue) {
     Vue.component(YFooter.name, YFooter)
 }

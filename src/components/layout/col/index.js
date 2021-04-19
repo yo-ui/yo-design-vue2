@@ -5,7 +5,7 @@
 
 import YCol from './Col'
 
-/* istanbul ignore next */
+
 YCol.install = function(Vue) {
     Vue.component(YCol.name, YCol)
 }

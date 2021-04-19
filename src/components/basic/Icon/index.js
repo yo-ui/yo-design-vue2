@@ -5,7 +5,7 @@
 
 import YIcon from './Icon'
 
-/* istanbul ignore next */
+
 YIcon.install = function(Vue) {
     Vue.component(YIcon.name, YIcon)
 }

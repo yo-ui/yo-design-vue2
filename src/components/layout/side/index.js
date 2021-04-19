@@ -5,7 +5,7 @@
 
 import YSide from './Side'
 
-/* istanbul ignore next */
+
 YSide.install = function(Vue) {
     Vue.component(YSide.name, YSide)
 }

@@ -5,7 +5,7 @@
 
 import YoCheckbox from './checkbox'
 
-/* istanbul ignore next */
+
 YoCheckbox.install = function(Vue) {
     Vue.component(YoCheckbox.name, YoCheckbox)
 }

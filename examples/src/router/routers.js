@@ -69,6 +69,18 @@ const Routers = [
             /* webpackChunkName: "yo-component-layout" */ "@/pages/components/basic/layout/layout"
           )
       },
+      //列表组件-布局组件
+      {
+        path: RouterURL["componentList"].path,
+        name: RouterURL["componentList"].name,
+        meta: {
+          title: RouterURL["componentList"].title
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "yo-component-List" */ "@/pages/components/layout/list/list"
+          )
+      },
       //组件-基础组件
       {
         path: RouterURL["componentButton"].path,

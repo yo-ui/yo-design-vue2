@@ -1,48 +1,48 @@
 export default {
   // 'basicExtend1': () => require.ensure([], require => require('./basic/extend1.vue'), 'basic'),
-  basicLayoutNormal: () =>
+  layoutLayoutNormal: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-layout" */ "./basic/layout/normal"
+      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/normal"
     ),
-  basicLayoutLayout1: () =>
+  layoutLayoutLayout1: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-layout" */ "./basic/layout/layout1"
+      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout1"
     ),
-  basicLayoutLayout2: () =>
+  layoutLayoutLayout2: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-layout" */ "./basic/layout/layout2"
+      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout2"
     ),
-  basicGridNormal: () =>
+  layoutGridNormal: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/normal"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/normal"
     ),
-  basicGridGutter: () =>
+  layoutGridGutter: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/gutter"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/gutter"
     ),
-  basicGridGroup: () =>
+  layoutGridGroup: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/group"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/group"
     ),
-  basicGridOffset: () =>
+  layoutGridOffset: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/offset"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/offset"
     ),
-  basicGridFlex: () =>
+  layoutGridFlex: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/flex"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/flex"
     ),
-  basicGridOrder: () =>
+  layoutGridOrder: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/order"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/order"
     ),
-  basicGridResponsive: () =>
+  layoutGridResponsive: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/responsive"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/responsive"
     ),
-  basicGridAlign: () =>
+  layoutGridAlign: () =>
     import(
-      /* webpackChunkName: "yo-component-basic-grid" */ "./basic/grid/align"
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/align"
     ),
   basicFontFont: () =>
     import(

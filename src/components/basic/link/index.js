@@ -5,7 +5,7 @@
 
 import YoLink from './Link'
 
-/* istanbul ignore next */
+
 YoLink.install = function(Vue) {
     Vue.component(YoLink.name, YoLink)
 }

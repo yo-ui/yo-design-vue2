@@ -1,6 +1,6 @@
-import { Constants } from "@/common/env";
+// import { Constants } from "@/common/env";
 import { getLang } from "@/common/lang/index";
-import fqCommon from "@/common/common";
+// import fqCommon from "@/common/common";
 
 export default {
   getLangObj(state) {

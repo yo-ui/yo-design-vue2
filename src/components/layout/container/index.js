@@ -5,7 +5,7 @@
 
 import YContainer from './Container'
 
-/* istanbul ignore next */
+
 YContainer.install = function(Vue) {
     Vue.component(YContainer.name, YContainer)
 }

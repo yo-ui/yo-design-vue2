@@ -130,6 +130,13 @@
             >
               {{ $lang("布局 Layout") }}
             </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentList' }"
+              :class="{ active: code == 'componentList' }"
+            >
+              {{ $lang("列表 List") }}
+            </router-link>
           </ul>
           <a class="sub">{{ $lang("数据输入组件") }}</a>
           <ul class="list">

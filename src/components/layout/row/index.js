@@ -5,7 +5,7 @@
 
 import YRow from './Row'
 
-/* istanbul ignore next */
+
 YRow.install = function(Vue) {
     Vue.component(YRow.name, YRow)
 }

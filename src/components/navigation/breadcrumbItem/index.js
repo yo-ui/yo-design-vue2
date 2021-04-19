@@ -5,7 +5,7 @@
 
 import YoBreadcrumbItem from './breadcrumb-item'
 
-/* istanbul ignore next */
+
 YoBreadcrumbItem.install = function(Vue) {
     Vue.component(YoBreadcrumbItem.name, YoBreadcrumbItem)
 }

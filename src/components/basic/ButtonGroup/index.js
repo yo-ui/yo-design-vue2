@@ -4,7 +4,7 @@
  */
 import ButtonGroup from './ButtonGroup'
 
-/* istanbul ignore next */
+
 ButtonGroup.install = function(Vue) {
     Vue.component(ButtonGroup.name, ButtonGroup)
 }

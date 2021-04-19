@@ -1,0 +1,15 @@
+//配置
+{"presets": [
+  [
+    "es2015",
+   { "modules": false }
+   ]
+  ],
+ "plugins": [
+   [ "component",
+      { "libraryName": "youi",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}

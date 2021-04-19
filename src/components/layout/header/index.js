@@ -5,7 +5,7 @@
 
 import YHeader from './Header'
 
-/* istanbul ignore next */
+
 YHeader.install = function(Vue) {
     Vue.component(YHeader.name, YHeader)
 }

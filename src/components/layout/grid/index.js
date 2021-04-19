@@ -5,7 +5,7 @@
 
 import YGrid from './Grid'
 
-/* istanbul ignore next */
+
 YGrid.install = function(Vue) {
     Vue.component(YGrid.name, YGrid)
 }

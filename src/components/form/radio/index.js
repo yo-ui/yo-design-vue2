@@ -5,7 +5,7 @@
 
 import YoRadio from './radio'
 
-/* istanbul ignore next */
+
 YoRadio.install = function(Vue) {
     Vue.component(YoRadio.name, YoRadio)
 }

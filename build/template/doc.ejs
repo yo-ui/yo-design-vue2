@@ -1,66 +1,92 @@
 <template>
   	<div class="yo-component-<%=lowerName%>-page">
-		<yo-anchor :text="'<%=upperName%>'+$lang('按钮')" size="18"></yo-anchor>
+		<yo-anchor :text="'<%=upperName%> '+$lang('按钮')" size="18"></yo-anchor>
 
-		
-		<p>说明</p>
+		<yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
+    <yo-code
+      type="javascript"
+      src="<%=moduleName%>/<%=lowerName%>/use.js"
+    ></yo-code>
+    <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-		<h3>基本调用</h3>
-		<yo-example root="/components/demos/" demo="<%=moduleName%>/<%=lowerName%>1" ext=".vue"></yo-example>
+    <yo-example demo="<%=moduleName%>/<%=lowerName%>1">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('基本用法')">
+          {{
+            $lang(
+              "基本用法"
+            )
+          }}
+        </yo-desc>
+      </template>
+    </yo-example>
 
-		<h3>其他</h3>
-		<yo-example root="/components/demos/" demo="<%=moduleName%>/<%=lowerName%>2" ext=".vue"></yo-example>
+		<yo-anchor :text="'<%=upperName%> ' + $lang('属性')" :size="24"></yo-anchor>
+    <p
+      v-html="
+        $lang(
+          '属性说明'
+        )
+      "
+    ></p>
+    <table class="table">
+      <tr>
+        <th v-for="item in propsTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
+      </tr>
+      <tr v-for="item in propsTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.default || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
+      </tr>
+    </table>
 
-		<yo-anchor :text="'<%=upperName%> '+$lang('参数')"></yo-anchor>
-		<table class="table">
-			<tr>
-				<th>参数</th>
-				<th>说明</th>
-				<th>类型</th>
-				<th>可选值</th>
-				<th>默认值</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td>Boolean</td>
-				<td>-</td>
-				<td>false</td>
-			</tr>
-		</table>
 
-		<yo-anchor :text="'<%=upperName%> '+$lang('方法')"></yo-anchor>
-		<table class="table">
-			<tr>
-				<th>方法</th>
-				<th>说明</th>
-				<th>参数</th>
-				<th>返回值</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
+    <yo-anchor :text="'<%=upperName%> ' + $lang('事件')" :size="24"></yo-anchor>
+    <table class="table">
+      <tr>
+        <th v-for="item in eventTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
+      </tr>
+      <tr v-for="item in eventTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.callback || "-" }}</td>
+        <td>{{ item.version || "-" }}</td>
+      </tr>
+    </table>
 
-		<yo-anchor :text="'<%=upperName%> '+$lang('事件')"></yo-anchor>
-		<table class="table">
-			<tr>
-				<th>参数</th>
-				<th>说明</th>
-				<th>返回值</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
+
+    <yo-anchor :text="'<%=upperName%> ' + $lang('插槽')" :size="24"></yo-anchor>
+    <table class="table">
+      <tr>
+        <th v-for="item in slotTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
+      </tr>
+      <tr v-for="item in slotTableData" :key="item.param">
+        <td>{{ item.param }}</td>
+        <td v-html="item.desc"></td>
+        <td>{{ item.version || "-" }}</td>
+      </tr>
+    </table>
   	</div>
 </template>
-
+<script>
+	export default {
+		data(){
+			return {
+				propsTableData:[],
+				eventTableData:[],
+				slotTableData:[],
+			}
+		}
+	}
+</script>
 <style lang="less" scoped>
 	@import "../../../../assets/less/pages/components/<%=moduleName%>/<%=lowerName%>.less";
 </style>

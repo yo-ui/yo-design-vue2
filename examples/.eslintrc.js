@@ -7,6 +7,8 @@ module.exports = {
   },
   globals: {
     document: true,
+    Qs: true,
+    axios: true,
     $vm: true,
     localStorage: true,
     window: true,
