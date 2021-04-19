@@ -1,11 +1,12 @@
 /** * author: eric * create at: 2019-12-30 23:48:26 */
 <script>
+import Props from "../../../common/props";
 const prefix = "yo-input";
 const t_prefix = "yo-textarea";
-const Props = {
-  // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
-  size: ["xxl", "xl", "l", "m", "s", "xs"],
-};
+// const Props = {
+//   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
+//   size: ["xxxl", "xxl", "xl", "l", "m", "s", "xs"]
+// };
 const template = `
         <span class="${prefix}-pre" v-if="$slots.prepend">
             <slot name="prepend"></slot>
@@ -111,16 +112,16 @@ export default {
     // console.log(dataValue, "data()");
     return {
       showPass: false, //是否显示密码
-      dataValue,
+      dataValue
     };
   },
   inject: {
     yForm: {
-      default: "",
+      default: ""
     },
     yFormItem: {
-      default: "",
-    },
+      default: ""
+    }
   },
   //存放 子组件
   // template: '',
@@ -129,82 +130,82 @@ export default {
   props: {
     value: {
       type: [String, Number],
-      default: "",
+      default: ""
     },
     placeholder: { type: String, default: "" },
     maxlength: { type: [String, Number] },
     autoSize: {
       type: [Boolean, Object],
-      default: false,
+      default: false
     },
     type: {
       type: String,
-      default: "text", //组件类型  text textarea  默认为text
+      default: "text" //组件类型  text textarea  默认为text
     },
     // 自动获取焦点
     autoFocus: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 是否显示边框
     border: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 拼写检查
     spellcheck: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 自动完成
     autocomplete: {
       type: String,
-      default: "off",
+      default: "off"
     },
     //是否显示加载中
     loading: {
       type: Boolean,
-      default: false,
+      default: false
     },
     //loading 样式
     loadingName: {
       type: String,
-      default: "loading",
+      default: "loading"
     },
     //是否开启search
     search: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 回车按钮输入文字
     enterButton: {
       type: [Boolean, String],
-      default: false,
+      default: false
     },
     //是否只输入数字
     number: {
       type: Boolean,
-      default: false,
+      default: false
     },
     //字数统计是否显示在外面
     outer: {
       type: Boolean,
-      default: false,
+      default: false
     },
     //字数统计是否显示在里面
     inner: {
       type: Boolean,
-      default: true,
+      default: true
     },
     //是否显示密码切换按钮
     showPassword: {
       type: Boolean,
-      default: false,
+      default: false
     },
     //是否显示清除图标按钮
     clearable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 左图标
     icon: String,
@@ -213,30 +214,30 @@ export default {
     // 可用状态
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 可读状态
     readonly: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 是否显示字数统计
     showWordLimit: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 自适应内容高度，只对 type="textarea" 有效，可传入对象，如，{ minRows: 2, maxRows: 6 }
     autoSize: {
       type: [Boolean, Object],
-      default: false,
+      default: false
     },
     // 控件大小
     size: {
       type: String,
       validator(value) {
         return Props.size.indexOf(value) != -1;
-      },
-    },
+      }
+    }
   }, // 把父组件传递过来的 parent msg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
   computed: {
     inputDisabled() {
@@ -273,7 +274,7 @@ export default {
       let yoStyles = {
         "background-color": `${this.color}`,
         "border-color": `${this.color}`,
-        color: `${this.textColor}`,
+        color: `${this.textColor}`
       };
       // console.log(yoStyles)
       return this.type == "textarea" ? {} : yoStyles;
@@ -292,7 +293,7 @@ export default {
     showPassClasses() {
       return {
         [`yo-icon-eye`]: !!this.showPass,
-        [`yo-icon-eye-close`]: !this.showPass,
+        [`yo-icon-eye-close`]: !this.showPass
       };
     },
     yoClasses() {
@@ -303,7 +304,7 @@ export default {
             [`${t_prefix}-circle`]: !!this.circle,
             [`${t_prefix}-round`]: !!this.round,
             [`${t_prefix}-square`]: !!this.square,
-            [`${t_prefix}-disabled`]: !!this.disabled,
+            [`${t_prefix}-disabled`]: !!this.disabled
           }
         : {
             [`${prefix}`]: true,
@@ -314,7 +315,7 @@ export default {
             [`${prefix}-disabled`]: !!this.disabled,
             [`${prefix}-${this.inputSize}`]: !!this.inputSize,
             [`${prefix}-transparent`]: !!this.transparent,
-            [`${prefix}-no-border`]: !this.border,
+            [`${prefix}-no-border`]: !this.border
           };
     },
     textLen() {
@@ -330,7 +331,7 @@ export default {
         }
       }
       return maxlength;
-    },
+    }
   },
   updated() {
     // this.updateComponent();
@@ -355,7 +356,7 @@ export default {
     init() {
       // this.setNativeInputValue();
       this.updateComponent();
-      this.resizeTextarea()
+      this.resizeTextarea();
       // console.log('----',this.$attrs,this.type)
     },
     onEnter(e) {
@@ -431,10 +432,10 @@ export default {
       }
 
       let value = e.target.value;
-      if (this.number && value !== ""){
+      if (this.number && value !== "") {
         value = Number.isNaN(Number(value)) ? value : Number(value);
       }
-      console.log('value====',value);
+      console.log("value====", value);
       this.$emit("input", value);
       this.setNativeInputValue(value);
       this.$emit("change", e);
@@ -466,14 +467,12 @@ export default {
         maxRows
       );
     },
-    calcTextareaHeight(){
-
-    }
+    calcTextareaHeight() {}
   },
   watch: {
     value(val) {
       this.setNativeInputValue(val);
-    },
+    }
   },
   //存放 过滤器
   filters: {},
@@ -492,6 +491,6 @@ export default {
   updated() {},
   //销毁时期
   beforeDestroy() {},
-  destroyed() {},
+  destroyed() {}
 };
 </script>

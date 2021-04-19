@@ -1,49 +1,6 @@
 export default {
   // 'basicExtend1': () => require.ensure([], require => require('./basic/extend1.vue'), 'basic'),
-  layoutLayoutNormal: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/normal"
-    ),
-  layoutLayoutLayout1: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout1"
-    ),
-  layoutLayoutLayout2: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout2"
-    ),
-  layoutGridNormal: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/normal"
-    ),
-  layoutGridGutter: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/gutter"
-    ),
-  layoutGridGroup: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/group"
-    ),
-  layoutGridOffset: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/offset"
-    ),
-  layoutGridFlex: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/flex"
-    ),
-  layoutGridOrder: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/order"
-    ),
-  layoutGridResponsive: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/responsive"
-    ),
-  layoutGridAlign: () =>
-    import(
-      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/align"
-    ),
+
   basicFontFont: () =>
     import(
       /* webpackChunkName: "yo-component-basic-font" */ "./basic/font/font"
@@ -139,6 +96,61 @@ export default {
   basicIconRotate: () =>
     import(
       /* webpackChunkName: "yo-component-basic-icon" */ "./basic/icon/rotate"
+    ),
+
+  //布局
+  layoutLayoutNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/normal"
+    ),
+  // layoutLayoutLayout1: () =>
+  //   import(
+  //     /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout1"
+  //   ),
+  // layoutLayoutLayout2: () =>
+  //   import(
+  //     /* webpackChunkName: "yo-component-layout-layout" */ "./layout/layout/layout2"
+  //   ),
+  layoutGridNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/normal"
+    ),
+  layoutGridGutter: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/gutter"
+    ),
+  layoutGridGroup: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/group"
+    ),
+  layoutGridOffset: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/offset"
+    ),
+  layoutGridFlex: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/flex"
+    ),
+  layoutGridOrder: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/order"
+    ),
+  layoutGridResponsive: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/responsive"
+    ),
+  layoutGridAlign: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-grid" */ "./layout/grid/align"
+    ),
+
+  layoutListNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/normal"
+    ),
+  layoutListSize: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/size"
     ),
 
   formFormForm1: () =>

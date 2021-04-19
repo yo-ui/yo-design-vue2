@@ -24,14 +24,19 @@
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-    <yo-example demo="basic/button/type">
+    <yo-example demo="layout/list/normal">
       <template v-slot:desc>
-        <yo-desc :title="$lang('按钮类型')">
+        <yo-desc :title="$lang('基本用法')">
           {{
-            $lang(
-              "按钮有7种类型:默认按钮、主题色按钮、虚线框按钮、文本按钮、信息按钮、成功按钮、警告按钮、错误按钮"
-            )
+            $lang("基础列表,可以设置 header 或 footer 来自定义列表头部或尾部。")
           }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="layout/list/size">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('尺寸大小')">
+          {{ $lang("设置属性 size 可以显示八种不同尺寸的列表。") }}
         </yo-desc>
       </template>
     </yo-example>

@@ -1,21 +1,32 @@
 <template>
-  <div class="yo-list">
-    <div class="yo-list-header" v-if="$slots.header || header">
-      <slot name="header" v-if="$slots.header"> </slot>
+  <div class="yo-list" :class="yoClasses" :style="yoStyles">
+    <div class="yo-list-header" v-if="$scopedSlots.header || header">
+      <slot name="header" v-if="$scopedSlots.header"> </slot>
+      <template v-else>
+        {{ header }}
+      </template>
     </div>
-    <slot></slot>
-    <div class="yo-list-footer" v-if="$slots.footer || footer">
-      <slot name="footer" v-if="$slots.footer"> </slot>
+
+    <ul class="yo-list-item-box" v-if="$slots.default && isCorrectChilds()">
+      <slot></slot>
+    </ul>
+    <div class="yo-list-footer" v-if="$scopedSlots.footer || footer">
+      <slot name="footer" v-if="$scopedSlots.footer"> </slot>
+      <template v-else>
+        {{ footer }}
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-const Props = {
-  // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
-  // response:
-  size: ["xxl", "xl", "l", "m", "s", "xs"]
-};
+import Props from "../../../common/props";
+const prefix = "yo-list";
+// const Props = {
+//   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
+//   // response:
+//   size:
+// };
 export default {
   name: "yList",
   components: {},
@@ -60,8 +71,53 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
-  methods: {}
+  //提供给子组件使用
+  provide() {
+    return {
+      yList: this
+    };
+  },
+  computed: {
+    //列表尺寸
+    listSize() {
+      return this.size || this.$YOUI.size;
+    },
+    yoClasses() {
+      return {
+        [`${prefix}-${this.listSize}`]: !!this.listSize,
+        [`${prefix}-border`]: this.border
+      };
+    },
+    yoStyles() {
+      let { borderRadius } = this;
+      let yoStyles = {
+        "border-radius": `${
+          isNaN(borderRadius) ? borderRadius : borderRadius + "px"
+        }`
+      };
+      return yoStyles;
+    }
+  },
+  mounted() {
+    console.log("list", this.$slots.default, this.$scopedSlots);
+  },
+  methods: {
+    //判断子节点是否只有ListItem
+    isCorrectChilds() {
+      let childs = this.$slots.default;
+      let { length = 0 } = childs || [];
+      while (length-- > 0) {
+        let item = childs[length];
+        let { componentOptions = {} } = item || {};
+        let { tag = "" } = componentOptions || {};
+        // console.log("isCorrectChilds", tag, item, length);
+        if (tag !== "y-list-item") {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
 };
 </script>
 

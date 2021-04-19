@@ -45,6 +45,8 @@ const components = [
 
   Row,
   Col,
+  List,
+  ListItem,
 
   Button,
   ButtonGroup,

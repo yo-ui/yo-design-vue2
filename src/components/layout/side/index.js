@@ -3,11 +3,10 @@
  *  create at: 2019-12-25 20:34:59
  */
 
-import YSide from './Side'
-
+import YSide from "./Side";
 
 YSide.install = function(Vue) {
-    Vue.component(YSide.name, YSide)
-}
+  Vue.component(YSide.name, YSide);
+};
 
-export default YSide
+export default YSide;

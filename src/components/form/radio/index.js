@@ -3,11 +3,10 @@
  *  create at: 2020-01-13 16:04:37
  */
 
-import YoRadio from './radio'
-
+import YoRadio from "./radio";
 
 YoRadio.install = function(Vue) {
-    Vue.component(YoRadio.name, YoRadio)
-}
+  Vue.component(YoRadio.name, YoRadio);
+};
 
-export default YoRadio
+export default YoRadio;

@@ -1,10 +1,11 @@
 <script>
+import Props from "../../../common/props";
 const prefix = "yo-btn";
-const Props = {
-  // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
-  // response:
-  size: ["xxl", "xl", "l", "m", "s", "xs"]
-};
+// const Props = {
+//   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
+//   // response:
+//   size: ["xxxl", "xxl", "xl", "l", "m", "s", "xs"]
+// };
 const template = `<slot name="left"></slot>
         <i :class="'yo-icon-'+loadingName+' '+loadingName"  :style="{'font-size':iconSize+'px'}" v-if="loading"></i>
         <i :class="'yo-icon-'+icon+' '+icon"  :style="{'font-size':iconSize+'px'}" v-if="icon && !loading"></i>

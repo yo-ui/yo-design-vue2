@@ -3,11 +3,10 @@
  *  create at: 2020-01-15 00:03:52
  */
 
-import YoCheckbox from './checkbox'
-
+import YoCheckbox from "./checkbox";
 
 YoCheckbox.install = function(Vue) {
-    Vue.component(YoCheckbox.name, YoCheckbox)
-}
+  Vue.component(YoCheckbox.name, YoCheckbox);
+};
 
-export default YoCheckbox
+export default YoCheckbox;

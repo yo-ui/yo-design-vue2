@@ -550,20 +550,20 @@ export default {
 <style lang="less" scoped>
 @import (reference) "../../../../assets/less/common.less";
 .yo-button-page {
-  .demo {
+  /deep/ .demo {
     .yo-btn {
       .mb(10);
     }
-  }
-  .bg-gray {
-    .p(20px);
-    .bc(#bcccce);
-  }
-  .pb20 {
-    .pb(20);
-  }
-  .pb10 {
-    .pb(10);
+    .bg-gray {
+      .p(20px);
+      .bc(#bcccce);
+    }
+    .pb20 {
+      .pb(20);
+    }
+    .pb10 {
+      .pb(10);
+    }
   }
 }
 </style>

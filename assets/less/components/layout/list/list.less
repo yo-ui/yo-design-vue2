@@ -1,0 +1,60 @@
+/**
+ *  author: eric
+ *  create at: 2019-12-21 13:25:54
+ */
+ @list-prefix: ~"@{prefix}list";
+ @p_h:12;
+ @p_w:24;
+ .@{list-prefix}{
+   &.@{list-prefix}-border{
+    .bor(1px solid @yo-border);
+   }
+  .@{list-prefix}-header,.@{list-prefix}-footer{
+    .p(~"@{p_h}px" ~"@{p_w}px");
+  }
+  .@{list-prefix}-header{
+    .borb(1px solid @yo-border);
+  }
+  .@{list-prefix}-footer{
+    .bort(1px solid @yo-border);
+  }
+  *:last-child{
+    .borb(none);
+  }
+
+  &.@{list-prefix}-xxxl{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+8px @p_w+8px);
+    }
+   }
+   &.@{list-prefix}-xxl{    
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+6px @p_w+6px);
+    }
+   }
+   &.@{list-prefix}-xl{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+4px @p_w+4px);
+    }
+   }
+   &.@{list-prefix}-l{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(p_h+2px @p_w+2px);
+    }
+   }
+   &.@{list-prefix}-m{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+-2px @p_w+-2px);
+    }
+   }
+   &.@{list-prefix}-s{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+-4px @p_w+-4px);
+    }
+  }
+   &.@{list-prefix}-xs{
+    .@{list-prefix}-header,.@{list-prefix}-footer{
+      .p(@p_h+-6px @p_w+-6px);
+    }
+  }
+ }

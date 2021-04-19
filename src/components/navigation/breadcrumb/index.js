@@ -3,11 +3,10 @@
  *  create at: 2019-12-26 16:42:34
  */
 
-import YoBreadcrumb from './breadcrumb'
-
+import YoBreadcrumb from "./breadcrumb";
 
 YoBreadcrumb.install = function(Vue) {
-    Vue.component(YoBreadcrumb.name, YoBreadcrumb)
-}
+  Vue.component(YoBreadcrumb.name, YoBreadcrumb);
+};
 
-export default YoBreadcrumb
+export default YoBreadcrumb;

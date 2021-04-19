@@ -1,0 +1,38 @@
+/**
+ *  author: eric
+ *  create at: 2019-12-21 13:25:54
+ */
+  @list-item-prefix: ~"@{prefix}list-item";
+  @p_h:12;
+  @p_w:24;
+ .@{list-item-prefix}{
+   .p(~"@{p_h}px" ~"@{p_w}px");
+   .borb(1px solid @yo-border);
+   &:last-child{
+     .borb(none);
+   }
+   &.@{list-item-prefix}-xxxl{
+    .p(@p_h+8px @p_w+8px);
+   }
+   &.@{list-item-prefix}-xxl{    
+   .p(@p_h+6px @p_w+6px);
+  //  .p(14px 26px);
+   }
+   &.@{list-item-prefix}-xl{
+    .p(@p_h+4px @p_w+4px);
+  //  .p(14px 26px);
+   }
+   &.@{list-item-prefix}-l{
+    .p(p_h+2px @p_w+2px);
+  //  .p(14px 26px);
+   }
+   &.@{list-item-prefix}-m{
+   .p(@p_h+-2px @p_w+-2px);
+   }
+   &.@{list-item-prefix}-s{
+    .p(@p_h+-4px @p_w+-4px);
+  }
+   &.@{list-item-prefix}-xs{
+    .p(@p_h+-6px @p_w+-6px);
+  }
+ }

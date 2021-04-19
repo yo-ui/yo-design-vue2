@@ -1,21 +1,38 @@
 <template>
   <div>
     <y-button-group>
-      <y-button :class="{ active: btnSize == 'l' }" @click="switchSize('l')">{{
+      <y-button
+        :class="{ active: btnSize === 'xxxl' }"
+        @click="switchSize('xxxl')"
+        >{{ $lang("超大型按钮") }}</y-button
+      >
+      <y-button
+        :class="{ active: btnSize === 'xxl' }"
+        @click="switchSize('xxl')"
+        >{{ $lang("特大型按钮") }}</y-button
+      >
+      <y-button
+        :class="{ active: btnSize === 'xl' }"
+        @click="switchSize('xl')"
+        >{{ $lang("加大型按钮") }}</y-button
+      >
+      <y-button :class="{ active: btnSize === 'l' }" @click="switchSize('l')">{{
         $lang("大型按钮")
       }}</y-button>
-      <y-button :class="{ active: btnSize == '' }" @click="switchSize('')">{{
+      <y-button :class="{ active: btnSize === '' }" @click="switchSize('')">{{
         $lang("默认按钮")
       }}</y-button>
-      <y-button :class="{ active: btnSize == 'm' }" @click="switchSize('m')">{{
+      <y-button :class="{ active: btnSize === 'm' }" @click="switchSize('m')">{{
         $lang("中等按钮")
       }}</y-button>
-      <y-button :class="{ active: btnSize == 's' }" @click="switchSize('s')">{{
+      <y-button :class="{ active: btnSize === 's' }" @click="switchSize('s')">{{
         $lang("小型按钮")
       }}</y-button>
-      <y-button :class="{ active: btnSize == 'xs' }" @click="switchSize('xs')">{{
-        $lang("超小按钮")
-      }}</y-button>
+      <y-button
+        :class="{ active: btnSize === 'xs' }"
+        @click="switchSize('xs')"
+        >{{ $lang("超小按钮") }}</y-button
+      >
     </y-button-group>
 
     <y-button :size="btnSize">Default</y-button>
@@ -60,39 +77,44 @@
     <y-button :size="btnSize" circle type="info" icon="info"></y-button>
     <y-button :size="btnSize" circle type="success" icon="success"></y-button>
     <y-button :size="btnSize" circle type="warning" icon="warn"></y-button>
-    <y-button :size="btnSize" circle type="error" icon="network-error"></y-button>
+    <y-button
+      :size="btnSize"
+      circle
+      type="error"
+      icon="network-error"
+    ></y-button>
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        btnSize: "",
-      };
-    },
-    methods: {
-      switchSize(size) {
-        this.btnSize = size;
-      },
-    },
-  };
+export default {
+  data() {
+    return {
+      btnSize: ""
+    };
+  },
+  methods: {
+    switchSize(size) {
+      this.btnSize = size;
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
-  @import (reference) "../../../../src/assets/less/common.less";
-  .yo-btn-group {
-    .db;
-    .mb(10);
-    .tl;
-    .yo-btn {
-      &.active {
-        .bc(@yo-primary);
-        .c(@white);
-      }
+@import (reference) "../../../../src/assets/less/common.less";
+.yo-btn-group {
+  .db;
+  .mb(10);
+  .tl;
+  .yo-btn {
+    &.active {
+      .bc(@yo-primary);
+      .c(@white);
     }
   }
-  .line {
-    .db;
-    .mb(10);
-  }
+}
+.line {
+  .db;
+  .mb(10);
+}
 </style>
