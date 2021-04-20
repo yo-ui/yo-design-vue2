@@ -58,6 +58,7 @@
         <td>12px</td>
       </tr>
     </table>
+
     <table>
       <tr>
         <th>{{ $lang("英文字体") }}</th>

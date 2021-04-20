@@ -5,14 +5,34 @@
     <y-input :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input> -->
 
     <p>{{ $lang("尺寸") }}</p>
-    <y-input size="l" :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
-    <y-input size="m" :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
+    <y-input
+      size="l"
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
+    <y-input
+      size="m"
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
     <y-input :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
-    <y-input size="s" :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
-    <y-input size="xs" :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
+    <y-input
+      size="s"
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
+    <y-input
+      size="xs"
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
 
     <p>{{ $lang("可清空") }}</p>
-    <y-input :placeholder="$lang('请输入内容')" v-model="yoInput" clearable></y-input>
+    <y-input
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+      clearable
+    ></y-input>
     <p>{{ $lang("显示字数统计") }}</p>
     <y-input
       show-word-limit
@@ -41,7 +61,11 @@
     ></y-input>
 
     <p>{{ $lang("禁用状态") }}</p>
-    <y-input disabled :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
+    <y-input
+      disabled
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
     <y-input
       type="textarea"
       disabled
@@ -69,7 +93,11 @@
       :placeholder="$lang('请输入内容')"
       v-model="yoInput"
     ></y-input>
-    <y-input icon="search" :placeholder="$lang('请输入内容')" v-model="yoInput"></y-input>
+    <y-input
+      icon="search"
+      :placeholder="$lang('请输入内容')"
+      v-model="yoInput"
+    ></y-input>
     <br />
     {{ $lang("slot方式") }}:
     <y-input :placeholder="$lang('请输入内容')" v-model="yoInput">
@@ -90,7 +118,8 @@
       <span slot="append" class="yo-icon-search"></span>
     </y-input>
     <p>{{ $lang("开启 search 属性，可以设置为搜索型输入框。") }}</p>
-    <y-input search :placeholder="$lang('请输入内容')" v-model="yoInput"> </y-input>
+    <y-input search :placeholder="$lang('请输入内容')" v-model="yoInput">
+    </y-input>
     <y-input
       search
       size="l"
@@ -109,22 +138,22 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        yoInput: 1,
-        yoInput1: 2,
-      };
-    },
-    mounted() {
-      this.$emit("loaded");
-    },
-  };
+export default {
+  data() {
+    return {
+      yoInput: 1,
+      yoInput1: 2
+    };
+  },
+  mounted() {
+    this.$emit("loaded");
+  }
+};
 </script>
 <style lang="less" scoped>
-  .demo {
-    .y-input {
-      margin-right: 10px;
-    }
+.demo {
+  .y-input {
+    margin-right: 10px;
   }
+}
 </style>

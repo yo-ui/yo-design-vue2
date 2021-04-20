@@ -110,8 +110,8 @@ export default {
         let item = childs[length];
         let { componentOptions = {} } = item || {};
         let { tag = "" } = componentOptions || {};
-        // console.log("isCorrectChilds", tag, item, length);
         if (tag !== "y-list-item") {
+          console.warn("y-list组件子组件只能为y-list-item");
           return false;
         }
       }

@@ -16,15 +16,22 @@
       ></y-input>
     </div>
     <div class="nav">
-      <router-link :to="{ name: 'index' }" :class="{ active: code == 'index' }">{{
-        $lang("首页")
-      }}</router-link>
-      <router-link :to="{ name: 'component' }" :class="{ active: code == 'component' }">
+      <router-link
+        :to="{ name: 'index' }"
+        :class="{ active: code == 'index' }"
+        >{{ $lang("首页") }}</router-link
+      >
+      <router-link
+        :to="{ name: 'component' }"
+        :class="{ active: code == 'component' }"
+      >
         {{ $lang("组件") }}
       </router-link>
-      <router-link :to="{ name: 'themes' }" :class="{ active: code == 'themes' }">{{
-        $lang("主题")
-      }}</router-link>
+      <router-link
+        :to="{ name: 'themes' }"
+        :class="{ active: code == 'themes' }"
+        >{{ $lang("主题") }}</router-link
+      >
       <router-link :to="{ name: 'run' }" :class="{ active: code == 'run' }"
         >Run</router-link
       >
@@ -36,29 +43,29 @@
 </template>
 
 <script>
-  import yoCommon from "@/common/common";
-  export default {
-    name: "header-com",
-    data() {
-      return {
-        keywords: "",
-      };
-    },
-    props: {
-      code: {
-        type: String,
-        default: "index",
-      },
-    },
-    components: {
-      //组件传入
-    },
-    mounted() {},
-    computed: {},
-    methods: {},
-  };
+import yoCommon from "@/common/common";
+export default {
+  name: "header-com",
+  data() {
+    return {
+      keywords: ""
+    };
+  },
+  props: {
+    code: {
+      type: String,
+      default: "index"
+    }
+  },
+  components: {
+    //组件传入
+  },
+  mounted() {},
+  computed: {},
+  methods: {}
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-  @import "../../src/assets/less/components/common/yo-header.less";
+@import "../../src/assets/less/components/common/yo-header.less";
 </style>

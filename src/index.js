@@ -24,6 +24,7 @@ import Row from "./components/layout/row";
 import Col from "./components/layout/col";
 import List from "./components/layout/list";
 import ListItem from "./components/layout/listItem";
+import ListItemMeta from "./components/layout/listItemMeta";
 
 // input
 import Input from "./components/form/input";
@@ -47,6 +48,7 @@ const components = [
   Col,
   List,
   ListItem,
+  ListItemMeta,
 
   Button,
   ButtonGroup,
@@ -98,6 +100,7 @@ export default {
   Col,
   List,
   ListItem,
+  ListItemMeta,
 
   Breadcrumb,
   BreadcrumbItem,

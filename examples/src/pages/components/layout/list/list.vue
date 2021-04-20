@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import fqCommon from "@/common/common";
+// import fqCommon from "@/common/common";
 export default {
   name: "fq-layout-list-page",
   components: {},

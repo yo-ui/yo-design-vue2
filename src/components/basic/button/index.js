@@ -3,11 +3,10 @@
  *  create at: 2019-12-12
  *  按钮组件入口
  */
-import Button from './Button'
-
+import Button from "./Button";
 
 Button.install = function(Vue) {
-    Vue.component(Button.name, Button)
-}
+  Vue.component(Button.name, Button);
+};
 
-export default Button
+export default Button;

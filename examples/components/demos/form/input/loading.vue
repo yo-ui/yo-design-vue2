@@ -1,6 +1,11 @@
 <template>
   <div class="demo">
-    <y-input search loading clearable :placeholder="$lang('请输入内容')"></y-input>
+    <y-input
+      search
+      loading
+      clearable
+      :placeholder="$lang('请输入内容')"
+    ></y-input>
     <br />
     <br />
     <y-input
@@ -14,11 +19,11 @@
   </div>
 </template>
 <script>
-  export default {
-    methods: {
-      onSearch() {
-        alert("搜索事件处理");
-      },
-    },
-  };
+export default {
+  methods: {
+    onSearch() {
+      alert("搜索事件处理");
+    }
+  }
+};
 </script>

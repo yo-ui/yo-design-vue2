@@ -1,6 +1,6 @@
-import { Constants, URL } from "@/common/env";
-import fqCommon from "@/common/common";
-import { post, get } from "@/vuex/axios";
+// import { Constants, URL } from "@/common/env";
+// import fqCommon from "@/common/common";
+import { get } from "@/vuex/axios";
 export default {
   //费率获取
   async getContent(context, { url, params }) {

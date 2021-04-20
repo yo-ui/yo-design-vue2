@@ -35,7 +35,7 @@ async function request(type, options, callback) {
     // needAPIkey,
     // coinpayNeedToken,needAPPId,outApi,
     retry,
-    noProgress,
+    // noProgress,
     noholdFilter
   } = options;
   // if(!noProgress){

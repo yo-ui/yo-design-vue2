@@ -11,6 +11,7 @@ module.exports = {
     axios: true,
     $vm: true,
     localStorage: true,
+    VueRouter: true,
     window: true,
     AMap: true,
     Vuex: true,

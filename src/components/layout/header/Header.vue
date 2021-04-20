@@ -1,50 +1,50 @@
 /** * author: eric * create at: 2019-12-24 23:12:35 */
 <template>
-  <div class="yo-header" :style="typeof height === 'string' ? height : `${height}px`">
+  <div class="yo-header" :style="isNaN(height) ? `${height}px` : height">
     <slot></slot>
   </div>
 </template>
 <script>
-  export default {
-    name: "yoHeader",
-    //存放 数据
-    data: function () {
-      return {};
-    },
-    //存放 子组件
-    // template: '',
-    // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
-    // props 中的数据，都是只读的，无法重新赋值
-    props: {
-      height: {
-        type: String | Number,
-        default: 60,
-      },
-    }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
-    computed: {},
-    //存放 方法
-    methods: {
-      init() {
-        console.log("传入的height=", this.height, typeof height);
-      },
-    },
-    //存放 过滤器
-    filters: {},
-    //自定义 私有指令
-    directives: {},
-    /*  生命周期函数  */
-    //创建期间
-    beforeCreate() {},
-    created() {},
-    beforeMount() {},
-    mounted() {
-      this.init();
-    },
-    //运行期间
-    beforeUpdate() {},
-    updated() {},
-    //销毁时期
-    beforeDestroy() {},
-    destroyed() {},
-  };
+export default {
+  name: "yoHeader",
+  //存放 数据
+  data: function() {
+    return {};
+  },
+  //存放 子组件
+  // template: '',
+  // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
+  // props 中的数据，都是只读的，无法重新赋值
+  props: {
+    height: {
+      type: [String, Number],
+      default: 60
+    }
+  }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
+  computed: {},
+  //存放 方法
+  methods: {
+    init() {
+      console.log("传入的height=", this.height, typeof height);
+    }
+  },
+  //存放 过滤器
+  filters: {},
+  //自定义 私有指令
+  directives: {},
+  /*  生命周期函数  */
+  //创建期间
+  beforeCreate() {},
+  created() {},
+  beforeMount() {},
+  mounted() {
+    this.init();
+  },
+  //运行期间
+  beforeUpdate() {},
+  updated() {},
+  //销毁时期
+  beforeDestroy() {},
+  destroyed() {}
+};
 </script>

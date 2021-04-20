@@ -189,7 +189,7 @@ let common = {
         //如果历史信息不重要了，可清空后再设置
         let userInfo = $vm.$store.getters.getUserInfo;
         localStorage.clear();
-        that.$store.commit("setUserInfo", userInfo);
+        $vm.$store.commit("setUserInfo", userInfo);
         if (type == 1) {
           sessionStorage.setItem(key, value);
           if (!value) {

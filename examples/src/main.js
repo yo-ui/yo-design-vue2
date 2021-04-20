@@ -9,7 +9,7 @@ import store from "@/vuex/store";
 // import vueAnalytics from 'vue-analytics'
 // import Mprogress from "mprogress/build/js/mprogress";
 // import "mprogress/build/css/mprogress.css";
-import { URL, RouterURL, Constants } from "@/common/env";
+import { RouterURL } from "@/common/env";
 import YOUI from "./../../src/index";
 import "./../../assets/less/themes/default/index.less";
 import "highlight.js/styles/arduino-light.css";

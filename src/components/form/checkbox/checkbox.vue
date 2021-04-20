@@ -67,7 +67,9 @@ export default {
     name: {
       type: [String]
     },
-    value: {},
+    value: {
+      type: [String]
+    },
     type: {
       type: [Number, String],
       default: 0
@@ -80,11 +82,11 @@ export default {
       default: ""
     },
     trueValue: {
-      type: [Object],
+      type: [Object, Boolean],
       default: true
     },
     falseValue: {
-      type: [Object],
+      type: [Object, Boolean],
       default: false
     },
     size: {
@@ -124,9 +126,9 @@ export default {
         console.log("----------", val, this.label);
         if (!this.label) {
           if (this.$refs.checkbox && this.$refs.checkbox.checked) {
-            val = this.label = this.trueValue;
+            val = this.trueValue || this.label;
           } else {
-            val = this.value = this.falseValue;
+            val = this.falseValue || this.value;
           }
           if (val === true) {
             this.$refs.checkbox.checked = true;
@@ -199,6 +201,7 @@ export default {
           }[this.model === this.label]]: true
         };
       }
+      return {};
     },
     yoClasses() {
       return {

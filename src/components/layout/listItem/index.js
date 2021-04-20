@@ -1,7 +1,7 @@
 /**
  *  author: eric
  *  create at: 2021-04-19
- *  按钮组件入口
+ *  列表项组件入口
  */
 import ListItem from "./ListItem";
 

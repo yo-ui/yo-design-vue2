@@ -1,4 +1,4 @@
-import Common from "@/common/common";
+// import Common from "@/common/common";
 export const getLang = function(lang) {
   lang = lang.toLowerCase();
   // Common.log("-----"+lang);

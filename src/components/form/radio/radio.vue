@@ -56,7 +56,7 @@ export default {
   //存放 数据
   data: function() {
     return {
-      value: false
+      // value: false
     };
   },
   //存放 子组件
@@ -67,7 +67,9 @@ export default {
     name: {
       type: [String]
     },
-    value: {},
+    value: {
+      type: [String]
+    },
     type: {
       type: [Number, String],
       default: 0
@@ -80,11 +82,11 @@ export default {
       default: ""
     },
     trueValue: {
-      type: [Object],
+      type: [Object, Boolean],
       default: true
     },
     falseValue: {
-      type: [Object],
+      type: [Object, Boolean],
       default: false
     },
     size: {
@@ -122,7 +124,7 @@ export default {
       },
       set(val) {
         if (!this.label) {
-          val = this.label = this.trueValue;
+          val = this.trueValue || this.label;
         }
         if (this.yoRadioGroup) {
           this.yoRadioGroup.$emit("input", val);
@@ -174,6 +176,7 @@ export default {
           ]]: true
         };
       }
+      return "";
     },
     yoClasses() {
       return {

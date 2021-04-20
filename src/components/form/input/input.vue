@@ -3,6 +3,7 @@
 import Props from "../../../common/props";
 const prefix = "yo-input";
 const t_prefix = "yo-textarea";
+let oldType = "";
 // const Props = {
 //   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
 //   size: ["xxxl", "xxl", "xl", "l", "m", "s", "xs"]
@@ -134,10 +135,10 @@ export default {
     },
     placeholder: { type: String, default: "" },
     maxlength: { type: [String, Number] },
-    autoSize: {
-      type: [Boolean, Object],
-      default: false
-    },
+    // autoSize: {
+    //   type: [Boolean, Object],
+    //   default: false
+    // },
     type: {
       type: String,
       default: "text" //组件类型  text textarea  默认为text
@@ -248,13 +249,13 @@ export default {
       );
     },
     nativeInputType() {
-      let type = this.type;
-      if (!this.oldType) {
-        this.oldType = type;
+      let { type, showPassword, showPass } = this;
+      if (!oldType) {
+        oldType = type;
       }
-      if (this.oldType == "password") {
-        if (this.showPassword) {
-          if (this.showPass) {
+      if (oldType == "password") {
+        if (showPassword) {
+          if (showPass) {
             type = "text";
           } else {
             type = "password";
@@ -326,7 +327,7 @@ export default {
       if (!maxlength) {
         maxlength = this.type == "textarea" ? 300 : 20; //默认为300个字符限制
         if (this.getInput()) {
-          this.maxlength = maxlength;
+          // this.maxlength = maxlength;
           this.getInput().setAttribute("maxlength", maxlength);
         }
       }
@@ -455,13 +456,13 @@ export default {
       this.dataValue = value;
     },
     resizeTextarea() {
-      const { autoSize, type } = this;
+      const { autoSize } = this;
       if (!autoSize || this.type !== "textarea") {
         return false;
       }
 
       const { minRows, maxRows } = autoSize || {};
-      this.textareaStyles = calcTextareaHeight(
+      this.textareaStyles = this.calcTextareaHeight(
         this.getInput(),
         minRows,
         maxRows
@@ -488,7 +489,6 @@ export default {
   },
   //运行期间
   beforeUpdate() {},
-  updated() {},
   //销毁时期
   beforeDestroy() {},
   destroyed() {}

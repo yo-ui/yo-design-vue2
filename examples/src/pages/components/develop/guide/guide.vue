@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import fqCommon from "@/common/common";
+// import fqCommon from "@/common/common";
 export default {
   name: "fq-develop-guide-page",
   components: {
