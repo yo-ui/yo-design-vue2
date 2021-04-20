@@ -1,30 +1,34 @@
 <template>
-  <li class="yo-list-item-meta" :class="yoClasses" :style="yoStyles">
-    <slot></slot>
+  <div class="yo-list-item-meta" :class="yoClasses" :style="yoStyles">
     <!-- 图像放置处 -->
-    <div class="yo-list-item-meta-avatar" v-if="$scopeSlots.avatar || avatar">
-      <slot name="avatar" v-if="$scopeSlots.avatar"></slot>
-      <template v-if="avatar">
+    <div class="yo-list-item-meta-avatar" v-if="$scopedSlots.avatar || avatar">
+      <slot name="avatar" v-if="$scopedSlots.avatar"></slot>
+      <template v-else-if="avatar">
         <img :src="avatar" :alt="avatarTitle" />
       </template>
     </div>
     <!-- 标题放置处 -->
-    <div class="yo-list-item-meta-title" v-if="$scopeSlots.title || title">
-      <slot name="title"></slot>
+    <div class="yo-list-item-meta-content">
+      <h3 class="yo-list-item-meta-title" v-if="$scopedSlots.title || title">
+        <slot name="title" v-if="$scopedSlots.title"></slot>
+        <template v-else-if="title">
+          {{ title }}
+        </template>
+      </h3>
+      <!-- 描述放置处 -->
+      <div class="yo-list-item-meta-desc" v-if="$scopedSlots.desc || desc">
+        <slot name="desc" v-if="$scopedSlots.desc"></slot>
+        <slot name="desc" v-else-if="$slots.default"></slot>
+        <template v-else-if="desc">
+          {{ desc }}
+        </template>
+        <slot></slot>
+      </div>
     </div>
-    <!-- 描述放置处 -->
-    <div class="yo-list-item-meta-desc" v-if="$scopeSlots.desc || desc">
-      <slot name="desc"></slot>
-    </div>
-  </li>
+  </div>
 </template>
 
 <script>
-// const Props = {
-//   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
-//   // response:
-//   size: ["xxl", "xl", "l", "m", "s", "xs"]
-// };
 import Props from "../../../common/props";
 const prefix = "yo-list-item";
 export default {
@@ -101,5 +105,3 @@ export default {
   methods: {}
 };
 </script>
-
-<style lang="less" scoped></style>

@@ -43,7 +43,7 @@ export default {
         that.$store
           .dispatch("getContent", { url: that.src, params: {} })
           .then(({ data }) => {
-            console.log("yo-code", that.src, data);
+            // console.log("yo-code", that.src, data);
             that.sourceCode =
               typeof data === "object" ? JSON.stringify(data) : data;
           });

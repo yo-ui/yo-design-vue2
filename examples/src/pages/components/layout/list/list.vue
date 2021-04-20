@@ -40,6 +40,39 @@
         </yo-desc>
       </template>
     </yo-example>
+    <yo-example demo="layout/list/icon">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('图标列表')">
+          {{ $lang("带有图标、标题、描述的基础列表。也可以带有列表操作组。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="layout/list/type">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('列表类型')">
+          <span
+            v-html="
+              $lang(
+                '设置属性<code>vertical</code> 可实现竖排列表样式。默认为horizontal水平列表样式,<br>设置属性<code>reverse</code>能实现列表的反序排列'
+              )
+            "
+          ></span>
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="layout/list/loading">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('列表加载中')">
+          <span
+            v-html="
+              $lang(
+                '设置属性<code>loading</code>当卡片内容还在加载中时，可以用 loading 展示一个占位'
+              )
+            "
+          ></span>
+        </yo-desc>
+      </template>
+    </yo-example>
   </div>
 </template>
 

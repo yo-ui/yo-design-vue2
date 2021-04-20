@@ -54,7 +54,7 @@ const Routers = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "yo-component-grid" */ "@/pages/components/basic/grid/grid"
+            /* webpackChunkName: "yo-component-grid" */ "@/pages/components/layout/grid/grid"
           )
       },
       //组件-布局组件
@@ -66,7 +66,7 @@ const Routers = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "yo-component-layout" */ "@/pages/components/basic/layout/layout"
+            /* webpackChunkName: "yo-component-layout" */ "@/pages/components/layout/layout/layout"
           )
       },
       //列表组件-布局组件

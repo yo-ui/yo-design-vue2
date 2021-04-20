@@ -152,6 +152,18 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/size"
     ),
+  layoutListIcon: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/icon"
+    ),
+  layoutListType: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/type"
+    ),
+  layoutListLoading: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/loading"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),

@@ -1,10 +1,29 @@
 <template>
   <li class="yo-list-item" :class="yoClasses" :style="yoStyles">
-    <slot></slot>
-    <!-- 操作按钮放置处 -->
-    <slot name="action"></slot>
     <!-- 扩展内容放置处 -->
-    <slot name="extra"></slot>
+    <div class="yo-list-item-extra" v-if="$scopedSlots.extra && !!itemReverse">
+      <slot name="extra"></slot>
+    </div>
+    <template v-if="vertical">
+      <div class="yo-list-item-main" v-if="$scopedSlots.extra">
+        <slot></slot>
+        <!-- 操作按钮放置处 -->
+        <ul class="yo-list-item-action" v-if="$scopedSlots.action">
+          <slot name="action"></slot>
+        </ul>
+      </div>
+    </template>
+    <template v-else>
+      <slot></slot>
+      <!-- 操作按钮放置处 -->
+      <ul class="yo-list-item-action" v-if="$scopedSlots.action">
+        <slot name="action"></slot>
+      </ul>
+    </template>
+    <!-- 扩展内容放置处 -->
+    <div class="yo-list-item-extra" v-if="$scopedSlots.extra && !itemReverse">
+      <slot name="extra"></slot>
+    </div>
   </li>
 </template>
 
@@ -21,38 +40,10 @@ export default {
   components: {},
   directives: {},
   props: {
-    // // 是否是最后一个元素
-    // isLasted: {
-    //   type: Boolean,
-    //   default: false
-    // },
-    // border: {
-    //   type: Boolean,
-    //   default: false
-    // },
-    // // 边框圆角
-    // borderRadius: {
-    //   type: [Number, String],
-    //   default: 0
-    // },
-    // //水平布局
-    // horizontal: {
-    //   type: Boolean,
-    //   default: false
-    // },
-    // // 垂直布局
-    // vertical: {
-    //   type: Boolean,
-    //   default: true
-    // },
-    // // 列表头
-    // header: {
-    //   type: String
-    // },
-    // //列表底
-    // footer: {
-    //   type: String
-    // },
+    reverse: {
+      type: Boolean,
+      default: false
+    },
     size: {
       type: String,
       default: "",
@@ -70,9 +61,19 @@ export default {
     itemSize() {
       return this.size || (this.yList && this.yList.size) || this.$YOUI.size;
     },
+    //是否垂直排列
+    vertical() {
+      return !!(this.yList && this.yList.vertical);
+    },
+    //是否反序
+    itemReverse() {
+      return this.reverse || (this.yList && this.yList.reverse);
+    },
     yoClasses() {
+      let { itemSize, itemReverse } = this;
       return {
-        [`${prefix}-${this.itemSize}`]: !!this.itemSize
+        [`${prefix}-${this.itemSize}`]: !!itemSize,
+        [`${prefix}-reverse`]: !!itemReverse
       };
     },
     yoStyles() {
@@ -89,5 +90,3 @@ export default {
   methods: {}
 };
 </script>
-
-<style lang="less" scoped></style>

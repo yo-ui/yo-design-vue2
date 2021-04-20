@@ -1,5 +1,8 @@
 <template>
   <div class="yo-list" :class="yoClasses" :style="yoStyles">
+    <div class="yo-list-loading" v-if="loading">
+      <i class="yo-icon-loading3"></i>
+    </div>
     <div class="yo-list-header" v-if="$scopedSlots.header || header">
       <slot name="header" v-if="$scopedSlots.header"> </slot>
       <template v-else>
@@ -42,15 +45,20 @@ export default {
       type: [Number, String],
       default: 0
     },
-    //水平布局
-    horizontal: {
+    //反转布局
+    reverse: {
       type: Boolean,
       default: false
     },
     // 垂直布局
     vertical: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    // 是否在加载中
+    loading: {
+      type: Boolean,
+      default: false
     },
     // 列表头
     header: {
@@ -83,9 +91,11 @@ export default {
       return this.size || this.$YOUI.size;
     },
     yoClasses() {
+      let { listSize, vertical, border } = this;
       return {
-        [`${prefix}-${this.listSize}`]: !!this.listSize,
-        [`${prefix}-border`]: this.border
+        [`${prefix}-${listSize}`]: !!listSize,
+        [`${prefix}-vertical`]: !!vertical,
+        [`${prefix}-border`]: border
       };
     },
     yoStyles() {
@@ -99,7 +109,7 @@ export default {
     }
   },
   mounted() {
-    console.log("list", this.$slots.default, this.$scopedSlots);
+    // console.log("list", this.$slots.default, this.$scopedSlots);
   },
   methods: {
     //判断子节点是否只有ListItem
@@ -120,5 +130,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less" scoped></style>

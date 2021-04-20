@@ -8,8 +8,43 @@
  .@{list-item-prefix}{
    .p(~"@{p_h}px" ~"@{p_w}px");
    .borb(1px solid @yo-border);
+   .df;
+   justify-content: space-between;
+   align-items: center;
    &:last-child{
      .borb(none);
+    }
+  &.@{list-item-prefix}-reverse{    
+    .@{list-item-prefix}-extra{
+      .ml(0);
+      .mr(40);
+    }
+  }
+  .@{list-item-prefix}-action{
+    .ml(48);
+    .fz(0);
+    .df;
+    align-items: center;
+    li{
+      .fz(14);
+      .p(0 8px);
+      &+li{
+        .posr;
+        &::before{
+          content:'';
+          .bc(@yo-divide);
+          left:0;
+          top:50%;
+          .tranf(translate(0,-50%));
+          .posa;
+          .h(15);
+          .w(1);
+        }
+      }
+    }
+  }
+   .@{list-item-prefix}-extra{
+     .ml(40);
    }
    &.@{list-item-prefix}-xxxl{
     .p(@p_h+8px @p_w+8px);

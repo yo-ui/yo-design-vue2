@@ -71,8 +71,9 @@ const install = function(Vue, opts = {}) {
   });
   let config = opts.config || {};
   Vue.prototype.$YOUI = {
-    size: config.size | "", //组件大小
+    size: config.size || "", //组件大小
     zIndex: config.zIndex || 1000 //弹出框索引
+    // loading:'
   };
 };
 

@@ -33,7 +33,11 @@
     <yo-example demo="basic/icon/color">
       <template v-slot:desc>
         <yo-desc :title="$lang('图标颜色')">
-          {{ $lang("定义图标的颜色。") }}
+          {{
+            $lang(
+              "定义图标的颜色，有primary,info,success,warning,error五个颜色常量可以设置"
+            )
+          }}
         </yo-desc>
       </template>
     </yo-example>
@@ -117,7 +121,8 @@ export default {
         },
         {
           param: "color",
-          desc: "设置图标的颜色",
+          desc:
+            "设置图标的颜色，有primary,info,success,warning,error五个颜色常量可以设置",
           type: "String",
           default: "",
           version: ""

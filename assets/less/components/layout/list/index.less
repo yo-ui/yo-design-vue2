@@ -6,8 +6,40 @@
  @p_h:12;
  @p_w:24;
  .@{list-prefix}{
+   .posr;
    &.@{list-prefix}-border{
     .bor(1px solid @yo-border);
+   }
+   .@{list-prefix}-loading{
+     .c(@yo-primary);
+     .posa;
+     left:50%;
+     top:50%;
+     .tranf(translate(-50%,-50%));
+      i{
+        .fz(25);
+        .db(inherit);
+      }
+   }
+   &.@{list-prefix}-vertical{
+    .@{list-prefix}-item{
+      align-items: flex-start;
+      .@{list-prefix}-item-main{
+        .flex(1);
+        flex-direction: column;
+        align-items: flex-start;
+        .@{list-prefix}-item-action{
+          .mt(16);
+          .ml(0);
+        }
+        .@{list-prefix}-item-meta-content{
+          .@{list-prefix}-item-meta-title{
+            .fz(16);
+            .mb(12);
+          }
+        }
+      }
+    }
    }
   .@{list-prefix}-header,.@{list-prefix}-footer{
     .p(~"@{p_h}px" ~"@{p_w}px");

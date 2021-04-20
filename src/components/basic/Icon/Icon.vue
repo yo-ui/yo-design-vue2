@@ -4,6 +4,13 @@
 </template>
 <script>
 const prefix = "yo-icon";
+const colorMap = {
+  primary: "var(--yo-primary)",
+  info: "var(--yo-info)",
+  success: "var(--yo-success)",
+  warning: "var(--yo-warning)",
+  error: "var(--yo-error)"
+};
 export default {
   name: "YIcon",
   //存放 数据
@@ -45,7 +52,7 @@ export default {
       let { size, color = "", rotate = 0 } = this;
       return {
         "font-size": `${parseFloat(size)}px`,
-        color,
+        color: colorMap[color] || color,
         transform: `rotate(${rotate}deg)`
       };
     }
