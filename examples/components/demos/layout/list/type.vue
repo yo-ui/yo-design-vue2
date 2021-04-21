@@ -23,7 +23,7 @@
       </y-list-item>
     </y-list>
     <br />
-    <y-list border vertical reverse>
+    <y-list border vertical reverse :split="false">
       <y-list-item v-for="item in 3" :key="item">
         <y-list-item-meta title="这是标题" avatar="/static/images/demo/1.jpeg">
           <template v-slot:desc>

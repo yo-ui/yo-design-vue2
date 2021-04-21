@@ -13,13 +13,25 @@
    .@{list-prefix}-loading{
      .c(@yo-primary);
      .posa;
-     left:50%;
-     top:50%;
-     .tranf(translate(-50%,-50%));
-      i{
+     left:0;
+     top:0;
+     .squ(100%);
+     i{
+        .posa;
+        left:50%;
+        top:50%;
+        .tranf(translate(-50%,-50%));
         .fz(25);
         .db(inherit);
       }
+   }
+   &.@{list-prefix}-split{
+    .@{list-prefix}-item{
+      .borb(1px solid @yo-border);
+      &:last-child{
+        .borb(none);
+       }
+    }     
    }
    &.@{list-prefix}-vertical{
     .@{list-prefix}-item{

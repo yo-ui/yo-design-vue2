@@ -4,7 +4,7 @@
     <div class="yo-list-item-meta-avatar" v-if="$scopedSlots.avatar || avatar">
       <slot name="avatar" v-if="$scopedSlots.avatar"></slot>
       <template v-else-if="avatar">
-        <img :src="avatar" :alt="avatarTitle" />
+        <img :src="avatar" :alt="avatarTitle" :title="avatarTitle" />
       </template>
     </div>
     <!-- 标题放置处 -->

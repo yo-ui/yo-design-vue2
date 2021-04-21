@@ -188,15 +188,6 @@
         </yo-desc> </template
     ></yo-example>
 
-    <!-- <yo-anchor :text="$lang('图标按钮')"></yo-anchor>
-    <yo-example demo="basic/button/button8"></yo-example> -->
-
-    <!-- <yo-anchor :text="$lang('文字按钮')"></yo-anchor>
-    <yo-example demo="basic/button/button9"></yo-example> -->
-
-    <!-- <h3>Button 参数</h3> -->
-    <!-- <yo-anchor text="API" :size="24"></yo-anchor> -->
-
     <yo-anchor :text="'Button ' + $lang('属性')" :size="24"></yo-anchor>
     <p
       v-html="
@@ -210,11 +201,6 @@
         <th v-for="item in propsTableKeys" :key="item.code">
           {{ $lang(item.name) }}
         </th>
-        <!-- <th>说明</th>
-        <th>类型</th> -->
-        <!-- <th>可选值</th> -->
-        <!-- <th>默认值</th>
-        <th>版本</th> -->
       </tr>
       <tr v-for="item in propsTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -225,17 +211,12 @@
       </tr>
     </table>
 
-    <!-- <h3>Button 事件</h3> -->
-
     <yo-anchor :text="'Button ' + $lang('事件')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in eventTableKeys" :key="item.code">
           {{ $lang(item.name) }}
         </th>
-        <!-- <th>参数</th>
-        <th>说明</th>
-        <th>返回值</th> -->
       </tr>
       <tr v-for="item in eventTableData" :key="item.param">
         <td>{{ item.param }}</td>
@@ -243,14 +224,7 @@
         <td>{{ item.callback || "-" }}</td>
         <td>{{ item.version || "-" }}</td>
       </tr>
-      <!-- <tr>
-        <td>click</td>
-        <td>点击事件</td>
-        <td>Event</td>
-      </tr> -->
     </table>
-
-    <!-- <h3>Button Slots</h3> -->
 
     <yo-anchor :text="'Button ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
@@ -258,18 +232,14 @@
         <th v-for="item in slotTableKeys" :key="item.code">
           {{ $lang(item.name) }}
         </th>
-        <!-- <th>名称</th>
-        <th>说明</th> -->
       </tr>
       <tr v-for="item in slotTableData" :key="item.param">
         <td>{{ item.param }}</td>
         <td v-html="item.desc"></td>
-        <!-- <td>{{ item.callback || "-" }}</td> -->
         <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
 
-    <!-- <h3>ButtonGroup 参数</h3> -->
     <yo-anchor :text="'ButtonGroup ' + $lang('属性')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
@@ -284,48 +254,18 @@
         <td>{{ item.default || "-" }}</td>
         <td>{{ item.version || "-" }}</td>
       </tr>
-      <!-- <tr>
-        <td>round</td>
-        <td>是否是圆角边框</td>
-        <td>String</td>
-        <td>
-          <code>primary</code
-          >、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code
-            >error</code
-          >
-        </td>
-        <td>--</td>
-      </tr>
-      <tr>
-        <td>size</td>
-        <td>按钮大小</td>
-        <td>String</td>
-        <td><code>l</code>、<code>m</code>、<code> s</code>、<code> xs</code></td>
-        <td>--</td>
-      </tr>
-      <tr>
-        <td>vertical</td>
-        <td>是否纵向排列按钮组</td>
-        <td>Boolean</td>
-        <td>--</td>
-        <td>false</td>
-      </tr> -->
     </table>
 
-    <!-- <h3>ButtonGroup Slots</h3> -->
     <yo-anchor :text="'ButtonGroup ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in slotTableKeys" :key="item.code">
           {{ $lang(item.name) }}
         </th>
-        <!-- <th>名称</th>
-        <th>说明</th> -->
       </tr>
       <tr v-for="item in groupSlotTableData" :key="item.param">
         <td>{{ item.param }}</td>
         <td v-html="item.desc"></td>
-        <!-- <td>{{ item.callback || "-" }}</td> -->
         <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
@@ -333,7 +273,7 @@
 </template>
 
 <script>
-import yoCommon from "@/common/common";
+// import yoCommon from "@/common/common";
 export default {
   name: "yo-component-button-page",
   components: {
@@ -341,25 +281,6 @@ export default {
   },
   data() {
     return {
-      // propsTableKeys: [
-      //   { code: "param", name: "参数" },
-      //   { code: "desc", name: "说明" },
-      //   { code: "type", name: "类型" },
-      //   { code: "default", name: "默认值" },
-      //   { code: "version", name: "版本" },
-      // ],
-      // eventTableKeys: [
-      //   { code: "param", name: "事件名称" },
-      //   { code: "desc", name: "说明" },
-      //   { code: "callback", name: "回调参数" },
-      //   { code: "version", name: "版本" },
-      // ],
-      // slotTableKeys: [
-      //   { code: "param", name: "插槽名称" },
-      //   { code: "desc", name: "说明" },
-      //   // { code: "callback", name: "回调参数" },
-      //   { code: "version", name: "版本" },
-      // ],
       propsTableData: [
         {
           param: "type",

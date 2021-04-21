@@ -1,7 +1,8 @@
 <template>
   <div class="yo-list" :class="yoClasses" :style="yoStyles">
     <div class="yo-list-loading" v-if="loading">
-      <i class="yo-icon-loading3"></i>
+      <slot name="loading" v-if="$scopedSlots.loading"></slot>
+      <i class="yo-icon-loading3" v-else></i>
     </div>
     <div class="yo-list-header" v-if="$scopedSlots.header || header">
       <slot name="header" v-if="$scopedSlots.header"> </slot>
@@ -50,6 +51,11 @@ export default {
       type: Boolean,
       default: false
     },
+    //是否显示分割线
+    split: {
+      type: Boolean,
+      default: true
+    },
     // 垂直布局
     vertical: {
       type: Boolean,
@@ -91,10 +97,11 @@ export default {
       return this.size || this.$YOUI.size;
     },
     yoClasses() {
-      let { listSize, vertical, border } = this;
+      let { listSize, vertical, border, split } = this;
       return {
         [`${prefix}-${listSize}`]: !!listSize,
         [`${prefix}-vertical`]: !!vertical,
+        [`${prefix}-split`]: !!split,
         [`${prefix}-border`]: border
       };
     },

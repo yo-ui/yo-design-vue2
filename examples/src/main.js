@@ -207,5 +207,5 @@ window.$vm.$mount("#app");
 
 qrcodeConsole.generate("https://github.com/yo-ui", function(qrcode) {
   console.log(qrcode);
-  console.log(` %c  一个基于Vue.js的高质量UI组件库`, "color: #2470ff");
+  console.log(` %c  一个基于Vue2.x的高质量UI组件库`, "color: #2470ff");
 });
