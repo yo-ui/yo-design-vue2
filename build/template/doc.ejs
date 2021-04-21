@@ -1,11 +1,11 @@
 <template>
-  	<div class="yo-component-<%=lowerName%>-page">
-		<yo-anchor :text="'<%=upperName%> '+$lang('按钮')" size="18"></yo-anchor>
+  	<div class="yo-<%=lowerName%>-page">
+		<yo-anchor :text="'<%=upperName%> '+$lang('组件')" size="30"></yo-anchor>
 
 		<yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
     <yo-code
       type="javascript"
-      src="<%=moduleName%>/<%=lowerName%>/use.js"
+      src="/components/demos/<%=moduleName%>/use.js"
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
@@ -80,9 +80,22 @@
 	export default {
 		data(){
 			return {
-				propsTableData:[],
-				eventTableData:[],
-				slotTableData:[],
+				propsTableData:[
+        {
+          param: "type",
+          desc: ``,
+          type: "String",
+          default: "",
+          version: ""
+        },
+        ],
+				eventTableData:[{
+          param: "click",
+          desc: "点击事件,点击按钮时的回调",
+          callback: "(event)=>void",
+          version: ""
+        }],
+				slotTableData:[ { param: "-", desc: "默认插槽", version: "" },],
 			}
 		}
 	}

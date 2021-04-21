@@ -25,6 +25,8 @@ import Col from "./components/layout/col";
 import List from "./components/layout/list";
 import ListItem from "./components/layout/listItem";
 import ListItemMeta from "./components/layout/listItemMeta";
+import Card from "./components/layout/card";
+import CardMeta from "./components/layout/cardMeta";
 
 // input
 import Input from "./components/form/input";
@@ -49,6 +51,8 @@ const components = [
   List,
   ListItem,
   ListItemMeta,
+  Card,
+  CardMeta,
 
   Button,
   ButtonGroup,
@@ -102,6 +106,8 @@ export default {
   List,
   ListItem,
   ListItemMeta,
+  Card,
+  CardMeta,
 
   Breadcrumb,
   BreadcrumbItem,

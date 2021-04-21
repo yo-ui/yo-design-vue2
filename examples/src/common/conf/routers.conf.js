@@ -30,18 +30,23 @@ export default {
   componentFont: { name: "componentFont", path: "basic/font", title: "字体" },
   componentGrid: {
     name: "componentGrid",
-    path: "basic/grid",
-    title: "按钮组件"
+    path: "layout/grid",
+    title: "网格组件"
   },
   componentLayout: {
     name: "componentLayout",
-    path: "basic/layout",
+    path: "layout/layout",
     title: "布局组件"
   },
   componentList: {
     name: "componentList",
-    path: "basic/list",
+    path: "layout/list",
     title: "列表组件"
+  },
+  componentCard: {
+    name: "componentCard",
+    path: "layout/card",
+    title: "卡片组件"
   },
 
   componentInput: {

@@ -196,7 +196,7 @@ export default {
         {
           param: "size",
           desc:
-            "列表尺寸，可选值有<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+            "列表尺寸，可选值有<code>xxxl</code>、<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
           type: "String",
           default: "",
           version: ""
@@ -254,13 +254,13 @@ export default {
         }
       ],
       slotTableData: [
-        { param: "-", desc: "默认插槽,显示列表项内容", version: "" },
+        { param: "-", desc: "默认插槽,显示列表主体内容", version: "" },
         { param: "header", desc: "自定义列表头部", version: "" },
         { param: "footer", desc: "自定义列表底部", version: "" },
         { param: "loading", desc: "自定义加载中", version: "" }
       ],
       itemSlotTableData: [
-        { param: "-", desc: "默认插槽,显示列表项内容", version: "" },
+        { param: "-", desc: "默认插槽,显示列表项主体内容", version: "" },
         {
           param: "action",
           desc:
@@ -287,7 +287,7 @@ export default {
           version: ""
         },
         {
-          param: "title",
+          param: "desc",
           desc: "自定义列表元素的描述内容",
           version: ""
         }

@@ -36,7 +36,7 @@
    &.@{list-prefix}-vertical{
     .@{list-prefix}-item{
       align-items: flex-start;
-      .@{list-prefix}-item-main{
+      .@{list-prefix}-item-content{
         .flex(1);
         flex-direction: column;
         align-items: flex-start;
@@ -58,11 +58,14 @@
   }
   .@{list-prefix}-header{
     .borb(1px solid @yo-border);
+    white-space: nowrap;
+    .oh;
+    text-overflow: ellipsis;
   }
   .@{list-prefix}-footer{
     .bort(1px solid @yo-border);
   }
-  *:last-child{
+  &>*:last-child{
     .borb(none);
   }
 

@@ -93,11 +93,11 @@ let options = {};
 const files = [
   {
     template: "./build/template/less.ejs",
-    path: `assets/less/components/${moduleName}/${params.lowerName}.less`
+    path: `assets/less/components/${moduleName}/index.less`
   },
   {
     template: "./build/template/demo-less.ejs",
-    path: `examples/src/assets/less/pages/components/${moduleName}/${params.lowerName}.less`
+    path: `examples/src/assets/less/pages/components/${moduleName}/index.less`
   },
   {
     template: "./build/template/index.ejs",
@@ -120,6 +120,10 @@ const files = [
     path: `examples/components/demos/${moduleName}/${params.lowerName}1.vue`
   },
   {
+    template: "./build/template/use.ejs",
+    path: `examples/components/demos/${moduleName}/use.js`
+  },
+  {
     template: "./build/template/demo.ejs",
     path: `examples/components/demos/${moduleName}/${params.lowerName}2.vue`
   },
@@ -130,6 +134,10 @@ const files = [
   {
     template: "./build/template/demo.ejs",
     path: `examples/components_en/demos/${moduleName}/${params.lowerName}2.vue`
+  },
+  {
+    template: "./build/template/use.ejs",
+    path: `examples/components_en/demos/${moduleName}/use.js`
   }
 ];
 
@@ -147,7 +155,7 @@ for (let p of paths) {
     //创建目录
     fs.mkdirSync(p, { recursive: true }, err => {
       if (err) {
-        console.error(error.message);
+        console.error(err.message);
       } else {
         console.warn(p, "创建成功");
       }
@@ -174,6 +182,6 @@ for (let f of files) {
 }
 
 //demo
-// node build/template.js button-group button-group
+// node build/template.js buttonGroup buttonGroup
 // node build/template.js button button
 // node build/template.js button basic/button

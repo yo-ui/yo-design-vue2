@@ -1,0 +1,36 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-21 14:18:02
+ */
+@card-meta-prefix: ~"@{prefix}card-meta";
+
+.@{card-meta-prefix}{
+  .df;
+   .flex(1);
+  .@{card-meta-prefix}-avatar{
+    .oh;
+    .lh(32);
+    .squ(32);
+    min-width: 32px;
+    vertical-align: middle;
+    .mr(20);
+    img{
+      .db;
+      .squ(100%);
+      object-fit: cover;
+      .br(50%);
+    }
+  }
+  .@{card-meta-prefix}-content{
+    .@{card-meta-prefix}-title{
+      .c(@yo-text);
+      .lh(22);
+      .fz(14);
+    }
+    .@{card-meta-prefix}-desc{
+      .c(@yo-text-assist);
+      .lh(22);
+      .fz(13);
+    }
+  }
+ }

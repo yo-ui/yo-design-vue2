@@ -109,7 +109,7 @@
 
     <!-- <h3>其他</h3>
     <yo-example demo="basic/link/link2"></yo-example> -->
-    <!-- 
+    <!--
     <yo-anchor :text="'Link ' + $lang('参数')"></yo-anchor>
     <table class="table">
       <tr>
@@ -225,18 +225,18 @@ export default {
           version: ""
         },
         {
-          param: "underline",
-          desc: "是否带下划线",
-          type: "Boolean",
-          default: "true",
-          version: ""
-        },
-        {
           param: "target",
           desc:
             "路由跳转时，相当于 a 链接的 target 属性,可选值请参考<a class='yo-btn yo-btn-text' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formtarget' target='_blank'>HTML 标准</a>,可选值有<code>_self </code>、<code>_blank</code>、<code>_parent</code>、<code>_top</code>",
           type: "String",
           default: "_self",
+          version: ""
+        },
+        {
+          param: "underline",
+          desc: "是否带下划线",
+          type: "Boolean",
+          default: "true",
           version: ""
         },
         {

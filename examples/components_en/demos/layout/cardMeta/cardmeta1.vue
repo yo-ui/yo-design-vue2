@@ -1,6 +1,10 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-21 14:18:02
+ */
 <template>
 	<div>
-		<y-<%=lowerName%>></y-<%=lowerName%>>
+		<y-cardmeta></y-cardmeta>
 	</div>
 </template>
 <script>

@@ -5,7 +5,7 @@
       <slot name="extra"></slot>
     </div>
     <template v-if="vertical">
-      <div class="yo-list-item-main" v-if="$scopedSlots.extra">
+      <div class="yo-list-item-content" v-if="$scopedSlots.extra">
         <slot></slot>
         <!-- 操作按钮放置处 -->
         <ul class="yo-list-item-action" v-if="$scopedSlots.action">

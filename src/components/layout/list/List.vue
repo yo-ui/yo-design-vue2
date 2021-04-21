@@ -4,16 +4,18 @@
       <slot name="loading" v-if="$scopedSlots.loading"></slot>
       <i class="yo-icon-loading3" v-else></i>
     </div>
+    <!-- 头部内容 -->
     <div class="yo-list-header" v-if="$scopedSlots.header || header">
       <slot name="header" v-if="$scopedSlots.header"> </slot>
       <template v-else>
         {{ header }}
       </template>
     </div>
-
-    <ul class="yo-list-item-box" v-if="$slots.default && isCorrectChilds()">
+    <!-- 中间内容区 -->
+    <ul class="yo-list-item-body" v-if="$slots.default && isCorrectChilds()">
       <slot></slot>
     </ul>
+    <!-- 底部内容 -->
     <div class="yo-list-footer" v-if="$scopedSlots.footer || footer">
       <slot name="footer" v-if="$scopedSlots.footer"> </slot>
       <template v-else>

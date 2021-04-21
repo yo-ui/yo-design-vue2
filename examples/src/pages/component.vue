@@ -137,6 +137,13 @@
             >
               {{ $lang("列表 List") }}
             </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentCard' }"
+              :class="{ active: code == 'componentCard' }"
+            >
+              {{ $lang("卡片 Card") }}
+            </router-link>
           </ul>
           <a class="sub">{{ $lang("数据输入组件") }}</a>
           <ul class="list">

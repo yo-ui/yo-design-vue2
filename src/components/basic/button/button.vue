@@ -33,13 +33,13 @@ export default {
     **/
   template: `
         <router-link v-bind="$attrs" v-on="$listeners" :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
-        :target="target" v-if="typeof(to)==='object'&&$route" 
+        :target="target" v-if="to&&$route" 
         :class="yoClasses" :disabled="disabled || loading">
             ${template}
         </router-link>
-        <a v-bind="$attrs" v-on="$listeners" :href="typeof(to)=='string'?to:to.name" class="${prefix}" :class="yoClasses" :style="yoStyles"
+        <a v-bind="$attrs" v-on="$listeners" :href="typeof(to)=='object'?to.name:to" class="${prefix}" :class="yoClasses" :style="yoStyles"
         :target="target" @click="handleClick"
-        :disabled="disabled || loading" v-else-if="isHttpLink">
+        :disabled="disabled || loading" v-else-if="to">
             ${template}
         </a>
         <button v-bind="$attrs" v-on="$listeners" class="${prefix}"
@@ -142,14 +142,14 @@ export default {
       }
       return false;
     },
-    isHttpLink() {
-      let to = this.to;
-      let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
-      if (typeof to === "string" && reg.test(to)) {
-        return true;
-      }
-      return false;
-    },
+    // isHttpLink() {
+    //   let to = this.to;
+    //   let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+    //   if (typeof to === "string" && reg.test(to)) {
+    //     return true;
+    //   }
+    //   return false;
+    // },
     yoStyles() {
       let yoStyles = {
         "background-color": `${this.backgroundColor}`,
@@ -160,7 +160,6 @@ export default {
       return yoStyles;
     },
     btnSize() {
-      // console.log("----", this.yButtonGroup);
       return this.size || (this.yButtonGroup || {}).size || this.$YOUI.size;
     },
     btnRound() {

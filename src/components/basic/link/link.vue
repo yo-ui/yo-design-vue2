@@ -17,11 +17,11 @@ export default {
   //存放 子组件
   template: `
         <router-link :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
-        :target="target" v-if="typeof(to)==='object'&&$route" 
+        :target="target" v-if="to&&$route" 
         :class="yoClasses" :disabled="disabled">
             ${template}
         </router-link>
-        <a :href="to" class="${prefix}" :class="yoClasses" :style="yoStyles"
+        <a :href="typeof(to)=='object'?to.name:to" class="${prefix}" :class="yoClasses" :style="yoStyles"
         :target="target" @click="handleClick"
         :disabled="disabled" v-else-if="to">
             ${template}
@@ -45,12 +45,10 @@ export default {
       type: Number,
       default: 12
     },
+    //左边图标
     icon: String,
+    // 右边图标
     rightIcon: String,
-    //链接跳转  适用router-link参数（如果有使用Vue-Router）
-    to: [String, Object],
-    // 窗口打开目标     _blank, _parent,_self, _top,framename 与a标签类似
-    target: String,
     //是否有下划线
     underline: {
       type: Boolean,
@@ -64,6 +62,10 @@ export default {
     textColor: String,
     //类型
     type: String,
+    //链接跳转  适用router-link参数（如果有使用Vue-Router）
+    to: [String, Object],
+    // 窗口打开目标     _blank, _parent,_self, _top,framename 与a标签类似
+    target: String,
     //是否记录浏览记录
     replace: {
       type: Boolean,
@@ -78,25 +80,25 @@ export default {
       }
       return false;
     },
-    hrefLink() {
-      let to = this.to;
-      if (!to) {
-        return "";
-      } else if (typeof to === "string") {
-        return to;
-      } else if (typeof to === "object") {
-        return to.name;
-      }
-      return "";
-    },
-    isHttpLink() {
-      let to = this.to;
-      let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
-      if (typeof to === "string" && reg.test(to)) {
-        return true;
-      }
-      return false;
-    },
+    // hrefLink() {
+    //   let to = this.to;
+    //   if (!to) {
+    //     return "";
+    //   } else if (typeof to === "string") {
+    //     return to;
+    //   } else if (typeof to === "object") {
+    //     return to.name;
+    //   }
+    //   return "";
+    // },
+    // isHttpLink() {
+    //   let to = this.to;
+    //   let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+    //   if (typeof to === "string" && reg.test(to)) {
+    //     return true;
+    //   }
+    //   return false;
+    // },
     yoStyles() {
       let yoStyles = {
         "background-color": `${this.color}`,

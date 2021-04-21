@@ -1,0 +1,19 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-21 12:07:14
+ */
+ @import "../../../../common.less";
+@card-prefix: ~"@{prefix}card";
+
+.@{card-prefix}-page{
+  /deep/ .yo-example{
+    .yo-card{
+      .yo-card-body{
+        p{
+          line-height: inherit;
+          .p(0);
+        }
+      }
+    }
+  }
+}

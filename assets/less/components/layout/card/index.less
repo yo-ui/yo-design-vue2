@@ -1,0 +1,244 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-21 12:07:14
+ */
+@card-prefix: ~"@{prefix}card";
+
+@p_h:12;
+@p_w:24;
+.@{card-prefix}{
+  .posr;
+  .fz(14);
+  .bc(@white);
+  .oh;
+  &.@{card-prefix}-border{
+   .bor(1px solid @yo-border);
+  }
+  &.@{card-prefix}-link{
+    // .bor(none);
+    .db;
+  }
+  &.@{card-prefix}-hover{    
+   &:hover{
+     .box-s(~"0 1px 6px rgb(0 0 0 / 20%)");
+   }
+  }
+  &.@{card-prefix}-shadow{    
+    .box-s(~"0 1px 6px 0 rgb(0 0 0 / 10%)");
+  }
+  .@{card-prefix}-loading{
+    .c(@yo-primary);
+    .posa;
+    left:0;
+    top:0;
+    .squ(100%);
+    i{
+       .posa;
+       left:50%;
+       top:50%;
+       .tranf(translate(-50%,-50%));
+       .fz(25);
+       .db(inherit);
+     }
+  }
+ .@{card-prefix}-header{
+  .p(~"@{p_h}px" ~"@{p_w}px");
+   .borb(1px solid @yo-border);
+   .df;
+   justify-content: space-between;
+   align-items: center;
+   .c(@yo-text);
+   .@{card-prefix}-title{
+     .flex(1);
+     white-space: nowrap;
+     .oh;
+     text-overflow: ellipsis;
+    //  .df;
+    //  align-items: center;
+     .@{card-prefix}-title-icon{
+        // .fz(13);
+        .fw(400);
+        .mr(3);
+        i{
+          .fz(14);
+        }
+        // vertical-align: middle;
+     }
+   }
+
+   .@{card-prefix}-extra{
+    .df;
+    align-items: center;
+    // justify-content: flex-end;
+    li{
+      .fz(14);
+      .p(0 8px);
+      &+li{
+        .posr;
+        &::before{
+          content:'';
+          .bc(@yo-divide);
+          left:0;
+          top:50%;
+          .tranf(translate(0,-50%));
+          .posa;
+          .h(15);
+          .w(1);
+        }
+      }
+    }
+   }
+ }
+ .@{card-prefix}-poster{
+   img{
+     .w(100%);
+   }
+ }
+ .@{card-prefix}-action{
+   .df;
+   align-items: center;
+   .bc(@yo-border-background);
+   .bort(1px solid @yo-border);
+   li{
+     .flex(1);
+     .m(12px 0);
+    //  .fl;
+     .tc;
+     &+li{
+      .posr;
+      &::before{
+        content:'';
+        .bc(@yo-divide);
+        left:0;
+        top:50%;
+        .tranf(translate(0,-50%));
+        .posa;
+        .h(24);
+        .w(1);
+      }
+    }
+   }
+ }
+ .@{card-prefix}-body{
+  .p(~"@{p_h}px" ~"@{p_w}px");
+ }
+//  .@{card-prefix}-footer{
+//    .bort(1px solid @yo-border);
+//  }
+ &>*:last-child{
+   .borb(none);
+ }
+
+ &.@{card-prefix}-xxxl{
+  .@{card-prefix}-header{
+    .fz(18);
+    .@{card-prefix}-title-icon{
+      i{
+      .fz(18);
+      }
+    }
+  }
+  .@{card-prefix}-body{
+    .fz(18);
+  }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+8px @p_w+8px);
+   }
+  }
+  &.@{card-prefix}-xxl{   
+    .@{card-prefix}-header{
+      .fz(17);
+      .@{card-prefix}-title-icon{
+        i{
+        .fz(17);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(17);
+    } 
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+6px @p_w+6px);
+   }
+  }
+  &.@{card-prefix}-xl{
+    .@{card-prefix}-header{
+      .fz(16);
+      .@{card-prefix}-title-icon{
+        i{
+        .fz(16);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(16);
+    }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+4px @p_w+4px);
+   }
+  }
+  &.@{card-prefix}-l{
+    .@{card-prefix}-header{
+      .fz(15);
+      .@{card-prefix}-title-icon{
+        i{
+        .fz(15);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(15);
+    }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(p_h+2px @p_w+2px);
+   }
+  }
+  &.@{card-prefix}-m{
+    .@{card-prefix}-header{
+      .fz(13);
+      .@{card-prefix}-title-icon{
+        i{
+        .fz(13);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(13);
+    }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+-2px @p_w+-2px);
+   }
+  }
+  &.@{card-prefix}-s{
+    .@{card-prefix}-header{
+      .fz(12);
+      .@{card-prefix}-title-icon{
+        i{
+        .fz(12);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(12);
+    }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+-4px @p_w+-4px);
+   }
+ }
+  &.@{card-prefix}-xs{
+    .@{card-prefix}-header{
+      .fz(11);
+      .@{card-prefix}-title-icon{
+        i{
+          .fz(11);
+        }
+      }
+    }
+    .@{card-prefix}-body{
+      .fz(11);
+    }
+   .@{card-prefix}-header,.@{card-prefix}-body{
+     .p(@p_h+-6px @p_w+-6px);
+   }
+ }
+} 

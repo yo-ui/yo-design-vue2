@@ -1,22 +1,22 @@
 <template>
-  <div class="yo-list-item-meta" :class="yoClasses" :style="yoStyles">
+  <div class="yo-card-meta" :class="yoClasses" :style="yoStyles">
     <!-- 图像放置处 -->
-    <div class="yo-list-item-meta-avatar" v-if="$scopedSlots.avatar || avatar">
+    <div class="yo-card-meta-avatar" v-if="$scopedSlots.avatar || avatar">
       <slot name="avatar" v-if="$scopedSlots.avatar"></slot>
       <template v-else-if="avatar">
         <img :src="avatar" :alt="avatarTitle" :title="avatarTitle" />
       </template>
     </div>
     <!-- 标题放置处 -->
-    <div class="yo-list-item-meta-content">
-      <h3 class="yo-list-item-meta-title" v-if="$scopedSlots.title || title">
+    <div class="yo-card-meta-content">
+      <h3 class="yo-card-meta-title" v-if="$scopedSlots.title || title">
         <slot name="title" v-if="$scopedSlots.title"></slot>
         <template v-else-if="title">
           {{ title }}
         </template>
       </h3>
       <!-- 描述放置处 -->
-      <div class="yo-list-item-meta-desc" v-if="$scopedSlots.desc || desc">
+      <div class="yo-card-meta-desc" v-if="$scopedSlots.desc || desc">
         <slot name="desc" v-if="$scopedSlots.desc"></slot>
         <slot name="desc" v-else-if="$slots.default"></slot>
         <template v-else-if="desc">
@@ -30,9 +30,9 @@
 
 <script>
 import Props from "../../../common/props";
-// const prefix = "yo-list-item-meta";
+const prefix = "yo-card";
 export default {
-  name: "yListItemMeta",
+  name: "yCardMeta",
   components: {},
   directives: {},
   props: {
@@ -77,7 +77,7 @@ export default {
       }
     }
   },
-  // inject: ["yList"],
+  //   inject: ["yList"],
   data() {
     return {};
   },

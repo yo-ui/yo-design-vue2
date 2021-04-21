@@ -363,7 +363,7 @@ export default {
         {
           param: "size",
           desc:
-            "按钮大小，可选值有<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+            "按钮大小，可选值有<code>xxxl</code>、<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
           type: "String",
           default: "",
           version: ""
@@ -454,7 +454,7 @@ export default {
         {
           param: "size",
           desc:
-            "按钮大小，可选值有<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
+            "按钮大小，可选值有<code>xxxl</code>、<code>xxl</code>、<code>xl</code>、<code>l</code>、<code>m</code>、<code>s</code>、<code>xs</code>,不填则为默认大小",
           type: "String",
           default: "",
           version: ""

@@ -164,6 +164,42 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-list" */ "./layout/list/loading"
     ),
+  layoutCardNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/normal"
+    ),
+  layoutCardSize: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/size"
+    ),
+  layoutCardHover: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/hover"
+    ),
+  layoutCardBorder: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/border"
+    ),
+  layoutCardShadow: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/shadow"
+    ),
+  layoutCardLink: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/link"
+    ),
+  layoutCardSimple: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/simple"
+    ),
+  layoutCardPoster: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/poster"
+    ),
+  layoutCardInner: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/inner"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),

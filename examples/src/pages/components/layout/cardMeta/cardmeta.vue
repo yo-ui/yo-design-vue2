@@ -1,15 +1,15 @@
 <template>
-		<div class="yo-component-<%=lowerName%>-page">
-		  <yo-anchor :text="'<%=upperName%> '+$lang('按钮')" size="30"></yo-anchor>
+  	<div class="yo-component-cardmeta-page">
+		<yo-anchor :text="'CardMeta '+$lang('按钮')" size="30"></yo-anchor>
 
 		<yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
     <yo-code
       type="javascript"
-      src="/components_en/demos/<%=moduleName%>/use.js"
+      src="/components/demos/layout/cardMeta/use.js"
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-    <yo-example demo="<%=moduleName%>/<%=lowerName%>1">
+    <yo-example demo="layout/cardMeta/cardmeta1">
       <template v-slot:desc>
         <yo-desc :title="$lang('基本用法')">
           {{
@@ -21,7 +21,7 @@
       </template>
     </yo-example>
 
-		<yo-anchor :text="'<%=upperName%> ' + $lang('属性')" :size="24"></yo-anchor>
+		<yo-anchor :text="'CardMeta ' + $lang('属性')" :size="24"></yo-anchor>
     <p
       v-html="
         $lang(
@@ -45,7 +45,7 @@
     </table>
 
 
-    <yo-anchor :text="'<%=upperName%> ' + $lang('事件')" :size="24"></yo-anchor>
+    <yo-anchor :text="'CardMeta ' + $lang('事件')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in eventTableKeys" :key="item.code">
@@ -61,7 +61,7 @@
     </table>
 
 
-    <yo-anchor :text="'<%=upperName%> ' + $lang('插槽')" :size="24"></yo-anchor>
+    <yo-anchor :text="'CardMeta ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in slotTableKeys" :key="item.code">
@@ -74,10 +74,32 @@
         <td>{{ item.version || "-" }}</td>
       </tr>
     </table>
-		</div>
-  </template>
-
-
+  	</div>
+</template>
+<script>
+	export default {
+		data(){
+			return {
+				propsTableData:[
+        {
+          param: "type",
+          desc: ``,
+          type: "String",
+          default: "",
+          version: ""
+        },
+        ],
+				eventTableData:[{
+          param: "click",
+          desc: "点击事件,点击按钮时的回调",
+          callback: "(event)=>void",
+          version: ""
+        }],
+				slotTableData:[ { param: "-", desc: "默认插槽", version: "" },],
+			}
+		}
+	}
+</script>
 <style lang="less" scoped>
-	@import "../../../../assets/less/pages/components/<%=moduleName%>/<%=lowerName%>.less";
+	@import "../../../../assets/less/pages/components/layout/cardMeta/cardmeta.less";
 </style>
