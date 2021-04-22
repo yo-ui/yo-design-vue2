@@ -93,6 +93,18 @@ const Routers = [
             /* webpackChunkName: "yo-component-card" */ "@/pages/components/layout/card/card"
           )
       },
+      //卡片组件-折叠面板
+      {
+        path: RouterURL["componentCollapse"].path,
+        name: RouterURL["componentCollapse"].name,
+        meta: {
+          title: RouterURL["componentCollapse"].title
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "yo-component-collapse" */ "@/pages/components/layout/collapse/collapse"
+          )
+      },
       //组件-基础组件
       {
         path: RouterURL["componentButton"].path,

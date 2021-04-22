@@ -1,0 +1,40 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-22 16:27:26
+ */
+@collapse-item-prefix: ~"@{prefix}collapse-item";
+
+.@{collapse-item-prefix}{
+  .borb(1px solid @yo-border);
+  &:last-child{
+    .borb(none);
+  }
+  // &.@{collapse-item-prefix}-active{
+  //   .@{collapse-item-prefix}-header{
+  //     .@{collapse-item-prefix}-header-icon{
+  //   }
+  // }
+  .@{collapse-item-prefix}-header{
+    .df;
+    .lh(22);
+    .p(12px 16px);
+    align-items: center;
+    justify-content: space-between; 
+    .bc(@yo-collapse-background-color);
+    .@{collapse-item-prefix}-header-title{
+      .flex(1);
+    }
+    .@{collapse-item-prefix}-header-icon{
+      // .fz(12);
+      .mr(15);
+    }
+    .@{collapse-item-prefix}-extra{
+
+    }
+
+  }
+  .@{collapse-item-prefix}-extra{}
+  .@{collapse-item-prefix}-action{}
+  .@{collapse-item-prefix}-body{}
+
+}

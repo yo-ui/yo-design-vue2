@@ -48,6 +48,11 @@ export default {
     path: "layout/card",
     title: "卡片组件"
   },
+  componentCollapse: {
+    name: "componentCollapse",
+    path: "layout/collapse",
+    title: "折叠面板组件"
+  },
 
   componentInput: {
     name: "componentInput",

@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import yoCommon from "@/common/common";
 import Props from "../../../common/props";
 const prefix = "yo-list";
 // const Props = {
@@ -123,18 +124,19 @@ export default {
   methods: {
     //判断子节点是否只有ListItem
     isCorrectChilds() {
-      let childs = this.$slots.default;
-      let { length = 0 } = childs || [];
-      while (length-- > 0) {
-        let item = childs[length];
-        let { componentOptions = {} } = item || {};
-        let { tag = "" } = componentOptions || {};
-        if (tag !== "y-list-item") {
-          console.warn("y-list组件子组件只能为y-list-item");
-          return false;
-        }
-      }
-      return true;
+      // let childs = this.$slots.default;
+      // let { length = 0 } = childs || [];
+      // while (length-- > 0) {
+      //   let item = childs[length];
+      //   let { componentOptions = {} } = item || {};
+      //   let { tag = "" } = componentOptions || {};
+      //   if (tag !== "y-list-item") {
+      //     console.warn("y-list组件子组件只能为y-list-item");
+      //     return false;
+      //   }
+      // }
+      // return true;
+      return yoCommon.isCorrectChilds(this.$slots.default, ["yo-list-item"]);
     }
   }
 };

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import yoCommon from "@/common/common";
+// import yoCommon from "@/common/common";
 export default {
   name: "yo-run-page",
   components: {

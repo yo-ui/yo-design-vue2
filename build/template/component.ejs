@@ -4,7 +4,7 @@
  */
 <template>
     <% if(lowerName=='button'){%>
-    <yo-<%=lowerName%> class="yo-<%=lowerName%>">
+    <yo-<%=lowerName%> class="yo-<%=lowerName%>" :class="yoClasses" :style="yoStyles">
     </yo-<%=lowerName%>>
     <% }else{%>
     <div class="yo-<%=lowerName%>">
@@ -12,10 +12,11 @@
     <% }%>
 </template>
 <script>
+// import yoCommon from '@/common/common'
 export default {
 	name: 'y<%=upperName%>',
 	//存放 数据
-    data: function () {
+    data () {
         return {
         }
     },
@@ -27,7 +28,21 @@ export default {
 
 	}, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
     computed: {
-
+        yoClasses() {
+            let { border } = this;
+            return {
+                [`${prefix}-border`]: !!border ,
+            };
+        },
+        yoStyles() {
+            let { borderRadius } = this;
+            let yoStyles = {
+                "border-radius": `${
+                isNaN(borderRadius) ? borderRadius : borderRadius + "px"
+                }`
+            };
+            return yoStyles;
+        }
     },
     //存放 方法
     methods: {

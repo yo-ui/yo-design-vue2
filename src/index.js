@@ -27,6 +27,8 @@ import ListItem from "./components/layout/listItem";
 import ListItemMeta from "./components/layout/listItemMeta";
 import Card from "./components/layout/card";
 import CardMeta from "./components/layout/cardMeta";
+import Collapse from "./components/layout/collapse";
+import CollapseItem from "./components/layout/collapseItem";
 
 // input
 import Input from "./components/form/input";
@@ -53,6 +55,8 @@ const components = [
   ListItemMeta,
   Card,
   CardMeta,
+  Collapse,
+  CollapseItem,
 
   Button,
   ButtonGroup,
@@ -108,6 +112,8 @@ export default {
   ListItemMeta,
   Card,
   CardMeta,
+  Collapse,
+  CollapseItem,
 
   Breadcrumb,
   BreadcrumbItem,

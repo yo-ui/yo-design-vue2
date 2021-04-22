@@ -1,15 +1,15 @@
 <template>
-  	<div class="yo-collapse-page">
-		<yo-anchor :text="'Collapse '+$lang('组件')" size="30"></yo-anchor>
+  	<div class="yo-collapseitem-page">
+		<yo-anchor :text="'CollapseItem '+$lang('组件')" size="30"></yo-anchor>
 
 		<yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
     <yo-code
       type="javascript"
-      src="/components/demos/collapse/use.js"
+      src="/components/demos/layout/collapseItem/use.js"
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-    <yo-example demo="collapse/collapse1">
+    <yo-example demo="layout/collapseItem/collapseitem1">
       <template v-slot:desc>
         <yo-desc :title="$lang('基本用法')">
           {{
@@ -21,7 +21,7 @@
       </template>
     </yo-example>
 
-		<yo-anchor :text="'Collapse ' + $lang('属性')" :size="24"></yo-anchor>
+		<yo-anchor :text="'CollapseItem ' + $lang('属性')" :size="24"></yo-anchor>
     <p
       v-html="
         $lang(
@@ -45,7 +45,7 @@
     </table>
 
 
-    <yo-anchor :text="'Collapse ' + $lang('事件')" :size="24"></yo-anchor>
+    <yo-anchor :text="'CollapseItem ' + $lang('事件')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in eventTableKeys" :key="item.code">
@@ -61,7 +61,7 @@
     </table>
 
 
-    <yo-anchor :text="'Collapse ' + $lang('插槽')" :size="24"></yo-anchor>
+    <yo-anchor :text="'CollapseItem ' + $lang('插槽')" :size="24"></yo-anchor>
     <table class="table">
       <tr>
         <th v-for="item in slotTableKeys" :key="item.code">
@@ -101,5 +101,5 @@
 	}
 </script>
 <style lang="less" scoped>
-	@import "../../../../assets/less/pages/components/collapse/collapse.less";
+	@import "../../../../assets/less/pages/components/layout/collapseItem/index.less";
 </style>

@@ -185,3 +185,4 @@ for (let f of files) {
 // node build/template.js buttonGroup buttonGroup
 // node build/template.js button button
 // node build/template.js button basic/button
+// node build/template.js collapse layout/collapse

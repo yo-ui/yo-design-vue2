@@ -200,6 +200,10 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-card" */ "./layout/card/inner"
     ),
+  layoutCollapseNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/normal"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),
