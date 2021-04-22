@@ -10,6 +10,9 @@
         </div>
         <div class="menu-box">
           <!-- <h2 class="title" v-text="$lang('介绍')"></h2> -->
+          <!-- <router-link v-for="item in menuList" :to="{ name: item.code }" :key="item.code">
+            {{$lang(item.name)}}
+          </router-link> -->
           <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
@@ -144,6 +147,13 @@
             >
               {{ $lang("卡片 Card") }}
             </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentCollapse' }"
+              :class="{ active: code == 'componentCollapse' }"
+            >
+              {{ $lang("折叠面板 Collapse") }}
+            </router-link>
           </ul>
           <a class="sub">{{ $lang("数据输入组件") }}</a>
           <ul class="list">
@@ -212,6 +222,7 @@ export default {
   data() {
     return {
       // code:'componentGuide',
+      menuList: []
     };
   },
   mounted() {

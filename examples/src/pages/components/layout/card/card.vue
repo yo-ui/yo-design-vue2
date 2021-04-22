@@ -196,7 +196,7 @@ export default {
           param: "hover",
           desc: `鼠标悬停显示阴影`,
           type: "Boolean",
-          default: false,
+          default: "false",
           version: ""
         },
         {
@@ -222,7 +222,7 @@ export default {
         },
         {
           param: "icon",
-          desc: `标题前的图标`,
+          desc: `标题前的图标,可选值为对应的图标类，若为内部icon类，则可省略yo-icon-前缀`,
           type: "String",
           default: "",
           version: ""
@@ -259,7 +259,7 @@ export default {
           param: "shadow",
           desc: `卡片阴影，建议在灰色背景下使用`,
           type: "Boolean",
-          default: false,
+          default: "false",
           version: ""
         },
         {
@@ -288,7 +288,7 @@ export default {
           param: "append",
           desc: "是否附加前缀路径，同 vue-router append",
           type: "Boolean",
-          default: false,
+          default: "false",
           version: ""
         }
       ],
