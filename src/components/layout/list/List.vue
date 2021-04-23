@@ -136,7 +136,7 @@ export default {
       //   }
       // }
       // return true;
-      return yoCommon.isCorrectChilds(this.$slots.default, ["yo-list-item"]);
+      return yoCommon.isCorrectChilds(this.$slots.default, ["y-list-item"]);
     }
   }
 };

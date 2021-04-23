@@ -14,7 +14,7 @@ export default {
     let { value } = this;
     return {
       //存放选中的name
-      nameList: value || []
+      nameList: Array.isArray(value) ? value : [value]
     };
   },
   //存放 子组件
@@ -24,8 +24,10 @@ export default {
   props: {
     // 前激活的面板的 name，可以使用 v-model 双向绑定
     value: {
-      type: [Array, String, Number],
-      default: ""
+      type: [Array],
+      default() {
+        return [];
+      }
     },
     //   卡片尺寸
     size: {
@@ -60,10 +62,15 @@ export default {
       type: Boolean,
       default: false
     },
+    // 是否显示分割线
+    split: {
+      type: Boolean,
+      default: true
+    },
     // 图标大小
     iconSize: {
-      type: Number,
-      default: 12
+      type: [Number, String],
+      default: ""
     },
     // 自定义切换图标
     icon: {
@@ -75,6 +82,16 @@ export default {
       type: String,
       default: "left"
     },
+    // 面板内容区最大高度
+    maxHeight: {
+      type: [Number, String],
+      default: 500
+    },
+    // 面板内容展开的动画时长  单位为ms
+    animationTime: {
+      type: [Number, String],
+      default: 200
+    },
     // 销毁折叠隐藏的面板
     destroyInactivePanel: {
       type: Boolean,
@@ -83,14 +100,13 @@ export default {
   }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
   computed: {
     yoClasses() {
-      let { listSize, vertical, border, split, hover, shadow } = this;
+      let { border, simple } = this;
       return {
-        [`${prefix}-${listSize}`]: !!listSize,
-        [`${prefix}-vertical`]: !!vertical,
-        [`${prefix}-split`]: !!split,
-        [`${prefix}-border`]: !!border && !shadow,
-        [`${prefix}-shadow`]: !!shadow,
-        [`${prefix}-hover`]: !!hover && !shadow
+        // [`${prefix}-${collapseSize}`]: !!collapseSize,
+        [`${prefix}-simple`]: !!simple,
+        [`${prefix}-border`]: !!border
+        // [`${prefix}-shadow`]: !!shadow,
+        // [`${prefix}-hover`]: !!hover && !shadow
       };
     },
     // yoBodyStyles() {
@@ -122,13 +138,23 @@ export default {
     //返回面板所有的name
     changeEvent(name) {
       let { nameList, accordion } = this;
+      console.log(nameList);
+      let index = nameList.indexOf(name);
       if (!accordion) {
         //手风琴则只有一个选中
-        nameList.push(name);
+        if (index > -1) {
+          nameList.splice(index, 1);
+        } else {
+          nameList.push(name);
+        }
       } else {
-        nameList = name;
+        if (index > -1) {
+          nameList.splice(0);
+        } else {
+          nameList.splice(0, nameList.length, name);
+        }
       }
-      this.$emit("change", nameList);
+      this.$emit("input", nameList);
     }
   },
   //存放 过滤器

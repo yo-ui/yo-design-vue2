@@ -3,10 +3,10 @@
  *  create at: 2021-04-22 16:27:26
  */
 
-import YCollapseItem from './CollapseItem'
+import YCollapseItem from "./CollapseItem";
 
 YCollapseItem.install = function(Vue) {
-    Vue.component(YCollapseItem.name, YCollapseItem)
-}
+  Vue.component(YCollapseItem.name, YCollapseItem);
+};
 
-export default YCollapseItem
+export default YCollapseItem;

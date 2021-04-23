@@ -30,7 +30,7 @@
 
 <script>
 import Props from "../../../common/props";
-const prefix = "yo-card";
+// const prefix = "yo-card-meta";
 export default {
   name: "yCardMeta",
   components: {},

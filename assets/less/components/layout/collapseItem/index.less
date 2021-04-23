@@ -3,21 +3,57 @@
  *  create at: 2021-04-22 16:27:26
  */
 @collapse-item-prefix: ~"@{prefix}collapse-item";
-
+@p_h:12;
+@p_w:24;
+@ml:10;
+@mb:16;
 .@{collapse-item-prefix}{
-  .borb(1px solid @yo-border);
-  &:last-child{
-    .borb(none);
+  &.@{collapse-item-prefix}-simple{
+    .@{collapse-item-prefix}-header{
+      .bc(@white);
+    }
+    .@{collapse-item-prefix}-body{
+      .bort(1px solid @yo-border);
+    }
+    &:first-child{
+      .bort(1px solid @yo-border);
+    }
+    &:last-child{
+      .borb(1px solid @yo-border);
+    }
+  }
+  &.@{collapse-item-prefix}-split{
+    .borb(1px solid @yo-border);
+    &:last-child{
+      .borb(none);
+    }
+    .@{collapse-item-prefix}-body{
+      .bort(1px solid @yo-border);
+    }
+  }
+  &.@{collapse-item-prefix}-disabled{
+    .bc(@yo-collapse-item-disabled-background-color);
+    .c(@yo-collapse-item-disabled-text-color);
+    .@{collapse-item-prefix}-header{
+      cursor: not-allowed;
+      .@{collapse-item-prefix}-extra{
+        .c(@yo-collapse-item-disabled-text-color);
+      }
+    }
   }
   // &.@{collapse-item-prefix}-active{
-  //   .@{collapse-item-prefix}-header{
-  //     .@{collapse-item-prefix}-header-icon{
-  //   }
+  //   // .@{collapse-item-prefix}-header{
+  //   //   // .borb(1px solid @yo-border);
+  //   // }
+  //   // .@{collapse-item-prefix}-body{
+  //   //   .bort(1px solid @yo-border);
+  //   // }
   // }
   .@{collapse-item-prefix}-header{
     .df;
     .lh(22);
     .p(12px 16px);
+    .pointer;
     align-items: center;
     justify-content: space-between; 
     .bc(@yo-collapse-background-color);
@@ -26,15 +62,215 @@
     }
     .@{collapse-item-prefix}-header-icon{
       // .fz(12);
+      .db(inherit);
       .mr(15);
+      // &.@{collapse-item-prefix}-header-icon-left{}
+      &.@{collapse-item-prefix}-header-icon-right{
+        .mr(0);
+        .ml(15);
+      }
+      .@{collapse-item-prefix}-header-icon-default{
+        // .dib;
+        .fz(12);
+      }
     }
     .@{collapse-item-prefix}-extra{
-
+     .df;
+     align-items: center;
+     // justify-content: flex-end;
+     li{
+       .fz(14);
+       .p(0 8px);
+       &+li{
+         .posr;
+         &::before{
+           content:'';
+           .bc(@yo-divide);
+           left:0;
+           top:50%;
+           .tranf(translate(0,-50%));
+           .posa;
+           .h(15);
+           .w(1);
+         }
+       }
+     }
     }
-
   }
-  .@{collapse-item-prefix}-extra{}
-  .@{collapse-item-prefix}-action{}
-  .@{collapse-item-prefix}-body{}
+  // .@{collapse-item-prefix}-extra{}
+  .@{collapse-item-prefix}-body{
+    .bort(none);
+    .tran(max-height linear 2s);
+    .oh;
+    max-height: 500px;
+    .@{collapse-item-prefix}-content{
+      .p(16px);
+    }
+  }
+  .@{collapse-item-prefix}-action{
+    // .ml(48);
+    .ml(@ml);
+    .mb(@mb);
+    .fz(0);
+    .df;
+    align-items: center;
+    .fz(14);
+    li{
+      .p(0 8px);
+      &+li{
+        .posr;
+        &::before{
+          content:'';
+          .bc(@yo-divide);
+          left:0;
+          top:50%;
+          .tranf(translate(0,-50%));
+          .posa;
+          .h(15);
+          .w(1);
+        }
+      }
+    }
+  }
 
+  &.@{collapse-item-prefix}-xxxl{
+    .@{collapse-item-prefix}-header{
+      .fz(18);
+      .@{collapse-item-prefix}-header-icon{
+        i{
+        .fz(18);
+        }
+      }
+    }
+    .@{collapse-item-prefix}-content{
+      .fz(18);
+    }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+8px @p_w+8px);
+     }     
+    .@{collapse-item-prefix}-action{
+      .ml(@ml+14);
+      .mb(@mb+8);
+    }
+    }
+    &.@{collapse-item-prefix}-xxl{   
+      .@{collapse-item-prefix}-header{
+        .fz(17);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+          .fz(17);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(17);
+      } 
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+6px @p_w+6px);
+     }  
+     .@{collapse-item-prefix}-action{
+       .ml(@ml+12);
+       .mb(@mb+6);
+     }
+    }
+    &.@{collapse-item-prefix}-xl{
+      .@{collapse-item-prefix}-header{
+        .fz(16);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+          .fz(16);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(16);
+      }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+4px @p_w+4px);
+     }
+     .@{collapse-item-prefix}-action{
+       .ml(@ml+10);
+       .mb(@mb+4);
+     }
+    }
+    &.@{collapse-item-prefix}-l{
+      .@{collapse-item-prefix}-header{
+        .fz(15);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+          .fz(15);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(15);
+      }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(p_h+2px @p_w+2px);
+     }
+     .@{collapse-item-prefix}-action{
+       .ml(@ml+2);
+       .mb(@mb+2);
+     }
+    }
+    &.@{collapse-item-prefix}-m{
+      .@{collapse-item-prefix}-header{
+        .fz(13);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+          .fz(13);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(13);
+      }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+-2px @p_w+-2px);
+     }
+     .@{collapse-item-prefix}-action{
+       .ml(@ml);
+       .mb(@mb+-4);
+     }
+    }
+    &.@{collapse-item-prefix}-s{
+      .@{collapse-item-prefix}-header{
+        .fz(12);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+          .fz(12);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(12);
+      }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+-4px @p_w+-4px);
+     }
+     .@{collapse-item-prefix}-action{
+       .ml(@ml);
+       .mb(@mb+-6);
+     }
+   }
+    &.@{collapse-item-prefix}-xs{
+      .@{collapse-item-prefix}-header{
+        .fz(11);
+        .@{collapse-item-prefix}-header-icon{
+          i{
+            .fz(11);
+          }
+        }
+      }
+      .@{collapse-item-prefix}-content{
+        .fz(11);
+      }
+     .@{collapse-item-prefix}-header,.@{collapse-item-prefix}-content{
+       .p(@p_h+-6px @p_w+-6px);
+     }
+     .@{collapse-item-prefix}-action{
+       .ml(@ml+-2);
+       .mb(@mb+-8);
+     }
+   }
 }

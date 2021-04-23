@@ -136,13 +136,13 @@ export default {
   },
   computed: {
     //列表尺寸
-    listSize() {
+    cardSize() {
       return this.size || this.$YOUI.size;
     },
     yoClasses() {
-      let { listSize, vertical, border, split, hover, shadow } = this;
+      let { cardSize, vertical, border, split, hover, shadow } = this;
       return {
-        [`${prefix}-${listSize}`]: !!listSize,
+        [`${prefix}-${cardSize}`]: !!cardSize,
         [`${prefix}-vertical`]: !!vertical,
         [`${prefix}-split`]: !!split,
         [`${prefix}-border`]: !!border && !shadow,

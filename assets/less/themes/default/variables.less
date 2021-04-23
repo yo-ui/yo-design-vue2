@@ -6,6 +6,32 @@
 @font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
 @prefix: yo-;
+
+
+@__yo-black:@dark;
+@__yo-white:@white;
+@__yo-transparent:transparent;
+@__yo-link:#0a9fad;//链接颜色
+@__yo-primary:#0a9fad;//主题色
+@__yo-info:#2db7f5;//信息色
+@__yo-success:#19be6b;//成功色
+@__yo-warning:#ff9900;//警告色
+@__yo-error:#ed4014;//错误色
+@__yo-primary-light:#0bc4d630;//主题色浅色 hover用
+@__yo-primary-dark:#057782;//主题色深色  active用
+@__yo-title:#17233d;//标题颜色
+@__yo-text:#515a6e;//正文内容颜色
+@__yo-text-size:14px;
+@__yo-text-assist:#808695;//辅助文字颜色
+@__yo-text-disabled:#c5c8ce;//文字失效颜色
+@__yo-border:#dcdee2;//边框颜色
+@__yo-border-background:#fafafa;//边框背景颜色 与边框区分
+@__yo-divide:#e8eaec;//分割线颜色
+@__yo-background-color:#f8f8f9;//背景颜色
+@__yo-collapse-background-color:#fafafa;//折叠面板头背景
+@__yo-collapse-item-disabled-background-color:@__yo-collapse-background-color;//折叠面板失效头背景
+@__yo-collapse-item-disabled-text-color:rgba(0,0,0,.25);//折叠面板失效头文字
+
 @yo-black:var(--yo-black);//黑色
 @yo-link:var(--yo-link);//链接颜色
 @yo-white:var(--yo-white);//白色
@@ -29,6 +55,9 @@
 
 // 折叠面板头背景
 @yo-collapse-background-color:var(--yo-collapse-background-color);
+@yo-collapse-item-disabled-background-color:var(--yo-collapse-item-disabled-background-color);
+@yo-collapse-item-disabled-text-color:var(--yo-collapse-item-disabled-text-color);
+
 @default:@yo-primary;  //默认主题色
 @default-plain:#bfd4fc;  //默认主题色
 @default-bc:#f2f7ff;  //默认背景色

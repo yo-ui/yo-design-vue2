@@ -19,27 +19,29 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 
-	--yo-black:@dark;
-	--yo-white:@white;
-	--yo-transparent:transparent;
-	--yo-link:#0a9fad;//链接颜色
-	--yo-primary:#0a9fad;//主题色
-	--yo-info:#2db7f5;//信息色
-	--yo-success:#19be6b;//成功色
-	--yo-warning:#ff9900;//警告色
-	--yo-error:#ed4014;//错误色
-	--yo-primary-light:#0bc4d630;//主题色浅色 hover用
-	--yo-primary-dark:#057782;//主题色深色  active用
-	--yo-title:#17233d;//标题颜色
-	--yo-text:#515a6e;//正文内容颜色
-	--yo-text-size:14px;
-	--yo-text-assist:#808695;//辅助文字颜色
-	--yo-text-disabled:#c5c8ce;//文字失效颜色
-	--yo-border:#dcdee2;//边框颜色
-	--yo-border-background:#fafafa;//边框背景颜色 与边框区分
-	--yo-divide:#e8eaec;//分割线颜色
-	--yo-background-color:#f8f8f9;//背景颜色
-	--yo-collapse-background-color:#fafafa;//折叠面板头背景
+	--yo-black:@__yo-black;
+	--yo-white:@__yo-white;
+	--yo-transparent:@__yo-transparent;
+	--yo-link:@__yo-link;//链接颜色
+	--yo-primary:@__yo-primary;//主题色
+	--yo-info:@__yo-info;//信息色
+	--yo-success:@__yo-success;//成功色
+	--yo-warning:@__yo-warning;//警告色
+	--yo-error:@__yo-error;//错误色
+	--yo-primary-light:@__yo-primary-light;//主题色浅色 hover用
+	--yo-primary-dark:@__yo-primary-dark;//主题色深色  active用
+	--yo-title:@__yo-title;//标题颜色
+	--yo-text:@__yo-text;//正文内容颜色
+	--yo-text-size:@__yo-text-size;
+	--yo-text-assist:@__yo-text-assist;//辅助文字颜色
+	--yo-text-disabled:@__yo-text-disabled;//文字失效颜色
+	--yo-border:@__yo-border;//边框颜色
+	--yo-border-background:@__yo-border-background;//边框背景颜色 与边框区分
+	--yo-divide:@__yo-divide;//分割线颜色
+	--yo-background-color:@__yo-background-color;//背景颜色
+	--yo-collapse-background-color:@__yo-collapse-background-color;//折叠面板头背景;//折叠面板头背景
+	--yo-collapse-item-disabled-background-color:@__yo-collapse-item-disabled-background-color;//折叠面板项失效文字
+	--yo-collapse-item-disabled-text-color:@__yo-collapse-item-disabled-text-color;//折叠面板项失效文字颜色
 }
 body{
 	font-family: @font-family;

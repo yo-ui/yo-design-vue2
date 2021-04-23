@@ -16,20 +16,26 @@
           $scopedSlots.extra
       "
     >
-      <div
-        role="button"
-        class="yo-collapse-item-header"
-        @click="clickEvent(name)"
-      >
-        <template v-if="headerIconPosition === 'left'">
+      <div role="button" class="yo-collapse-item-header" @click="clickEvent">
+        <template v-if="headerIconPosition === 'left' && !headerIconHide">
           <div
-            class="yo-collapse-item-header-icon"
+            class="yo-collapse-item-header-icon yo-collapse-item-header-icon-left"
             v-if="$scopedSlots.icon || headerIcon"
           >
-            <slot name="icon" v-if="$scopedSlots.icon"></slot>
+            <slot
+              name="icon"
+              :isActive="isActive"
+              v-if="$scopedSlots.icon"
+            ></slot>
             <i
+              class="yo-collapse-item-header-icon-default"
               :class="'yo-icon-' + headerIcon + ' ' + headerIcon"
-              :style="{ 'font-size': headerIconSize + 'px' }"
+              :style="{
+                'font-size': isNaN(headerIconSize)
+                  ? headerIconSize
+                  : headerIconSize + 'px',
+                transform: `rotate(${isActive ? 90 : 0}deg)`
+              }"
               v-else
             ></i>
           </div>
@@ -45,12 +51,12 @@
         </div>
 
         <!--  自定义渲染每个面板右上角的内容-->
-        <div class="yo-collapse-item-extra" v-if="$scopedSlots.extra">
+        <ul class="yo-collapse-item-extra" v-if="$scopedSlots.extra">
           <slot name="extra"></slot>
-        </div>
-        <template v-if="headerIconPosition === 'right'">
+        </ul>
+        <template v-if="headerIconPosition === 'right' && !headerIconHide">
           <div
-            class="yo-collapse-item-header-icon"
+            class="yo-collapse-item-header-icon yo-collapse-item-header-icon-right"
             v-if="$scopedSlots.icon || headerIcon"
           >
             <slot name="icon" v-if="$scopedSlots.icon"></slot>
@@ -63,20 +69,34 @@
         </template>
       </div>
     </template>
-    <slot></slot>
-    <!--  自定义渲染每个面板下面的内容-->
-    <ul class="yo-collapse-item-action" v-if="$scopedSlots.action">
-      <slot name="action"></slot>
-    </ul>
+    <div
+      class="yo-collapse-item-body"
+      :style="yoBodyStyles"
+      v-if="!disabled && !(bodyDestroy && !bodyBorder)"
+    >
+      <div class="yo-collapse-item-content">
+        <slot></slot>
+      </div>
+      <!--  自定义渲染每个面板下面的内容-->
+      <ul class="yo-collapse-item-action" v-if="$scopedSlots.action">
+        <slot name="action"></slot>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
 import Props from "../../../common/props";
+const prefix = "yo-collapse-item";
 export default {
   name: "yCollapseItem",
   //存放 数据
-  data: function() {
-    return {};
+  data() {
+    let { name, _uid } = this;
+    return {
+      // 主体内容上边框是否显示
+      bodyBorder: false,
+      itemId: name || _uid
+    };
   },
   //存放 子组件
   // template: '',
@@ -89,11 +109,11 @@ export default {
       default: false
     },
     //   被隐藏时是否渲染 DOM 结构
-    forceRender: {
+    destroyInactivePanel: {
       type: Boolean,
       default: false
     },
-    //   卡片尺寸
+    //   折叠面板尺寸
     size: {
       type: String,
       default: "",
@@ -101,7 +121,7 @@ export default {
         return Props.size.indexOf(value) > -1;
       }
     },
-    //   面板头内容
+    //   折叠面板头内容
     header: {
       type: String,
       default: ""
@@ -113,7 +133,17 @@ export default {
     },
     // 图标大小
     iconSize: {
-      type: Number
+      type: [Number, String]
+    },
+    // 面板内容区最大高度
+    maxHeight: {
+      type: [Number, String],
+      default: 500
+    },
+    // 面板内容展开的动画时长  单位为ms
+    animationTime: {
+      type: [Number, String],
+      default: ""
     },
     // 自定义切换图标
     icon: {
@@ -135,6 +165,12 @@ export default {
     headerIcon() {
       return this.icon || (this.yCollapse || {}).icon;
     },
+    bodyMaxHeight() {
+      return this.maxHeight || (this.yCollapse || {}).maxHeight;
+    },
+    bodyAnimationTime() {
+      return this.animationTime || (this.yCollapse || {}).animationTime;
+    },
     headerIconSize() {
       return this.iconSize || (this.yCollapse || {}).iconSize;
     },
@@ -143,14 +179,111 @@ export default {
     },
     headerIconHide() {
       return this.iconHide || (this.yCollapse || {}).iconHide;
+    },
+    //面板尺寸
+    collapseItemSize() {
+      return this.size || (this.yCollapse || {}).size || this.$YOUI.size;
+    },
+    //简洁模式
+    simple() {
+      return (this.yCollapse || {}).simple;
+    },
+    split() {
+      return (this.yCollapse || {}).split;
+    },
+    bodyDestroy() {
+      return (
+        this.destroyInactivePanel || (this.yCollapse || {}).destroyInactivePanel
+      );
+    },
+    yoClasses() {
+      let { isActive, collapseItemSize, simple, split, disabled } = this;
+      return {
+        [`${prefix}-active`]: isActive,
+        [`${prefix}-${collapseItemSize}`]: !!collapseItemSize,
+        [`${prefix}-simple`]: !!simple,
+        [`${prefix}-disabled`]: !!disabled,
+        [`${prefix}-split`]: !!split
+        // [`${prefix}-split`]: !!split,
+        // [`${prefix}-border`]: !!border && !shadow,
+        // [`${prefix}-shadow`]: !!shadow,
+        // [`${prefix}-hover`]: !!hover && !shadow
+      };
+    },
+    yoBodyStyles() {
+      let {
+        yCollapse = {},
+        bodyMaxHeight,
+        bodyAnimationTime,
+        isActive,
+        bodyBorder = false
+      } = this;
+      let maxHeight = 0;
+      let animationTime = bodyAnimationTime;
+      let { accordion } = yCollapse || {};
+      if (isActive) {
+        maxHeight = bodyMaxHeight;
+      } else {
+        if (accordion) {
+          //如果为手风琴模式，快速收面板
+          animationTime = 0;
+          bodyBorder = false;
+        }
+      }
+      let yoStyles = {
+        "max-height": isNaN(maxHeight) ? maxHeight : `${maxHeight}px`,
+        "transition-duration": `${parseInt(animationTime) / 1000}s`,
+        "border-width": `${bodyBorder ? "1px" : 0}`
+        // display: `${bodyBorder ? "" : "none"}`
+      };
+      return yoStyles;
+    },
+    yoStyles() {
+      // let { borderRadius } = this;
+      let yoStyles = {
+        // "border-radius": `${
+        //   isNaN(borderRadius) ? borderRadius : borderRadius + "px"
+        // }`
+      };
+      return yoStyles;
+    },
+    //当前是否被选中
+    isActive() {
+      let { yCollapse = {}, itemId } = this;
+      let { nameList } = yCollapse || {};
+      return nameList.indexOf(itemId) > -1;
     }
   },
   inject: ["yCollapse"],
   //存放 方法
   methods: {
-    init() {},
-    clickEvent(name) {
-      this.yCollapse?.changeEvent(name);
+    init() {
+      let { isActive } = this;
+      if (isActive) {
+        this.bodyBorder = true;
+      }
+      console.log(this);
+    },
+    // 切换事件
+    clickEvent() {
+      let { isActive, bodyAnimationTime, disabled, itemId } = this;
+      if (disabled) {
+        return;
+      }
+      if (!isActive) {
+        this.bodyBorder = true;
+      } else {
+        this.bodyBorder = true;
+        //如果是折叠，则在动画完成后隐藏上边框
+        this._setTimeoutId = setTimeout(() => {
+          clearTimeout(this._setTimeoutId);
+          this.bodyBorder = false;
+          // if(bodyDestroy){//如果参数设置为真，则销毁dom
+
+          // }
+        }, bodyAnimationTime - 100 || 1);
+      }
+      this.yCollapse?.changeEvent(itemId);
     }
   },
   //存放 过滤器

@@ -204,6 +204,38 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/normal"
     ),
+  layoutCollapseAccordion: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/accordion"
+    ),
+  layoutCollapseSize: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/size"
+    ),
+  layoutCollapseGroup: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/group"
+    ),
+  layoutCollapseSimple: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/simple"
+    ),
+  layoutCollapseDiy: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/diy"
+    ),
+  layoutCollapseHide: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/hide"
+    ),
+  layoutCollapseExtra: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/extra"
+    ),
+  layoutCollapseAction: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/action"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),

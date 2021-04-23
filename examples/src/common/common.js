@@ -160,7 +160,7 @@ let common = {
       //   return false;
       // }
       if (children.indexOf(tag) < 0) {
-        console.warn(`组件子组件只能为${children.join()}`);
+        console.warn(`组件子组件只能为${children.join()},当前子组件为${tag}`);
         return false;
       }
     }
