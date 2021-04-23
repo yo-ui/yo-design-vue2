@@ -31,8 +31,17 @@
     .yo-left{
         .bs;
         min-width: 320px;
-        .touch-y;
         .w(16%);
+        overflow-y: scroll;
+        ::-webkit-scrollbar-track{
+          .bc(transparent);
+        }
+        ::-webkit-scrollbar-track-piece{
+          .bc(transparent);
+        }
+        &:hover{
+          .touch-y;
+        }
         // .h(100vh);
         // .pb(60);
         // .tc;
@@ -45,6 +54,7 @@
         }
         .menu-box{
             .borr(1px solid #e8e8e8);
+            .w(100%);
             a{
                 .db;
                 .c(@gray3);

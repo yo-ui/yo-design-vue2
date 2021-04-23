@@ -262,7 +262,7 @@ export default {
       if (isActive) {
         this.bodyBorder = true;
       }
-      console.log(this);
+      // console.log(this);
     },
     // 切换事件
     clickEvent() {

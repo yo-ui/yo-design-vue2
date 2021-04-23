@@ -154,6 +154,13 @@
             >
               {{ $lang("折叠面板 Collapse") }}
             </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentSplit' }"
+              :class="{ active: code == 'componentSplit' }"
+            >
+              {{ $lang("面板分割 Split") }}
+            </router-link>
           </ul>
           <a class="sub">{{ $lang("数据输入组件") }}</a>
           <ul class="list">

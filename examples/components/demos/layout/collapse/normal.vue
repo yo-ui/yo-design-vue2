@@ -16,7 +16,6 @@
       </y-collapse-item>
     </y-collapse>
     <br />
-    {{ activeKey }}
     <y-collapse v-model="activeKey" @change="changeEvent">
       <y-collapse-item header="This is item header 1">
         人之初，性本善。性相近，习相远。 苟不教，性乃迁。教之道，贵以专。

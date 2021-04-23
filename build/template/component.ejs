@@ -1,7 +1,3 @@
-/**
- *  author: <%=author%>
- *  create at: <%=date%>
- */
 <template>
     <% if(lowerName=='button'){%>
     <yo-<%=lowerName%> class="yo-<%=lowerName%>" :class="yoClasses" :style="yoStyles">
@@ -12,7 +8,11 @@
     <% }%>
 </template>
 <script>
-// import yoCommon from '@/common/common'
+/**
+ *  author: <%=author%>
+ *  create at: <%=date%>
+ */
+const prefix="yo-<%=lowerName%>"
 export default {
 	name: 'y<%=upperName%>',
 	//存放 数据

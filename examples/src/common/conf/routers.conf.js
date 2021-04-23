@@ -53,6 +53,11 @@ export default {
     path: "layout/collapse",
     title: "折叠面板组件"
   },
+  componentSplit: {
+    name: "componentSplit",
+    path: "layout/split",
+    title: "分割面板组件"
+  },
 
   componentInput: {
     name: "componentInput",

@@ -105,6 +105,18 @@ const Routers = [
             /* webpackChunkName: "yo-component-collapse" */ "@/pages/components/layout/collapse/collapse"
           )
       },
+      //卡片组件-分割面板
+      {
+        path: RouterURL["componentSplit"].path,
+        name: RouterURL["componentSplit"].name,
+        meta: {
+          title: RouterURL["componentSplit"].title
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "yo-component-split" */ "@/pages/components/layout/split/split"
+          )
+      },
       //组件-基础组件
       {
         path: RouterURL["componentButton"].path,

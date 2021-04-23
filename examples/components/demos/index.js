@@ -236,6 +236,18 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-collapse" */ "./layout/collapse/action"
     ),
+  layoutSplitNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-split" */ "./layout/split/normal"
+    ),
+  layoutSplitType: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-split" */ "./layout/split/type"
+    ),
+  layoutSplitGroup: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-split" */ "./layout/split/group"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),
