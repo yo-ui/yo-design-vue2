@@ -26,8 +26,9 @@
 </template>
 
 <script>
-import yoCommon from "@/common/common";
+// import yoCommon from "@/common/common";
 import Props from "../../../common/props";
+import { isCorrectChilds } from "../../../common/utils";
 const prefix = "yo-list";
 // const Props = {
 //   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
@@ -136,7 +137,7 @@ export default {
       //   }
       // }
       // return true;
-      return yoCommon.isCorrectChilds(this.$slots.default, ["y-list-item"]);
+      return isCorrectChilds(this.$slots.default, ["y-list-item"]);
     }
   }
 };

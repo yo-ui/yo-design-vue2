@@ -142,30 +142,6 @@ let common = {
       }
     }
   },
-  /**
-   * 判断子元素是否匹配
-   * @param {*} slot  Array<VNode>  默认插槽元素
-   * @param {*} childs  Array<String>
-   * @returns
-   */
-  isCorrectChilds(slots, children = []) {
-    // let childs = this.$slots.default;
-    let { length = 0 } = slots || [];
-    while (length-- > 0) {
-      let item = slots[length];
-      let { componentOptions = {} } = item || {};
-      let { tag = "" } = componentOptions || {};
-      // if (tag !== "y-list-item") {
-      //   console.warn("y-list组件子组件只能为y-list-item");
-      //   return false;
-      // }
-      if (children.indexOf(tag) < 0) {
-        console.warn(`组件子组件只能为${children.join()},当前子组件为${tag}`);
-        return false;
-      }
-    }
-    return true;
-  },
   substitute(str, data) {
     if (data && typeof data == "object") {
       return str.replace(/\{([^{}]+)\}/g, function(match, key) {

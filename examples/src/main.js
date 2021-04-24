@@ -11,7 +11,7 @@ import store from "@/vuex/store";
 // import "mprogress/build/css/mprogress.css";
 import { RouterURL } from "@/common/env";
 import YOUI from "./../../src/index";
-import "./../../assets/less/themes/default/index.less";
+import "./../../src/assets/less/themes/default/index.less";
 import "highlight.js/styles/arduino-light.css";
 import vueHighlightjs from "@/vue/vue-highlightjs";
 import qrcodeConsole from "qrcode-terminal";
