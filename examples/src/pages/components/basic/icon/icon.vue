@@ -221,7 +221,10 @@ export default {
         { code: "radio2-on" },
         { code: "radio2-off" },
         { code: "radio-on" },
-        { code: "radio-off" }
+        { code: "radio-off" },
+        { code: "vscode" },
+        { code: "github" },
+        { code: "gitee" }
       ])
     };
   },

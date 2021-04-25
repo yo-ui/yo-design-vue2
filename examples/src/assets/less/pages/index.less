@@ -4,12 +4,52 @@
  *  首页样式
 **/
 @import "../common.less";
-.yo-index-page{    
-    .yo-slider{
-        .h(440);
-        .bi('/static/images/bg.png');
-        .bz(cover);
-        .bgr(repeat-y);
-        .w(100%);
+.yo-index-page{
+  // .bc(@yo-primary);
+  .h(100%);
+  // /deep/ .header-com{
+  //   .bc(transparent);
+  //   .left{
+  //     .logo{
+  //       .bi('/static/images/logo2.png');
+  //     }
+  //     .title{
+  //       .c(@white);
+  //     }
+  //   }
+  //   .nav{
+  //     a{
+  //       .c(@grayD);
+  //       &:hover,&.active{
+  //         .c(@white);
+  //       }
+  //     }
+  //   }
+  // }
+    // .yo-slider{
+    //     .h(440);
+    //     .bi('/static/images/bg.png');
+    //     .bz(cover);
+    //     .bgr(repeat-y);
+    //     .w(100%);
+    // }
+  .content{
+    // .mt(20%);
+    .posa;
+    .tranf(translate(-50%,-50%));
+    left:50%;
+    top:50%;
+    // .c(@white);
+    .c(@yo-text);
+    // .pl(20%);
+    h1{
+      .fz(60);
     }
+    h2{
+      .fz(45);
+    }
+    .btn-box{
+      .mt(20);
+    }
+  }
 }

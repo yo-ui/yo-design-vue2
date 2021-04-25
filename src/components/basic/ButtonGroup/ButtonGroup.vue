@@ -1,6 +1,6 @@
 /** * author: eric * create at: 2019-12-12 14:37:53 * 按钮组 */
 <template>
-  <div :class="btnGroupCls">
+  <div :class="yoClasses">
     <slot></slot>
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
     }
   }, // 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据
   computed: {
-    btnGroupCls() {
+    yoClasses() {
       return {
         [`${prefix}`]: true,
         [`${prefix}-round`]: !!this.round,

@@ -2,8 +2,8 @@
 <template>
   <header class="header-com">
     <div class="left">
-      <div class="logo"></div>
-      <span class="title"> Yo Design Vue2.x </span>
+      <a href="/"><div class="logo"></div></a>
+      <a href="/"><span class="title"> Yo Design Vue2.x </span></a>
       <!-- <div class="search-box">
         <input type="text" :placeholder="$lang('搜索组件')" />
       </div> -->

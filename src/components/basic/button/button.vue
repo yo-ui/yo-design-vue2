@@ -1,5 +1,6 @@
 <script>
 import Props from "../../../common/props";
+import { isHrefLink } from "../../../common/utils";
 const prefix = "yo-btn";
 // const Props = {
 //   // 'xxl','xl', 'lg', 'md', 'sm', 'xs'
@@ -33,7 +34,7 @@ export default {
     **/
   template: `
         <router-link v-bind="$attrs" v-on="$listeners" :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
-        :target="target" v-if="to&&$route" 
+        :target="target" v-if="typeof(to)==='object'&&$route" 
         :class="yoClasses" :disabled="disabled || loading">
             ${template}
         </router-link>
@@ -142,14 +143,9 @@ export default {
       }
       return false;
     },
-    // isHttpLink() {
-    //   let to = this.to;
-    //   let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
-    //   if (typeof to === "string" && reg.test(to)) {
-    //     return true;
-    //   }
-    //   return false;
-    // },
+    isHrefLink() {
+      return isHrefLink(this.to);
+    },
     yoStyles() {
       let yoStyles = {
         "background-color": `${this.backgroundColor}`,
@@ -196,13 +192,13 @@ export default {
   //存放 方法
   methods: {
     handleClick(evt) {
-      if (this.isHttpLink) {
-        // console.log("handleClick start", this.to);
-        if (this.replace) {
-          location.replace(this.to);
-        }
-        return false;
-      }
+      // if (this.isHrefLink) {
+      //   // console.log("handleClick start", this.to);
+      //   if (this.replace) {
+      //     location.replace(this.to);
+      //   }
+      //   return false;
+      // }
       // console.log("handleClick end");
       if (this.stop) {
         event.stopPropagation();

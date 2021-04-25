@@ -35,3 +35,16 @@ export function isCorrectChilds(slots, children = []) {
   }
   return true;
 }
+/**
+ * 是否是跳转链接
+ * @param {*} slots
+ * @param {*} children
+ * @returns
+ */
+export function isHrefLink(url) {
+  let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~/])+$/;
+  if (typeof url === "string" && reg.test(url)) {
+    return true;
+  }
+  return false;
+}

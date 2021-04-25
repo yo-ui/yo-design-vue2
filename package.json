@@ -1,6 +1,6 @@
 {
   "name": "yo-design-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "eric <1034850788@qq.com>",
   "license": "MIT",
@@ -12,13 +12,15 @@
     "ui",
     "framework"
   ],
-  "main": "dist/youi.js",
+  "main": "dist/youi.umd.js",
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
-    "build": "vue-cli-service build --target lib ./src/index.js --dest dist --name youi"
+    "build:css": "gulp",
+    "build:js": "vue-cli-service build --target lib ./src/index.js --dest dist --name youi",
+    "build": "npm run build:css&npm run build:js"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",

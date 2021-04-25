@@ -1,5 +1,6 @@
 /** * author: eric * create at: 2019-12-23 10:47:50 */
 <script>
+import { isHrefLink } from "../../../common/utils";
 const prefix = "yo-link";
 const template = `<slot name="left"></slot>
         <i :class="'yo-icon-'+icon+' '+icon" :style="{'font-size':iconSize+'px'}" v-if="icon"></i>
@@ -91,13 +92,8 @@ export default {
     //   }
     //   return "";
     // },
-    // isHttpLink() {
-    //   let to = this.to;
-    //   let reg = /^((https|http|ftp|rtsp|mms){0,1}(:\/\/){0,1})www\.(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
-    //   if (typeof to === "string" && reg.test(to)) {
-    //     return true;
-    //   }
-    //   return false;
+    // isHrefLink() {
+    //   return isHrefLink(this.to);
     // },
     yoStyles() {
       let yoStyles = {
@@ -120,14 +116,14 @@ export default {
   //存放 方法
   methods: {
     handleClick(evt) {
-      if (this.href) {
-        console.log("handleClick start", this.href, this.replace);
-        if (this.replace) {
-          location.replace(this.to);
-          // return false
-        }
-        return;
-      }
+      // if (this.href) {
+      //   console.log("handleClick start", this.href, this.replace);
+      //   if (this.replace) {
+      //     location.replace(this.to);
+      //     // return false
+      //   }
+      //   return;
+      // }
       // console.log("handleClick end");
       // if (this.stop) {
       //     event.stopPropagation()
