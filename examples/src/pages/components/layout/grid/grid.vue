@@ -20,14 +20,14 @@
     <yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
     <yo-code
       type="javascript"
-      src="/components/demos/basic/grid/use.js"
+      src="/components/demos/layout/grid/use.js"
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
     <!-- <p>说明</p> -->
 
     <!-- <h3>基本调用</h3> -->
-    <yo-example demo="basic/grid/normal">
+    <yo-example demo="layout/grid/normal">
       <template v-slot:desc>
         <yo-desc :title="$lang('基础栅格')">
           {{
@@ -39,7 +39,7 @@
       </template>
     </yo-example>
 
-    <yo-example demo="basic/grid/gutter">
+    <yo-example demo="layout/grid/gutter">
       <template v-slot:desc>
         <yo-desc :title="$lang('栅格间隔')">
           <span
@@ -52,7 +52,7 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/group">
+    <yo-example demo="layout/grid/group">
       <template v-slot:desc>
         <yo-desc :title="$lang('混合布局')">
           {{
@@ -61,28 +61,28 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/offset">
+    <yo-example demo="layout/grid/offset">
       <template v-slot:desc>
         <yo-desc :title="$lang('分栏偏移')">
           {{ $lang("支持偏移指定的栏数。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/align">
+    <yo-example demo="layout/grid/align">
       <template v-slot:desc>
         <yo-desc :title="$lang('对齐方式')">
           {{ $lang("通过 flex 布局来对分栏进行灵活的对齐。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/flex">
+    <yo-example demo="layout/grid/flex">
       <template v-slot:desc>
         <yo-desc :title="$lang('flex 填充')">
           {{ $lang("Col 提供 flex 属性以支持填充") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/order">
+    <yo-example demo="layout/grid/order">
       <template v-slot:desc>
         <yo-desc :title="$lang('栅格排序')">
           {{
@@ -93,7 +93,7 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/grid/responsive">
+    <yo-example demo="layout/grid/responsive">
       <template v-slot:desc>
         <yo-desc :title="$lang('响应式布局')">
           <span
@@ -115,7 +115,7 @@
     </yo-example>
 
     <!-- <h3>其他</h3>
-    <yo-example demo="basic/grid/grid2"></yo-example> -->
+    <yo-example demo="layout/grid/grid2"></yo-example> -->
 
     <!-- <h3>Row 参数</h3> -->
     <yo-anchor :text="'Row ' + $lang('属性')" :size="24"></yo-anchor>
@@ -450,5 +450,5 @@ export default {
 };
 </script>
 <style lang="less">
-@import "../../../../assets/less/pages/components/basic/grid/grid.less";
+@import "../../../../assets/less/pages/components/layout/grid/grid.less";
 </style>

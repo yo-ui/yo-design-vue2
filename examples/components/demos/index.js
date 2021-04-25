@@ -270,6 +270,10 @@ export default {
     import(
       /* webpackChunkName: "yo-component-form-input" */ "./form/input/loading"
     ),
+  formInputPassword: () =>
+    import(
+      /* webpackChunkName: "yo-component-form-input" */ "./form/input/password"
+    ),
   formInputInput1: () =>
     import(
       /* webpackChunkName: "yo-component-form-input" */ "./form/input/input1"

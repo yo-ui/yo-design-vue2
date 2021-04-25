@@ -33,12 +33,12 @@
           >VSCode 插件</y-button
         >
         <iframe
-          style="margin-left: 2px; margin-bottom:-5px;"
+          class="github-img"
           frameborder="0"
           scrolling="0"
           width="150px"
           height="48px"
-          src="https://ghbtns.com/github-btn.html?user=yo-ui&repo=yo-design-vue2&type=star&count=true"
+          src="https://ghbtns.com/github-btn.html?user=yo-ui&repo=yo-design-vue2&type=star&count=true&size=large"
         >
         </iframe>
       </div>

@@ -36,18 +36,18 @@
     <yo-anchor :text="$lang('组件注册')" :size="24"></yo-anchor>
     <yo-code
       type="javascript"
-      src="/components/demos/basic/layout/use.js"
+      src="/components/demos/layout/layout/use.js"
     ></yo-code>
     <yo-anchor :text="$lang('代码示例')" :size="24"></yo-anchor>
 
-    <yo-example demo="basic/layout/normal">
+    <yo-example demo="layout/layout/normal">
       <template v-slot:desc>
         <yo-desc :title="$lang('基本结构')">
           {{ $lang("典型的页面布局。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('自定义触发器')">
           {{
@@ -58,7 +58,7 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('顶部-侧边布局-通栏')">
           {{
@@ -69,42 +69,42 @@
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('顶部-侧边布局')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('上中下布局 ')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('响应式布局  ')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('固定侧边栏  ')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('固定头部')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
         </yo-desc>
       </template>
     </yo-example>
-    <yo-example demo="basic/layout/trigger">
+    <yo-example demo="layout/layout/trigger">
       <template v-slot:desc>
         <yo-desc :title="$lang('侧边布局  ')">
           {{ $lang("拥有顶部导航及侧边栏的页面，多用于展示类网站。") }}
@@ -115,5 +115,5 @@
 </template>
 
 <style lang="less" scoped>
-@import "../../../../assets/less/pages/components/basic/layout/layout.less";
+@import "../../../../assets/less/pages/components/layout/layout/layout.less";
 </style>

@@ -72,19 +72,7 @@
       :placeholder="$lang('请输入内容')"
       v-model="yoInput"
     ></y-input>
-    <p>{{ $lang("密码框") }}</p>
-    <y-input
-      type="password"
-      :placeholder="$lang('请输入内容')"
-      v-model="yoInput"
-    ></y-input>
-    <y-input
-      type="password"
-      clearable
-      show-password
-      :placeholder="$lang('请输入内容')"
-      v-model="yoInput"
-    ></y-input>
+    <!-- <p>{{ $lang("密码框") }}</p> -->
 
     <p>{{ $lang("带icon的输入框") }}</p>
     {{ $lang("属性方式") }}:

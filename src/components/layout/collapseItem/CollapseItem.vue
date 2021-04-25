@@ -61,8 +61,14 @@
           >
             <slot name="icon" v-if="$scopedSlots.icon"></slot>
             <i
+              class="yo-collapse-item-header-icon-default"
               :class="'yo-icon-' + headerIcon + ' ' + headerIcon"
-              :style="{ 'font-size': headerIconSize + 'px' }"
+              :style="{
+                'font-size': isNaN(headerIconSize)
+                  ? headerIconSize
+                  : headerIconSize + 'px',
+                transform: `rotate(${isActive ? 90 : 0}deg)`
+              }"
               v-else
             ></i>
           </div>
