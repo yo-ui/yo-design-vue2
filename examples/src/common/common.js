@@ -42,7 +42,7 @@ let variablePool = {
     applicantName: /^[^<>]{1,30}$/, //申请人姓名
     // applicantName:/^[\d\w\u4e00-\u9fa5,.-]{1,30}$/,//申请人姓名
     fundPass: /^[0-9]{6}$/, //资金密码
-    noChinese: /[^\x00-\xff]/gi
+    noChinese: /[^\\x00-\\xff]/gi
   }
 };
 

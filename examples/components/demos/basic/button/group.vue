@@ -7,11 +7,15 @@
     </y-button-group>
     <y-button-group>
       <y-button type="primary" icon="left">{{ $lang("上一页") }}</y-button>
-      <y-button type="primary" right-icon="right">{{ $lang("下一页") }}</y-button>
+      <y-button type="primary" right-icon="right">{{
+        $lang("下一页")
+      }}</y-button>
     </y-button-group>
     <y-button-group round>
       <y-button type="primary" icon="left">{{ $lang("上一页") }}</y-button>
-      <y-button type="primary" right-icon="right">{{ $lang("下一页") }}</y-button>
+      <y-button type="primary" right-icon="right">{{
+        $lang("下一页")
+      }}</y-button>
     </y-button-group>
     <y-button-group size="l">
       <y-button type="primary" icon="add"></y-button>
@@ -91,19 +95,19 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {};
-    },
-    mounted() {
-      this.$emit("loaded");
-    },
-  };
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+    this.$emit("loaded");
+  }
+};
 </script>
 
 <style lang="less" scoped>
-  .yo-btn-group {
-    margin-bottom: 20px;
-    margin-right: 20px;
-  }
+.yo-btn-group {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
 </style>

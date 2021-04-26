@@ -34,7 +34,7 @@ import Plugins from "@/vue/plugins";
 import Filters from "@/vue/filters";
 import Directives from "@/vue/directives";
 
-const defaultImage = "/static/images/default.png";
+// const defaultImage = "/static/images/default.png";
 // if (process.env.NODE_ENV === 'production') {
 //     Vue.use(vueAnalytics, {
 //         id: Constants.APICONFIG.google.ga,
@@ -160,8 +160,8 @@ console.log(
 router.beforeEach((to, from, next) => {
   // mprogress && mprogress.start();
   let $store = router.app.$store || store;
-  let langObj = $store ? $store.getters.getLangObj : null;
-  let docTitle = to.meta.title;
+  // let langObj = $store ? $store.getters.getLangObj : null;
+  // let docTitle = to.meta.title;
   // if (docTitle) {
   //     document.title =$lang(langObj,'YOUI')//+$lang(langObj,docTitle)
   // }

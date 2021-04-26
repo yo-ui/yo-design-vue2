@@ -68,6 +68,7 @@ async function request(type, options, callback) {
   }
   if (options.headers) {
     for (let i in options.headers) {
+      // eslint-disable-next-line no-prototype-builtins
       if (options.headers.hasOwnProperty(i)) {
         headers[i] = options.headers[i];
       }

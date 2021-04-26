@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import fqCommon from "@/common/common";
-import { URL } from "@/common/env";
-let variablePool = {
-  startTime: Date.now()
-};
+// import fqCommon from "@/common/common";
+// import { URL } from "@/common/env";
+// let variablePool = {
+//   startTime: Date.now()
+// };
 
 export default {
   name: "app",
@@ -23,7 +23,7 @@ export default {
     };
   },
   async created() {
-    let that = this;
+    // let that = this;
   },
   components: {},
   computed: {
@@ -49,12 +49,8 @@ export default {
       return lang;
     }
   },
-  async mounted() {
-    let that = this;
-  },
-  beforeDestroy() {
-    let that = this;
-  },
+  async mounted() {},
+  beforeDestroy() {},
   destroyed() {},
   methods: {}
 };

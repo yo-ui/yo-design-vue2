@@ -29,9 +29,12 @@
     <y-button type="error" loading loading-name="loading4"></y-button>
     <y-button type="error" ghost loading loading-name="loading4"></y-button>
     <br />
-    <y-button type="primary" :loading="mouseenterStatus" @mouseenter="mouseenterEvent">{{
-      $lang("鼠标划过")
-    }}</y-button>
+    <y-button
+      type="primary"
+      :loading="mouseenterStatus"
+      @mouseenter="mouseenterEvent"
+      >{{ $lang("鼠标划过") }}</y-button
+    >
     <y-button
       type="primary"
       @click="clickEvent"
@@ -43,28 +46,28 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        mouseenterStatus: false,
-        clickStatus: false,
-      };
+export default {
+  data() {
+    return {
+      mouseenterStatus: false,
+      clickStatus: false
+    };
+  },
+  methods: {
+    mouseenterEvent() {
+      this.mouseenterStatus = true;
+      setTimeout(() => {
+        this.mouseenterStatus = false;
+      }, 2000);
     },
-    methods: {
-      mouseenterEvent() {
-        this.mouseenterStatus = true;
+    clickEvent() {
+      setTimeout(() => {
+        this.clickStatus = true;
         setTimeout(() => {
-          this.mouseenterStatus = false;
-        }, 2000);
-      },
-      clickEvent() {
-        setTimeout(() => {
-          this.clickStatus = true;
-          setTimeout(() => {
-            this.clickStatus = false;
-          }, 3000);
-        }, 1000);
-      },
-    },
-  };
+          this.clickStatus = false;
+        }, 3000);
+      }, 1000);
+    }
+  }
+};
 </script>

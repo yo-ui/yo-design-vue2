@@ -3,11 +3,10 @@
  *  create at: 2020-01-02 16:03:47
  */
 
-import YoFormItem from './form-item'
-
+import YoFormItem from "./form-item";
 
 YoFormItem.install = function(Vue) {
-    Vue.component(YoFormItem.name, YoFormItem)
-}
+  Vue.component(YoFormItem.name, YoFormItem);
+};
 
-export default YoFormItem
+export default YoFormItem;

@@ -16,6 +16,20 @@
         </yo-desc>
       </template>
     </yo-example>
+    <yo-example demo="layout/split/type">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('下下分割')">
+          {{ $lang("上下分割用法。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
+    <yo-example demo="layout/split/group">
+      <template v-slot:desc>
+        <yo-desc :title="$lang('嵌套使用')">
+          {{ $lang("嵌套使用。") }}
+        </yo-desc>
+      </template>
+    </yo-example>
 
     <yo-anchor :text="'Split ' + $lang('属性')" :size="24"></yo-anchor>
     <p v-html="$lang('属性说明')"></p>

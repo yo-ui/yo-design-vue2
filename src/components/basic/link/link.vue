@@ -1,6 +1,6 @@
 /** * author: eric * create at: 2019-12-23 10:47:50 */
 <script>
-import { isHrefLink } from "../../../common/utils";
+// import { isHrefLink } from "../../../common/utils";
 const prefix = "yo-link";
 const template = `<slot name="left"></slot>
         <i :class="'yo-icon-'+icon+' '+icon" :style="{'font-size':iconSize+'px'}" v-if="icon"></i>
@@ -18,11 +18,11 @@ export default {
   //存放 子组件
   template: `
         <router-link :replace="replace" :to="to" class="${prefix}" :style="yoStyles"
-        :target="target" v-if="to&&$route" 
+        :target="target" v-if="typeof(to)==='object'&&$route" 
         :class="yoClasses" :disabled="disabled">
             ${template}
         </router-link>
-        <a :href="typeof(to)=='object'?to.name:to" class="${prefix}" :class="yoClasses" :style="yoStyles"
+        <a :href="typeof(to)==='object'?to.name:to" class="${prefix}" :class="yoClasses" :style="yoStyles"
         :target="target" @click="handleClick"
         :disabled="disabled" v-else-if="to">
             ${template}

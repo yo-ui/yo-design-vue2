@@ -3,13 +3,19 @@
     <!-- <p>排序</p> -->
     <y-row type="flex" gutterY="20" justify="center" align="center">
       <y-col span="4" order="2"
-        ><div class="content" :style="[{ height: '80px' }]">y-col-4 2（原1）</div></y-col
+        ><div class="content" :style="[{ height: '80px' }]">
+          y-col-4 2（原1）
+        </div></y-col
       >
       <y-col span="4" order="3"
-        ><div class="content" :style="[{ height: '50px' }]">y-col-4 3（原2）</div></y-col
+        ><div class="content" :style="[{ height: '50px' }]">
+          y-col-4 3（原2）
+        </div></y-col
       >
       <y-col span="4" order="1"
-        ><div class="content" :style="[{ height: '30px' }]">y-col-4 1（原3）</div></y-col
+        ><div class="content" :style="[{ height: '30px' }]">
+          y-col-4 1（原3）
+        </div></y-col
       >
     </y-row>
 

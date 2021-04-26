@@ -1,6 +1,6 @@
 <template>
   <div>
-    <y-split>
+    <y-split border style="height:400px">
       <template #left>
         左边内容
       </template>
