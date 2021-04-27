@@ -2,15 +2,6 @@ import { RouterURL, routerAuth } from "@/common/env";
 
 const Routers = [
   {
-    path: RouterURL["*"].path,
-    name: RouterURL["*"].name,
-    meta: {
-      title: RouterURL["*"].title
-    },
-    component: () =>
-      import(/* webpackChunkName: "exnet-index" */ "@/pages/notFound")
-  },
-  {
     path: RouterURL["index"].path,
     name: RouterURL["index"].name,
     meta: {
@@ -29,9 +20,21 @@ const Routers = [
     component: () =>
       import(/* webpackChunkName: "yo-component" */ "@/pages/component"),
     redirect: {
-      name: RouterURL["componentGuide"].name
+      name: RouterURL["componentIntro"].name
     },
     children: [
+      // 开发指南
+      {
+        path: RouterURL["componentIntro"].path,
+        name: RouterURL["componentIntro"].name,
+        meta: {
+          title: RouterURL["componentIntro"].title
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "yo-component-intro" */ "@/pages/components/develop/intro/intro"
+          )
+      },
       // 开发指南
       {
         path: RouterURL["componentGuide"].path,
@@ -229,6 +232,15 @@ const Routers = [
           )
       }
     ]
+  },
+  {
+    path: RouterURL["*"].path,
+    name: RouterURL["*"].name,
+    meta: {
+      title: RouterURL["*"].title
+    },
+    component: () =>
+      import(/* webpackChunkName: "yo-notfound" */ "@/pages/notFound")
   }
 ];
 

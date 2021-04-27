@@ -3,6 +3,6 @@ module.exports = {
     ga: [""],
     geo: ""
   },
-  routerMode: "",
+  routerMode: "history",
   axioTimeout: 1000 * 30 //开发环境超时时间为30s
 };

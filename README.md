@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="100"  width="100" src="https://www.yo-ui.com/static/images/logo.png"/>
+  <img height="100"  width="100" src="https://yo-ui.gitee.io/youi/images/logo.png"/>
 </p>
 
 # YOUI-Vue2.x 前端UI框架 1.0
@@ -24,12 +24,12 @@
 ```
 
 # YOUI
-<!--
-[![npm package](https://img.shields.io/npm/v/youi.svg?style=flat-square)](https://www.npmjs.org/package/youi)
-![JS gzip size](http://img.badgesize.io/https://unpkg.com/youi/dist/youi.esm.js?style=flat-square&compression=gzip&label=gzip%20size:%20JS)
-![CSS gzip size](http://img.badgesize.io/https://unpkg.com/youi/themes/index.css?style=flat-square&compression=gzip&label=gzip%20size:%20CSS)
+
+[![npm package](https://img.shields.io/badge/npm-v1.0.1-brightgreen)](https://www.npmjs.com/package/yo-design-vue)
+<!-- ![JS gzip size](http://img.badgesize.io/https://unpkg.com/youi/dist/youi.esm.js?style=flat-square&compression=gzip&label=gzip%20size:%20JS)
+![CSS gzip size](http://img.badgesize.io/https://unpkg.com/youi/themes/index.css?style=flat-square&compression=gzip&label=gzip%20size:%20CSS) -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
--->
+
 > An UI components library.
 
 ## Install

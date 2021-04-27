@@ -1,23 +1,49 @@
 <!--demo页面-->
 <template>
-  <div class="fq-develop-guide-page">
-    <yo-anchor :text="$lang('快速上手')" size="30"></yo-anchor>
+  <div class="fq-develop-intro-page">
+    <yo-anchor :text="$lang('介绍 Yo-Desing-Vue')" size="30"></yo-anchor>
     <p>
       {{ $lang("本节将介绍如何在项目中使用 YOUI") }}
     </p>
-    <yo-anchor :text="$lang('引入 YOUI')"></yo-anchor>
+    <yo-anchor :text="$lang('支持环境')" size="24"></yo-anchor>
 
     <p>
-      {{
-        $lang(
-          "你可以引入整个 YOUI，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 YOUI。"
-        )
-      }}
+      <span
+        v-html="
+          $lang(
+            `现代浏览器和 IE9 及以上（需要 <a href='https://www.antdv.com/docs/vue/getting-started-cn/#%E5%85%BC%E5%AE%B9%E6%80%A7'>polyfills</a>）。`
+          )
+        "
+      ></span
+      ><br />
+      <!-- {{ $lang("支持服务端渲染。") }}<br /> -->
+      {{ $lang("Electron") }}
     </p>
+    <table class="table">
+      <tr>
+        <th v-for="item in envTableKeys" :key="item.code">
+          {{ $lang(item.name) }}
+        </th>
+      </tr>
+      <tr v-for="item in envTableData" :key="item.param">
+        <td>{{ item["IE"] }}</td>
+        <td v-html="item['FireFox']"></td>
+        <td>{{ item["Chrome"] }}</td>
+        <td>{{ item["Safari"] || "-" }}</td>
+        <td>{{ item["Opera"] || "-" }}</td>
+      </tr>
+    </table>
 
+    <yo-anchor :text="$lang('版本')" size="24"></yo-anchor>
+    <p>
+      {{ $lang("稳定版:") }}
+      <a href="https://www.npmjs.com/package/yo-design-vue"
+        ><img src="https://img.shields.io/badge/npm-v1.0.1-green"
+      /></a>
+    </p>
     <yo-anchor :text="$lang('完整引入')"></yo-anchor>
     <p>{{ $lang("在 main.js 中写入以下内容：") }}</p>
-    <yo-code type="javascript" src="/components/demos/develop/guide/import.js">
+    <yo-code type="javascript" src="/components/demos/develop/intro/import.js">
     </yo-code>
     <p>
       {{
@@ -43,7 +69,7 @@
       {{ $lang("然后，将 .babelrc 修改为：") }}
     </p>
 
-    <yo-code src="/components/demos/develop/guide/babelrc"></yo-code>
+    <yo-code src="/components/demos/develop/intro/babelrc"></yo-code>
     <!-- <yo-code>
       { "presets": [["es2015", { "modules": false }]], "plugins": [ [
       "component", { "libraryName": "youi", "styleLibraryName": "theme-chalk" }
@@ -57,7 +83,7 @@
       }}
     </p>
 
-    <yo-code src="/components/demos/develop/guide/single.js"></yo-code>
+    <yo-code src="/components/demos/develop/intro/single.js"></yo-code>
     <!-- <yo-code>
       import Vue from 'vue'; import { Button, Select } from 'youi'; import App
       from './App.vue'; Vue.component(Button.name, Button);
@@ -70,7 +96,7 @@
       }}
     </p>
 
-    <yo-code src="/components/demos/develop/guide/full.js"></yo-code>
+    <yo-code src="/components/demos/develop/intro/full.js"></yo-code>
     <!-- <yo-code>
     </yo-code> -->
     <yo-anchor :text="$lang('全局配置')"></yo-anchor>
@@ -85,7 +111,7 @@
       {{ $lang("完整引入 YOUI：") }}
     </p>
 
-    <yo-code src="/components/demos/develop/guide/full-config.js"></yo-code>
+    <yo-code src="/components/demos/develop/intro/full-config.js"></yo-code>
     <!-- <yo-code>
       import Vue from 'vue'; import YOUI from 'youi'; Vue.use(YOUI, { size:
       'small', zIndex: 3000 });
@@ -94,7 +120,7 @@
       {{ $lang("按需引入 YOUI：") }}
     </p>
 
-    <yo-code src="/components/demos/develop/guide/single-config.js"></yo-code>
+    <yo-code src="/components/demos/develop/intro/single-config.js"></yo-code>
     <!-- <yo-code>
       import Vue from 'vue'; import { Button } from 'youi'; Vue.prototype.$YOUI
       = { size: 'small', zIndex: 3000 }; Vue.use(Button);
@@ -120,13 +146,32 @@
 <script>
 // import fqCommon from "@/common/common";
 export default {
-  name: "fq-develop-guide-page",
+  name: "fq-develop-intro-page",
   components: {
     //组件传入
     // yoCode:() => import(/* webpackChunkName: "yo-component-code" */ '@com/common/yo-code'),
   },
   data() {
-    return {};
+    return {
+      envTableKeys: [
+        { code: "IE", name: "IE/Edge" },
+        { code: "FireFox", name: "FireFox" },
+        { code: "Chrome", name: "Chrome" },
+        { code: "Safari", name: "Safari" },
+        { code: "Opera", name: "Opera" },
+        { code: "Electron", name: "Electron" }
+      ],
+      envTableData: [
+        {
+          IE: "IE9,IE10,IE11,Edge",
+          FireFox: "last 2 versions",
+          Chrome: "last 2 versions",
+          Safari: "last 2 versions",
+          Opera: "last 2 versions",
+          Electron: "last 2 versions"
+        }
+      ]
+    };
   },
   mounted() {
     // this.$refs.fq_index_kline.init();

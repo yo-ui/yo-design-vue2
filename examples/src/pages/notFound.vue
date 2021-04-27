@@ -1,43 +1,33 @@
 <!--这里是头部组件-->
 <template>
-  <div class="fq-404-component">
-    <fq-header />
-    <div class="content">
-      <div class="image-box">
-        <img :src="IMAGE_SERVER + '/static/images/common/404.png'" />
-      </div>
-      <div class="text-box">
-        <div class="texts" v-text="$lang('很抱歉，您访问的页面不存在！')"></div>
-        <div class="texts">
-          <el-button
-            class="btns backs"
-            @click="$router.back()"
-            v-text="$lang('返回上一页')"
-          ></el-button>
-          <el-button
-            class="btns"
-            @click="jumpPage('index')"
-            v-text="$lang('返回首页')"
-          ></el-button>
-        </div>
-      </div>
+  <div class="yo-404-com">
+    <div class="circle"></div>
+    <div class="picture" :class="{ error: pageType == 'error' }">
+      <span v-if="pageType == 'error'">{{ $lang(errorCode) }}</span>
     </div>
-    <fq-footer />
+    <div class="title">{{ $lang(errorText) }}</div>
+    <a class="sub-title" href="/">{{ $lang("回到首页") }}</a>
   </div>
 </template>
 
 <script>
-// import FqHeader from '@/components/common/fq-header'
-// import FqFooter from '@/components/common/fq-footer'
 export default {
-  name: "fq-404-component",
+  name: "yo-404-com",
   data() {
-    return {};
+    return { pageType: "error" };
   },
   // props: [],
-  components: {
-    // FqHeader,
-    // FqFooter,
+  components: {},
+  props: {
+    type: { type: String, default: "error" },
+    errorCode: { type: String, default: "404" },
+    errorText: { type: String, default: "..页面没有找到.." }
+  },
+  mounted() {
+    let { $route } = this;
+    let { query = {} } = $route;
+    let { type = "" } = query || {};
+    this.pageType = type || this.type;
   },
   methods: {}
 };

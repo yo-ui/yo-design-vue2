@@ -1,1 +1,81 @@
 @import "../common.less";
+.yo-404-com{
+  // .logo{
+  //   .wh(23.3vh;7vh);
+  //   .posa;
+  //   left: 2vh;
+  //   top: 2vh;
+  // }
+  .picture{
+    .wh(60vh;60%);
+    top: 10%;
+    left: calc( 50% - 30vh );
+    .posa;
+    .bi("/static/images/common/maintenance.svg");
+    .bp(center);
+    background-repeat: no-repeat;
+    .bz(contain);
+    z-index: 2;
+    opacity: 0.8;
+    &.error{
+      .bi("/static/images/common/error.svg");
+      span{
+        .db;
+        .posa;
+        .w(100%);
+        .fz(10vh);
+        .fw(bold);
+        .c(#3371c9);
+        top: 42%;
+        .tc;
+      }
+    }
+  }
+
+  .title{
+    .posa;
+    width: 60%;
+    left: 20%;
+    .tc;
+    top: 58%;
+    .fz(4vh);
+    .fw(bold);
+    .c(#3371c9);
+    z-index: 2;
+  }
+  .sub-title{
+    .posa;
+    width: 60%;
+    left: 20%;
+    .tc;
+    top: 65%;
+    .fz(2vh);
+    .fw(bold);
+    .c(#3371c9);
+    .pointer;
+    z-index: 2;
+  }
+
+  .circle{
+    .squ(10vh);
+    .br(50%);
+    left: calc( 50% - 5vh );
+    top: 36vh;
+    .bor(#c9e0ff solid 1vh);
+    z-index: 1;
+    .posa;
+    transition: opacity .4s, transform .4s;
+    opacity: 1;
+    .anime(zoom_a 1.5s infinite ease-out);
+  }
+
+  .keyframes(zoom_a;{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        transform:scale(6);
+        opacity: 0;
+    }
+  })
+}

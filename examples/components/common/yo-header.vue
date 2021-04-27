@@ -27,7 +27,7 @@
       >
         {{ $lang("组件") }}
       </router-link>
-      <router-link
+      <!-- <router-link
         :to="{ name: 'themes' }"
         :class="{ active: code == 'themes' }"
         >{{ $lang("主题") }}</router-link
@@ -37,7 +37,7 @@
       >
       <router-link :to="{ name: 'admin' }" :class="{ active: code == 'admin' }">
         {{ $lang("管理后台") }}
-      </router-link>
+      </router-link> -->
     </div>
   </header>
 </template>

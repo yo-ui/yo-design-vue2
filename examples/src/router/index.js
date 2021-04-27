@@ -10,5 +10,6 @@ import Routers from "./routers";
 
 export default new VueRouter({
   mode: routerMode,
+  base: process.env.VUE_APP_API_HOST === "gitee" ? "youi" : "",
   routes: [...Routers]
 });

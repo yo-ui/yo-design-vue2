@@ -15,8 +15,8 @@
           </router-link> -->
           <router-link
             class="link"
-            :to="{ name: 'componentGuide' }"
-            :class="{ active: code == 'componentGuide' }"
+            :to="{ name: 'componentIntro' }"
+            :class="{ active: code == 'componentIntro' }"
           >
             {{ $lang("介绍") }}
           </router-link>

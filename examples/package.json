@@ -8,6 +8,7 @@
     "serve": "vue-cli-service serve --mode local",
     "start": "npm run serve",
     "build": "vue-cli-service build --mode production",
+    "gitee": "vue-cli-service build --mode gitee",
     "report": "vue-cli-service build --mode production --report --report-json",
     "dev": "vue-cli-service build --mode dev",
     "test": "vue-cli-service build --mode test",

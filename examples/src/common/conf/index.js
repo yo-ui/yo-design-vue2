@@ -1,6 +1,7 @@
 let api = {
   dev: require("../api/api.dev"),
   prod: require("../api/api.prod"),
+  gitee: require("../api/api.gitee"),
   pc: require("../api/api.pc"),
   test: require("../api/api.test"),
   local: require("../api/api.local")
