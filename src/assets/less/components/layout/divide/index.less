@@ -1,0 +1,132 @@
+/**
+ *  author: eric
+ *  create at: 2021-04-28 11:48:45
+ */
+@divide-prefix: ~"@{prefix}divide";
+@p_h:16;
+.@{divide-prefix}{
+  // .h(1);
+  .p(~"@{p_h}px" 0);
+  .posr;
+  .fz(15);
+  .fw(600);
+  .c(@yo-divide-text-color);
+  &.@{divide-prefix}-plain{
+    .fw(normal);
+    .c(unset);
+  }
+  &.@{divide-prefix}-dashed{
+    .@{divide-prefix}-line{
+      border-bottom-style: dashed;
+    }
+    &.@{divide-prefix}-vertical{
+      .@{divide-prefix}-line{
+        border-right-style: dashed;
+      }
+    }
+  }
+  &.@{divide-prefix}-dotted{
+    .@{divide-prefix}-line{
+      border-bottom-style: dotted;
+    }
+    &.@{divide-prefix}-vertical{
+      .@{divide-prefix}-line{
+        border-right-style: dotted;
+      }
+    }
+  }
+  &.@{divide-prefix}-vertical{
+    .dib;
+    .p(0 ~"@{p_h}px");
+    // .h(100%);
+    .h(1em);
+    .mt(-1);
+    vertical-align: middle;
+    .@{divide-prefix}-line{
+      .h(100%);
+      .w(0);
+      left:50%;
+      top:0;
+      .borr(1px solid @yo-divide-border);
+    }
+  }
+  &-text{
+    .bc(@white);
+    .p(0 15px);
+    .posr;
+    .ml(20);
+    .mr(20);
+    z-index: 1;
+  }
+  &-line{
+    .borb(1px solid @yo-divide-border);
+    .posa;
+    top:50%;
+    left:0;
+    .h(0);
+    .w(100%);
+  }
+  &.@{divide-prefix}-xxxl{
+    .p(@p_h+8px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+8px);
+    }
+    .@{divide-prefix}-text{
+      .fz(19);
+    }
+  }
+  &.@{divide-prefix}-xxl{
+    .p(@p_h+6px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+6px);
+    }
+    .@{divide-prefix}-text{
+      .fz(18);
+    }
+  }
+  &.@{divide-prefix}-xl{
+    .p(@p_h+4px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+4px);
+    }
+    .@{divide-prefix}-text{
+      .fz(17);
+    }
+  }
+  &.@{divide-prefix}-l{
+    .p(@p_h+2px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+2px);
+    }
+    .@{divide-prefix}-text{
+      .fz(16);
+    }
+  }
+  &.@{divide-prefix}-m{
+    .p(@p_h+-2px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+-2px);
+    }
+    .@{divide-prefix}-text{
+      .fz(14);
+    }
+  }
+  &.@{divide-prefix}-s{
+    .p(@p_h+-4px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+-4px);
+    }
+    .@{divide-prefix}-text{
+      .fz(13);
+    }
+  }
+  &.@{divide-prefix}-xs{
+    .p(@p_h+-6px 0);
+    &.@{divide-prefix}-vertical{
+    .p(0 @p_h+-6px);
+    }
+    .@{divide-prefix}-text{
+      .fz(12);
+    }
+  }
+}

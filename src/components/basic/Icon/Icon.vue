@@ -3,14 +3,17 @@
   <i class="yo-icon" :class="yoClasses" :style="yoStyles"></i>
 </template>
 <script>
+import Props from "../../../common/props";
 const prefix = "yo-icon";
-const colorMap = {
-  primary: "var(--yo-primary)",
-  info: "var(--yo-info)",
-  success: "var(--yo-success)",
-  warning: "var(--yo-warning)",
-  error: "var(--yo-error)"
-};
+const { colorMap } = Props;
+// const colorMap = {
+//   primary: "var(--yo-primary)",
+//   info: "var(--yo-info)",
+//   success: "var(--yo-success)",
+//   warning: "var(--yo-warning)",
+//   error: "var(--yo-error)"
+// };
+
 export default {
   name: "YIcon",
   //存放 数据
@@ -22,18 +25,22 @@ export default {
   // 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的
   // props 中的数据，都是只读的，无法重新赋值
   props: {
+    // 图标大小
     size: {
       type: [Number, String],
       default: 12
     },
+    //图标颜色
     color: {
       type: String,
       default: ""
     },
+    // 图标名称类型
     type: {
       type: String,
       required: true
     },
+    // 图标旋转角度
     rotate: {
       type: [Number, String],
       default: 0

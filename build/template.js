@@ -93,7 +93,7 @@ let options = {};
 const files = [
   {
     template: "./build/template/less.ejs",
-    path: `assets/less/components/${moduleName}/index.less`
+    path: `src/assets/less/components/${moduleName}/index.less`
   },
   {
     template: "./build/template/demo-less.ejs",
@@ -116,16 +116,20 @@ const files = [
     path: `examples/src/pages/components_en/${moduleName}/${params.lowerName}.vue`
   },
   {
-    template: "./build/template/demo.ejs",
-    path: `examples/components/demos/${moduleName}/${params.lowerName}1.vue`
-  },
-  {
     template: "./build/template/use.ejs",
     path: `examples/components/demos/${moduleName}/use.js`
   },
   {
     template: "./build/template/demo.ejs",
+    path: `examples/components/demos/${moduleName}/normal.vue`
+  },
+  {
+    template: "./build/template/demo.ejs",
     path: `examples/components/demos/${moduleName}/${params.lowerName}2.vue`
+  },
+  {
+    template: "./build/template/demo.ejs",
+    path: `examples/components_en/demos/${moduleName}/normal.vue`
   },
   {
     template: "./build/template/demo.ejs",
@@ -143,7 +147,7 @@ const files = [
 
 const paths = [
   `src/components/${moduleName}`,
-  `assets/less/components/${moduleName}`,
+  `src/assets/less/components/${moduleName}`,
   `examples/components/demos/${moduleName}`,
   `examples/src/assets/less/pages/components/${moduleName}`,
   `examples/src/pages/components/${moduleName}`,

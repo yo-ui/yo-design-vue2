@@ -30,6 +30,7 @@ import CardMeta from "./components/layout/cardMeta";
 import Collapse from "./components/layout/collapse";
 import CollapseItem from "./components/layout/collapseItem";
 import Split from "./components/layout/split";
+import Divide from "./components/layout/divide";
 
 // input
 import Input from "./components/form/input";
@@ -59,6 +60,7 @@ const components = [
   Collapse,
   CollapseItem,
   Split,
+  Divide,
 
   Button,
   ButtonGroup,
@@ -117,6 +119,7 @@ export default {
   Collapse,
   CollapseItem,
   Split,
+  Divide,
 
   Breadcrumb,
   BreadcrumbItem,

@@ -8,7 +8,7 @@
         <y-list-item-meta
           title="这是标题"
           desc="这是描述"
-          avatar="/static/images/demo/1.jpeg"
+          avatar="https://yo-ui.gitee.io/youi/static/images/demo/1.jpeg"
         >
         </y-list-item-meta>
         这是内容区

@@ -27,7 +27,7 @@
           >
             {{ $lang("入门") }}
           </router-link>
-          <router-link
+          <!-- <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
             :class="{ active: code == 'componentGuide1' }"
@@ -40,8 +40,8 @@
             :class="{ active: code == 'componentGuide1' }"
           >
             {{ $lang("定制主题") }}
-          </router-link>
-          <router-link
+          </router-link> -->
+          <!-- <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
             :class="{ active: code == 'componentGuide1' }"
@@ -54,28 +54,28 @@
             :class="{ active: code == 'componentGuide1' }"
           >
             {{ $lang("在vue-cli中使用") }}
-          </router-link>
-          <router-link
+          </router-link> -->
+          <!-- <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
             :class="{ active: code == 'componentGuide2' }"
           >
             {{ $lang("国际化") }}
-          </router-link>
-          <router-link
+          </router-link> -->
+          <!-- <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
             :class="{ active: code == 'componentGuide1' }"
           >
             {{ $lang("常见问题") }}
-          </router-link>
-          <router-link
+          </router-link> -->
+          <!-- <router-link
             class="link"
             :to="{ name: 'componentGuide' }"
             :class="{ active: code == 'componentGuide1' }"
           >
             {{ $lang("支持我们") }}
-          </router-link>
+          </router-link> -->
           <a class="title" :to="{}">{{ $lang("组件") }}</a>
           <a class="sub">{{ $lang("基础组件") }}</a>
 
@@ -160,6 +160,13 @@
               :class="{ active: code == 'componentSplit' }"
             >
               {{ $lang("面板分割 Split") }}
+            </router-link>
+            <router-link
+              class="link"
+              :to="{ name: 'componentDivide' }"
+              :class="{ active: code == 'componentDivide' }"
+            >
+              {{ $lang("分割线 Divide") }}
             </router-link>
           </ul>
           <a class="sub">{{ $lang("数据输入组件") }}</a>

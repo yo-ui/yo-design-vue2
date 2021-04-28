@@ -96,7 +96,7 @@ const Routers = [
             /* webpackChunkName: "yo-component-card" */ "@/pages/components/layout/card/card"
           )
       },
-      //卡片组件-折叠面板
+      //折叠面板组件-布局组件
       {
         path: RouterURL["componentCollapse"].path,
         name: RouterURL["componentCollapse"].name,
@@ -108,7 +108,7 @@ const Routers = [
             /* webpackChunkName: "yo-component-collapse" */ "@/pages/components/layout/collapse/collapse"
           )
       },
-      //卡片组件-分割面板
+      //分割面板-布局组件
       {
         path: RouterURL["componentSplit"].path,
         name: RouterURL["componentSplit"].name,
@@ -118,6 +118,18 @@ const Routers = [
         component: () =>
           import(
             /* webpackChunkName: "yo-component-split" */ "@/pages/components/layout/split/split"
+          )
+      },
+      //分割线-布局组件
+      {
+        path: RouterURL["componentDivide"].path,
+        name: RouterURL["componentDivide"].name,
+        meta: {
+          title: RouterURL["componentDivide"].title
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "yo-component-divide" */ "@/pages/components/layout/divide/divide"
           )
       },
       //组件-基础组件

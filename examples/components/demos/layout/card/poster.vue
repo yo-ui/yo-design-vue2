@@ -1,12 +1,16 @@
 <template>
   <y-row gutter="10">
     <y-col span="6">
-      <y-card hover poster="/static/images/demo/3.jpeg" border-radius="10">
+      <y-card
+        hover
+        poster="https://yo-ui.gitee.io/youi/static/images/demo/3.jpeg"
+        border-radius="10"
+      >
         <!-- <p v-for="item in 3" :key="item">
           卡片内容
         </p> -->
         <y-card-meta
-          avatar="/static/images/demo/4.jpeg"
+          avatar="https://yo-ui.gitee.io/youi/static/images/demo/4.jpeg"
           title="Card Title"
           desc="This is a description"
         ></y-card-meta>

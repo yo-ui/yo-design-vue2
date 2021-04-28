@@ -1,0 +1,15 @@
+<template>
+  <div>
+    <p>
+      Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，
+    </p>
+    <y-divide></y-divide>
+    <p>
+      Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，
+    </p>
+    <y-divide>分割线文字</y-divide>
+    <p>
+      Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，Divide分割线，
+    </p>
+  </div>
+</template>

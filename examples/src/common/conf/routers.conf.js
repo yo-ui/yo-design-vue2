@@ -67,6 +67,11 @@ export default {
     path: "layout/split",
     title: "分割面板组件"
   },
+  componentDivide: {
+    name: "componentDivide",
+    path: "layout/divide",
+    title: "分割面板组件"
+  },
 
   componentInput: {
     name: "componentInput",

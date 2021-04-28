@@ -248,6 +248,30 @@ export default {
     import(
       /* webpackChunkName: "yo-component-layout-split" */ "./layout/split/group"
     ),
+  layoutDivideNormal: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/normal"
+    ),
+  layoutDivideType: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/type"
+    ),
+  layoutDivideAlign: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/align"
+    ),
+  layoutDivideStyle: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/style"
+    ),
+  layoutDividePlain: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/plain"
+    ),
+  layoutDivideSize: () =>
+    import(
+      /* webpackChunkName: "yo-component-layout-divide" */ "./layout/divide/size"
+    ),
 
   formFormForm1: () =>
     import(/* webpackChunkName: "yo-component-form" */ "./form/form/form1"),
