@@ -276,7 +276,7 @@ export default {
     // 拖拽中事件
     mouseMoveEvent(e) {
       let pos = getMousePosition(e);
-      console.log("mouseMoveEvent=", this.$refs.yoSplitRef);
+      // console.log("mouseMoveEvent=", this.$refs.yoSplitRef);
       this.moving(pos);
       this.$emit("moving", e);
     },

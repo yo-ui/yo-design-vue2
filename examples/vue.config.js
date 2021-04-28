@@ -39,9 +39,14 @@ module.exports = {
   //访问路径
   publicPath: process.env.VUE_APP_STATIC_SERVER,
   // 生产环境构建文件的目录
-  outputDir: process.env.VUE_APP_API_HOST === "prod" ? "dist_prod" : "dist",
+  outputDir:
+    process.env.VUE_APP_API_HOST === "prod"
+      ? "dist_prod"
+      : process.env.VUE_APP_API_HOST === "gitee"
+      ? "dist/youi"
+      : "dist",
   // 放置静态资源的地方 (js/css/img/font/...)
-  assetsDir: "static",
+  assetsDir: `static`,
   // 指定生成的 index.html 的输出路径 (相对于 outputDir)。也可以是一个绝对路径
   indexPath: "index.html",
   // 生成的静态资源在它们的文件名中包含了 hash 以便更好的控制缓存

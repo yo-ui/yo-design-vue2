@@ -6,8 +6,16 @@ export default {
   "*": { name: "*", path: "*", title: "404 Not Found" },
   index: { name: "index", path: "/", title: "首页" },
   component: { name: "component", path: "/component", title: "组件页" },
-  componentIntro: { name: "componentIntro", path: "", title: "组件介绍页" },
-  componentGuide: { name: "componentGuide", path: "", title: "组件入门页" },
+  componentIntro: {
+    name: "componentIntro",
+    path: "intro",
+    title: "组件介绍页"
+  },
+  componentGuide: {
+    name: "componentGuide",
+    path: "guide",
+    title: "组件入门页"
+  },
   componentButton: {
     name: "componentButton",
     path: "basic/button",

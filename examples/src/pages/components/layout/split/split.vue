@@ -84,22 +84,91 @@ export default {
     return {
       propsTableData: [
         {
+          param: "value",
+          desc: `面板位置，可以是 0~1 代表百分比，或具体数值的像素，可用 v-model 双向绑定`,
+          type: "Number|String",
+          default: "0.5",
+          version: ""
+        },
+        {
+          param: "border",
+          desc: `是否显示边框`,
+          type: "Boolean",
+          default: "",
+          version: ""
+        },
+        {
+          param: "borderRadius",
+          desc: `显示边框圆角大小`,
+          type: "String|Number",
+          default: "0",
+          version: ""
+        },
+        {
           param: "type",
-          desc: ``,
+          desc: `类型，可选值为 horizontal 或 vertical`,
           type: "String",
+          default: "horizontal",
+          version: ""
+        },
+        {
+          param: "min",
+          desc: ``,
+          type: "最小阈值，距离最左边或最上边的距离",
+          default: "",
+          version: ""
+        },
+        {
+          param: "max",
+          desc: ``,
+          type: "最大阈值，距离最右边或最下边的距离",
           default: "",
           version: ""
         }
       ],
       eventTableData: [
         {
-          param: "click",
-          desc: "点击事件,点击按钮时的回调",
+          param: "moveStart",
+          desc: "鼠标事件，拖拽开始",
+          callback: "(event)=>void",
+          version: ""
+        },
+        {
+          param: "moveing",
+          desc: "鼠标事件，拖拽中",
+          callback: "(event)=>void",
+          version: ""
+        },
+        {
+          param: "moveEnd",
+          desc: "鼠标事件，拖拽结束",
           callback: "(event)=>void",
           version: ""
         }
       ],
-      slotTableData: [{ param: "-", desc: "默认插槽", version: "" }]
+      slotTableData: [
+        {
+          param: "left",
+          desc: "mode 为 horizontal 时可用，左边面板",
+          version: ""
+        },
+        {
+          param: "right",
+          desc: "mode 为 horizontal 时可用，右边面板",
+          version: ""
+        },
+        {
+          param: "top",
+          desc: "mode 为 vertical 时可用，上边面板",
+          version: ""
+        },
+        {
+          param: "bottom",
+          desc: "mode 为 vertical 时可用，下边面板",
+          version: ""
+        },
+        { param: "trigger", desc: "自定义分割拖拽节点", version: "" }
+      ]
     };
   }
 };

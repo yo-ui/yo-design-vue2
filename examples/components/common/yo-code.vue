@@ -38,19 +38,20 @@ export default {
   },
   methods: {
     getContent() {
-      let that = this;
-      if (that.src) {
-        that.$store
-          .dispatch("getContent", { url: that.src, params: {} })
+      let { src, content } = this;
+      src = `${process.env.VUE_APP_IMAGE_SERVER}${src}`;
+      if (src) {
+        this.$store
+          .dispatch("getContent", { url: src, params: {} })
           .then(({ data }) => {
             // console.log("yo-code", that.src, data);
-            that.sourceCode =
+            this.sourceCode =
               typeof data === "object" ? JSON.stringify(data) : data;
           });
-      } else if (that.content) {
-        that.sourceCode = that.content;
-      } else if (that.$slots.default) {
-        that.sourceCode = that.$slots.default[0].text.trim();
+      } else if (content) {
+        this.sourceCode = content;
+      } else if (this.$slots.default) {
+        this.sourceCode = this.$slots.default[0].text.trim();
       }
       // console.error(that.sourceCode)
     }
