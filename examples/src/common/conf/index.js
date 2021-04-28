@@ -3,6 +3,7 @@ let api = {
   prod: require("../api/api.prod"),
   gitee: require("../api/api.gitee"),
   pc: require("../api/api.pc"),
+  sandbox: require("../api/api.sandbox"),
   test: require("../api/api.test"),
   local: require("../api/api.local")
 };

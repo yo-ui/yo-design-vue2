@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="100"  width="100" src="https://yo-ui.gitee.io/youi/images/logo.png"/>
+  <img height="100"  width="100" src="https://yo-ui.github.io/images/logo.png"/>
 </p>
 
 # YOUI-Vue2.x 前端UI框架 1.0
